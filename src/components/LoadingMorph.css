@@ -1,0 +1,13 @@
+.loading-morph {
+  width: 180px;
+  height: 180px;
+  display: block;
+  background: transparent;
+}
+
+@media (max-width: 640px) {
+  .loading-morph {
+    width: 140px;
+    height: 140px;
+  }
+}

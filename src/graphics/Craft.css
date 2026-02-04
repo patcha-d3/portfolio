@@ -1,0 +1,286 @@
+.craft-page {
+  background: #f7f4ee;
+  color: #1d1d1d;
+  min-height: 100vh;
+}
+
+.craft-main {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 120px 0 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+}
+
+.craft-hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: center;
+  gap: 40px;
+}
+
+.craft-hero h1 {
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  margin: 0 0 16px;
+}
+
+.craft-sub {
+  color: #5c5c5c;
+  margin: 0 0 24px;
+  line-height: 1.7;
+}
+
+.craft-pill {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #f0e7da;
+  color: #6b5a44;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+.craft-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.craft-btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.craft-btn--primary {
+  background: #151515;
+  color: #fff;
+}
+
+.craft-btn--ghost {
+  background: transparent;
+  border: 1px solid #c4b9a6;
+  color: #473f33;
+}
+
+.craft-hero__media {
+  position: relative;
+  min-height: 320px;
+  display: grid;
+  place-items: center;
+}
+
+.craft-paper {
+  width: min(360px, 90%);
+  aspect-ratio: 4 / 5;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.craft-card {
+  position: absolute;
+  width: 220px;
+  height: 140px;
+  border-radius: 18px;
+  background: #f7e4c9;
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.15);
+  top: 10%;
+  right: 14%;
+}
+
+.craft-card--floating {
+  transform: rotate(-6deg);
+}
+
+.craft-section {
+  display: grid;
+  gap: 24px;
+}
+
+.craft-section--center {
+  text-align: center;
+  gap: 18px;
+}
+
+.craft-tags,
+.craft-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.craft-tags span,
+.craft-swatches span {
+  background: #fff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.craft-people {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.craft-person {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  gap: 14px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.craft-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f0e7da;
+  flex-shrink: 0;
+}
+
+.craft-role {
+  margin: 0;
+  color: #7a7a7a;
+  font-size: 0.85rem;
+}
+
+.craft-use {
+  margin: 6px 0 0;
+  color: #4d4d4d;
+}
+
+.craft-split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  align-items: center;
+}
+
+.craft-split--reverse {
+  direction: rtl;
+}
+
+.craft-split--reverse > * {
+  direction: ltr;
+}
+
+.craft-eyebrow {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  color: #8a7d6b;
+}
+
+.craft-links {
+  display: flex;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.craft-links a {
+  color: #1f1f1f;
+  font-weight: 600;
+}
+
+.craft-pane {
+  background: #fff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 34px rgba(0, 0, 0, 0.1);
+  display: grid;
+  gap: 16px;
+}
+
+.craft-pane__card {
+  height: 180px;
+  border-radius: 16px;
+  background: #f0e7da;
+}
+
+.craft-quote {
+  font-size: 0.95rem;
+  color: #4e4e4e;
+  display: grid;
+  gap: 8px;
+}
+
+.craft-quote span {
+  font-weight: 600;
+}
+
+.craft-pane--grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.craft-mini {
+  height: 90px;
+  border-radius: 16px;
+  background: #f5efe5;
+}
+
+.craft-structure {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.craft-structure__card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 18px;
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.08);
+}
+
+.craft-structure__thumb {
+  height: 120px;
+  border-radius: 14px;
+  background: #efe7d8;
+  margin-bottom: 12px;
+}
+
+.craft-pricing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.craft-price-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 20px;
+  display: grid;
+  gap: 16px;
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.1);
+}
+
+.craft-price-card--highlight {
+  border: 2px solid #151515;
+}
+
+.craft-cta {
+  background: #f0e7da;
+  border-radius: 28px;
+  padding: 36px;
+  text-align: center;
+  display: grid;
+  gap: 14px;
+}
+
+@media (max-width: 800px) {
+  .craft-main {
+    padding-top: 140px;
+  }
+
+  .craft-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

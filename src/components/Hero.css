@@ -1,0 +1,111 @@
+ .hero {
+  width: min(1200px, 94%);
+  min-height: 1fr;
+  margin: 0 auto;
+}
+
+.hero__surface {
+  min-height: 85vh;
+  border-radius: 24px;
+  padding: 48px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__loading {
+  align-self: flex-start;
+  margin-left: auto;
+}
+
+.hero__gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero__surface > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__stack {
+  position: relative;
+  width: min(460px, 70%);
+  height: 210px;
+}
+
+.hero__card {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.hero__card--back {
+  transform: translateY(-26px);
+  background: rgba(18, 18, 18, 0.18);
+}
+
+.hero__card--mid {
+  transform: translateY(-12px);
+  background: rgba(18, 18, 18, 0.24);
+}
+
+.hero__card--front {
+  background: rgba(255, 255, 255, 0.75);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.hero__card--front h1 {
+  margin: 0;
+  font-size: 2.1rem;
+  color: #151515;
+}
+
+.hero__name {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(18, 18, 18, 0.18);
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.hero__shadow {
+  position: absolute;
+  bottom: -40px;
+  left: 120px;
+  width: 260px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25), transparent 70%);
+  filter: blur(18px);
+}
+
+@media (max-width: 960px) {
+  .hero__surface {
+    min-height: 300px;
+    padding: 32px;
+  }
+
+  .hero__stack {
+    width: min(420px, 80%);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero__surface {
+    padding: 24px;
+    min-height: 260px;
+  }
+
+  .hero__stack {
+    width: 100%;
+  }
+}
