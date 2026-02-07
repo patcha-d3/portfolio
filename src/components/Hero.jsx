@@ -2,9 +2,13 @@ import './Hero.css'
 import FluidGradient from './FluidGradient'
 import LoadingMorph from './LoadingMorph'
 
-const Hero = () => {
+const Hero = ({ serviceCards, Bubble }) => {
   return (
-    <section className="hero" id="home">
+    <section className="home-hero">
+      <Bubble>
+        Make yourself at <span className="bubble__accent">home!</span>
+      </Bubble>
+
       <div className="hero__surface">
         <div className="hero__gradient" aria-hidden="true">
           <FluidGradient />

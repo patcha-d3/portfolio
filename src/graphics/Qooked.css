@@ -66,6 +66,13 @@ hr {
   gap: 28px;
 }
 
+.qooked-overview__lower {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.65fr) minmax(260px, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
 .qooked-overview__summary {
   background: #fdf6e8;
   border: 1px solid #f2dcc3;
@@ -75,37 +82,60 @@ hr {
 
 .qooked-overview__meta {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 22px;
+  gap: 18px;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  padding: 18px 20px;
+  max-width: 320px;
+  width: 100%;
+}
+
+.qooked-overview__meta > div {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ececec;
+}
+
+.qooked-overview__meta > div:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .qooked-overview__meta h4 {
-  margin: 0 0 6px;
+  margin: 0 0 4px;
   font-size: 0.85rem;
-  color: #999;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  color: #5a5a5a;
+  letter-spacing: 0.02em;
 }
 
 .qooked-overview__meta p {
   margin: 0;
   font-weight: 500;
+  color: #2a2a2a;
 }
 
 .qooked-overview__callouts {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 22px;
 }
 
-.qooked-overview__callouts h3 {
+.qooked-overview__callouts h2 {
   margin: 0 0 8px;
+  font-size: 1.25rem;
 }
 
 .qooked-overview__callouts p {
   margin: 0;
   color: #6f6f6f;
 }
+
+@media (max-width: 900px) {
+  .qooked-overview__lower {
+    grid-template-columns: 1fr;
+  }
+}
+
+.qooked-tools {
+  align-items: center;}
 
 .qooked-tools h2 {
   margin: 0 0 18px;

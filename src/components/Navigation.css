@@ -1,56 +1,52 @@
 .nav-wrapper {
   position: fixed;
-  top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 8px;
+  left: 8px;
   z-index: 10;
-  margin: 0;
-  width: fit-content;
-  max-width: 92%;
+  max-width: 64px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 16px;
-}
+  background: #f6f6f4;
 
-.nav-bar {
-  position: sticky;
-  padding: 8px 12px;
-  background: #ffffff;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.1);
-}
-
-.nav-bar--logo {
-  justify-content: center;
-}
-
-.nav-bar--menu {
-  justify-content: space-between;
 }
 
 .nav__logo {
-  width: 46px;
-  height: 46px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
-  background: #ffffff;
 }
 
 .nav__menu {
   display: flex;
-  justify-content: center;
-  padding-left: 24px;
-  gap: 24px;
-  font-size: 0.95rem;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
   color: #1f1f1f;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  padding: 24px 12px;
+  height: 90vh;
+}
+
+.nav__menu a {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: #1f1f1f;
+  font-weight: 600;
+  text-align: center;
 }
 
 .nav__menu a:hover {
   color: #4a64ff;
+  border-color: #4a64ff;
 }
 
 .nav__logo img {
@@ -60,12 +56,14 @@
 }
 
 .nav__cta {
+  margin-top: auto;
   border: none;
-  padding: 10px 20px;
-  border-radius: 999px;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
   background: #151515;
   color: #fff;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: background-color 200ms ease;
 }
@@ -76,26 +74,22 @@
 
 @media (max-width: 960px) {
   .nav-wrapper {
-    flex-wrap: wrap;
-    width: min(900px, 92%);
+    width: 56px;
   }
 
   .nav__menu {
-    display: none;
+    gap: 10px;
   }
 }
 
 @media (max-width: 640px) {
   .nav-wrapper {
-    margin: 0;
-  }
-
-  .nav-bar {
-    padding: 8px 12px;
+    width: 56px;
   }
 
   .nav__cta {
-    padding: 8px 14px;
-    font-size: 0.8rem;
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
   }
 }

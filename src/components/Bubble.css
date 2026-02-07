@@ -1,0 +1,34 @@
+.header {
+  position: fixed;
+background: #f6f6f4;
+width: 100%;
+height: 64px;
+top: 0;
+display: flex;
+align-items: center;
+z-index: 10;
+}
+
+.bubble {
+  align-self: start;
+  margin-top: 8px;
+  position: relative;
+  z-index: 11;
+  background: #ffffff;
+  border: 2px solid hsl(0, 0%, 69%);
+  padding: 8px 16px;
+  border-radius: 16px 16px 16px 0;
+  font-size: 1rem;
+  color: #6a6a6a;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.01);
+}
+
+
+
+.bubble__accent {
+  color: #3b5bff;
+  font-weight: 700;
+}

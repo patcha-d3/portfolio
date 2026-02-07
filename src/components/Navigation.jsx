@@ -1,25 +1,30 @@
 import './Navigation.css'
-import Button from './Button'
 
 const Navigation = () => {
   return (
-    <div className="nav-wrapper">
-      <header className="nav-bar nav-bar--logo">
-        <div className="nav__logo">
-          <img src="/src/assets/logo.svg" alt="Pat Sricome logo" />
-        </div>
-      </header>
-      <header className="nav-bar nav-bar--menu">
-        <nav className="nav__menu">
-          <a href="./App.jsx">Home</a>
-          <a href="./About.jsx">About</a>
-          <a href="#works">Works</a>
-          <a href="#resume">Resume</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <Button className="nav__cta">Let's work together!</Button>
-      </header>
-    </div>
+    <aside className="nav-wrapper" aria-label="Primary">
+      <div className="nav__logo">
+        <img src="/src/assets/logo.svg" alt="Pat Sricome logo" />
+      </div>
+      <nav className="nav__menu">
+        <a href="./App.jsx" aria-label="Home" title="Home">
+          Home
+        </a>
+        <a href="./About.jsx" aria-label="About" title="About">
+          About
+        </a>
+        <a href="#works" aria-label="Works" title="Works">
+          Works
+        </a>
+        <a href="#resume" aria-label="Resume" title="Resume">
+          Resume
+        </a>
+        <a href="#contact" aria-label="LinkedIn" title="LinkedIn">
+          LinkedIn
+        </a>
+      </nav>
+
+    </aside>
   )
 }
 

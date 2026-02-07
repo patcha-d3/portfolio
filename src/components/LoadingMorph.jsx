@@ -2,8 +2,14 @@ import { useEffect, useMemo, useRef } from 'react'
 import { interpolate } from 'flubber'
 import { useReducedMotion } from 'framer-motion'
 import './LoadingMorph.css'
+import logo01 from '../assets/loading/logo-01.svg?raw'
+import logo02 from '../assets/loading/logo-02.svg?raw'
+import logo03 from '../assets/loading/logo-03.svg?raw'
+import logo04 from '../assets/loading/logo-04.svg?raw'
+import logo05 from '../assets/loading/logo-05.svg?raw'
+import logo06 from '../assets/loading/logo-06.svg?raw'
 
-const BASE_PATH =
+const DEFAULT_BASE_PATH =
   'M406.9,790.5l-15.6-60.3s236.3,9.9,107.7-275.3l-236.3,20.4,26.1,315.2c-5.3,14.8,119.3,10.3,118.2,0Z'
 
 const TINY_PATH =
@@ -25,13 +31,73 @@ const pointsToPath = (points) => {
     .join(' ')} Z`
 }
 
+const LOGOS = [logo01, logo02, logo03, logo04, logo05, logo06]
+
+const extractLogoParts = (svgText) => {
+  const paths = [...svgText.matchAll(/<path[^>]*d="([^"]+)"/g)].map((match) => match[1])
+  const polygons = [...svgText.matchAll(/<polygon[^>]*points="([^"]+)"/g)].map(
+    (match) => match[1]
+  )
+  const ellipses = [
+    ...svgText.matchAll(
+      /<ellipse[^>]*cx="([^"]+)"[^>]*cy="([^"]+)"[^>]*rx="([^"]+)"[^>]*ry="([^"]+)"[^>]*>/g
+    ),
+  ].map((match) => ({
+    cx: Number(match[1]),
+    cy: Number(match[2]),
+    rx: Number(match[3]),
+    ry: Number(match[4]),
+  }))
+
+  const basePath = paths.find((path) => path.startsWith('M406.9,790.5'))
+  const bodyPath =
+    paths.find((path) => path.startsWith('M307.4,388.6')) ||
+    paths.find((path) => path.startsWith('M290.5,393'))
+  const leftEyePath =
+    paths.find((path) => path.startsWith('M358.7,549')) ||
+    paths.find((path) => path.startsWith('M358.8,549'))
+  const rightEyePath = paths.find((path) => path.startsWith('M460.8,536.6'))
+  const mouthPath =
+    paths.find((path) => path.startsWith('M429,632.6')) ||
+    paths.find((path) => path.startsWith('M412.4,658.6')) ||
+    paths.find((path) => path.startsWith('M421.3,662.5'))
+  const nosePath =
+    paths.find((path) => path.startsWith('M444.3,604.8')) ||
+    paths.find((path) => path.startsWith('M444.3,604.6'))
+  const hatPoints = polygons.find(
+    (points) => points.startsWith('262 364.7') || points.startsWith('260 362.7')
+  )
+  const hatShadowPoints = polygons.find((points) => points.startsWith('241.2 332.9'))
+
+  return {
+    basePath,
+    bodyPath,
+    leftEyePath,
+    rightEyePath,
+    mouthPath,
+    nosePath,
+    hatPoints,
+    hatShadowPoints,
+    ellipses,
+  }
+}
+
+const LOGO_PARTS = LOGOS.map(extractLogoParts)
+const FINAL_ELLIPSES = [...(LOGO_PARTS[5]?.ellipses ?? [])].sort((a, b) => a.cx - b.cx)
+const [LEFT_EYE_ELLIPSE, RIGHT_EYE_ELLIPSE] = FINAL_ELLIPSES.filter(
+  (ellipse) => ellipse.rx === 10.2 && ellipse.ry === 14.2
+)
+const MOUTH_ELLIPSE = FINAL_ELLIPSES.find((ellipse) => ellipse.rx === 20.4 && ellipse.ry === 28.4)
+
+const BASE_PATH = LOGO_PARTS.find((parts) => parts.basePath)?.basePath ?? DEFAULT_BASE_PATH
+
 const BODY_PATHS = [
   TINY_PATH,
   TINY_PATH,
-  'M307.4,388.6c-24.1,5.7-46.2,18.1-62.9,36.4-7.2,7.9-14.2,17.6-19.9,29.3-37.8,86.9-8,222.7-76.4,276.4,45.2,25.9,92.8,38.2,139.1,42.2l-24.6-297.6,236.3-20.4c128.6,285.2-107.7,275.3-107.7,275.3l9.7,37.3c92.4-15.6,160.9-52.2,160.9-52.2,0,0,32.8-394.6-254.4-326.7Z',
-  'M290.5,393c-9.9,2.8-20.5,1.1-26.5-7.2l-5.2-7.3-42.3,34.6,8.8,25.2c1.8,5.2,1.6,10.9-.6,16-37.8,86.9-8,222.7-76.4,276.4,45.2,25.9,92.8,38.2,139.1,42.2l-24.6-297.6,236.3-20.4c128.6,285.2-107.7,275.3-107.7,275.3l9.7,37.3c92.4-15.6,160.9-52.2,160.9-52.2,0,0,34.1-409.9-271.3-322.3Z',
-  'M290.5,393c-9.9,2.8-20.5,1.1-26.5-7.2l-5.2-7.3-42.3,34.6,8.8,25.2c1.8,5.2,1.6,10.9-.6,16-37.8,86.9-8,222.7-76.4,276.4,45.2,25.9,92.8,38.2,139.1,42.2l-24.6-297.6,236.3-20.4c128.6,285.2-107.7,275.3-107.7,275.3l9.7,37.3c92.4-15.6,160.9-52.2,160.9-52.2,0,0,34.1-409.9-271.3-322.3Z',
-  'M290.5,393c-9.9,2.8-20.5,1.1-26.5-7.2l-5.2-7.3-42.3,34.6,8.8,25.2c1.8,5.2,1.6,10.9-.6,16-37.8,86.9-8,222.7-76.4,276.4,45.2,25.9,92.8,38.2,139.1,42.2l-24.6-297.6,236.3-20.4c128.6,285.2-107.7,275.3-107.7,275.3l9.7,37.3c92.4-15.6,160.9-52.2,160.9-52.2,0,0,34.1-409.9-271.3-322.3Z',
+  LOGO_PARTS[2]?.bodyPath ?? TINY_PATH,
+  LOGO_PARTS[3]?.bodyPath ?? TINY_PATH,
+  LOGO_PARTS[4]?.bodyPath ?? TINY_PATH,
+  LOGO_PARTS[5]?.bodyPath ?? TINY_PATH,
 ]
 
 const HAT_PATHS = [
@@ -39,8 +105,8 @@ const HAT_PATHS = [
   TINY_PATH,
   TINY_PATH,
   TINY_PATH,
-  pointsToPath('262 364.7 249.3 344.5 194.6 392.1 206.5 412 262 364.7'),
-  pointsToPath('260 362.7 247.3 342.5 192.6 390.1 204.5 410 260 362.7'),
+  LOGO_PARTS[4]?.hatPoints ? pointsToPath(LOGO_PARTS[4].hatPoints) : TINY_PATH,
+  LOGO_PARTS[5]?.hatPoints ? pointsToPath(LOGO_PARTS[5].hatPoints) : TINY_PATH,
 ]
 
 const HAT_SHADOW_PATHS = [
@@ -49,43 +115,49 @@ const HAT_SHADOW_PATHS = [
   TINY_PATH,
   TINY_PATH,
   TINY_PATH,
-  pointsToPath('241.2 332.9 154 169.8 50 251.5 185.7 380.1 241.2 332.9'),
+  LOGO_PARTS[5]?.hatShadowPoints ? pointsToPath(LOGO_PARTS[5].hatShadowPoints) : TINY_PATH,
 ]
 
 const LEFT_EYE_PATHS = [
-  'M358.7,549c-8.8,0-17.9-3.3-27.3-9.8-3.4-2.4-4.2-7-1.9-10.4,2.4-3.4,7-4.2,10.4-1.9,8.6,6,16.4,8.2,23.2,6.6,9.7-2.2,15-11.6,15-11.7,2-3.6,6.5-4.9,10.1-3,3.6,2,5,6.5,3,10.1-.3.6-8.4,15.3-24.6,19.1-2.6.6-5.3.9-8,.9Z',
-  'M358.7,549c-8.8,0-17.9-3.3-27.3-9.8-3.4-2.4-4.2-7-1.9-10.4,2.4-3.4,7-4.2,10.4-1.9,8.6,6,16.4,8.2,23.2,6.6,9.7-2.2,15-11.6,15-11.7,2-3.6,6.5-4.9,10.1-3,3.6,2,5,6.5,3,10.1-.3.6-8.4,15.3-24.6,19.1-2.6.6-5.3.9-8,.9Z',
-  'M358.8,549c-8.8,0-17.9-3.3-27.3-9.8-3.4-2.4-4.2-7-1.9-10.4,2.4-3.4,7-4.2,10.4-1.9,8.6,6,16.4,8.2,23.2,6.6,9.7-2.2,15-11.6,15-11.7,2-3.6,6.5-4.9,10.1-3,3.6,2,5,6.5,3,10.1-.3.6-8.4,15.3-24.6,19.1-2.6.6-5.3.9-8,.9Z',
-  'M358.8,549c-8.8,0-17.9-3.3-27.3-9.8-3.4-2.4-4.2-7-1.9-10.4,2.4-3.4,7-4.2,10.4-1.9,8.6,6,16.4,8.2,23.2,6.6,9.7-2.2,15-11.6,15-11.7,2-3.6,6.5-4.9,10.1-3,3.6,2,5,6.5,3,10.1-.3.6-8.4,15.3-24.6,19.1-2.6.6-5.3.9-8,.9Z',
-  'M358.8,549c-8.8,0-17.9-3.3-27.3-9.8-3.4-2.4-4.2-7-1.9-10.4,2.4-3.4,7-4.2,10.4-1.9,8.6,6,16.4,8.2,23.2,6.6,9.7-2.2,15-11.6,15-11.7,2-3.6,6.5-4.9,10.1-3,3.6,2,5,6.5,3,10.1-.3.6-8.4,15.3-24.6,19.1-2.6.6-5.3.9-8,.9Z',
-  ellipseToPath(373.1, 523.7, 10.2, 14.2),
+  LOGO_PARTS[0]?.leftEyePath ?? TINY_PATH,
+  LOGO_PARTS[1]?.leftEyePath ?? TINY_PATH,
+  LOGO_PARTS[2]?.leftEyePath ?? TINY_PATH,
+  LOGO_PARTS[3]?.leftEyePath ?? TINY_PATH,
+  LOGO_PARTS[4]?.leftEyePath ?? TINY_PATH,
+  LEFT_EYE_ELLIPSE
+    ? ellipseToPath(LEFT_EYE_ELLIPSE.cx, LEFT_EYE_ELLIPSE.cy, LEFT_EYE_ELLIPSE.rx, LEFT_EYE_ELLIPSE.ry)
+    : TINY_PATH,
 ]
 
 const RIGHT_EYE_PATHS = [
-  'M460.8,536.6c-8.8,0-17.9-3.3-27.3-9.8-3.4-2.4-4.2-7-1.9-10.4,2.4-3.4,7-4.2,10.4-1.9,8.6,6,16.4,8.2,23.2,6.6,9.7-2.2,15-11.6,15-11.7,2-3.6,6.5-4.9,10.1-3,3.6,2,5,6.5,3,10.1-.3.6-8.4,15.3-24.6,19.1-2.6.6-5.3.9-8,.9Z',
-  'M460.8,536.6c-8.8,0-17.9-3.3-27.3-9.8-3.4-2.4-4.2-7-1.9-10.4,2.4-3.4,7-4.2,10.4-1.9,8.6,6,16.4,8.2,23.2,6.6,9.7-2.2,15-11.6,15-11.7,2-3.6,6.5-4.9,10.1-3,3.6,2,5,6.5,3,10.1-.3.6-8.4,15.3-24.6,19.1-2.6.6-5.3.9-8,.9Z',
-  'M460.8,536.6c-8.8,0-17.9-3.3-27.3-9.8-3.4-2.4-4.2-7-1.9-10.4,2.4-3.4,7-4.2,10.4-1.9,8.6,6,16.4,8.2,23.2,6.6,9.7-2.2,15-11.6,15-11.7,2-3.6,6.5-4.9,10.1-3,3.6,2,5,6.5,3,10.1-.3.6-8.4,15.3-24.6,19.1-2.6.6-5.3.9-8,.9Z',
-  'M460.8,536.6c-8.8,0-17.9-3.3-27.3-9.8-3.4-2.4-4.2-7-1.9-10.4,2.4-3.4,7-4.2,10.4-1.9,8.6,6,16.4,8.2,23.2,6.6,9.7-2.2,15-11.6,15-11.7,2-3.6,6.5-4.9,10.1-3,3.6,2,5,6.5,3,10.1-.3.6-8.4,15.3-24.6,19.1-2.6.6-5.3.9-8,.9Z',
-  'M460.8,536.6c-8.8,0-17.9-3.3-27.3-9.8-3.4-2.4-4.2-7-1.9-10.4,2.4-3.4,7-4.2,10.4-1.9,8.6,6,16.4,8.2,23.2,6.6,9.7-2.2,15-11.6,15-11.7,2-3.6,6.5-4.9,10.1-3,3.6,2,5,6.5,3,10.1-.3.6-8.4,15.3-24.6,19.1-2.6.6-5.3.9-8,.9Z',
-  ellipseToPath(467.2, 514.2, 10.2, 14.2),
+  LOGO_PARTS[0]?.rightEyePath ?? TINY_PATH,
+  LOGO_PARTS[1]?.rightEyePath ?? TINY_PATH,
+  LOGO_PARTS[2]?.rightEyePath ?? TINY_PATH,
+  LOGO_PARTS[3]?.rightEyePath ?? TINY_PATH,
+  LOGO_PARTS[4]?.rightEyePath ?? TINY_PATH,
+  RIGHT_EYE_ELLIPSE
+    ? ellipseToPath(RIGHT_EYE_ELLIPSE.cx, RIGHT_EYE_ELLIPSE.cy, RIGHT_EYE_ELLIPSE.rx, RIGHT_EYE_ELLIPSE.ry)
+    : TINY_PATH,
 ]
 
 const MOUTH_PATHS = [
   TINY_PATH,
   TINY_PATH,
-  'M429,632.6c8.4,2.7,16.1,8.6,23,17.6,2.5,3.3,1.9,8-1.4,10.5-3.3,2.5-8,1.9-10.5-1.4-6.4-8.3-13.1-12.8-20.1-13.3-9.9-.8-17.8,6.6-17.9,6.6-3,2.8-7.7,2.7-10.6-.2-2.8-3-2.8-7.7.2-10.5.5-.5,12.6-12,29.2-10.8,2.7.2,5.4.7,8,1.5Z',
-  'M412.4,658.6c-7.1-5.2-12.5-13.3-16.2-24.1-1.3-3.9.8-8.2,4.7-9.5,3.9-1.3,8.2.8,9.5,4.7,3.4,9.9,8.3,16.3,14.7,19.1,9.1,3.9,19-.5,19.1-.6,3.7-1.7,8.2-.1,9.9,3.6,1.7,3.7.2,8.2-3.5,9.9-.6.3-15.8,7.3-31.2.9-2.5-1.1-4.8-2.4-7-4Z',
-  'M421.3,662.5c-8.8,0-17.9-3.3-27.3-9.8-3.4-2.4-4.2-7-1.9-10.4,2.4-3.4,7-4.2,10.4-1.9,8.6,6,16.4,8.2,23.2,6.6,9.7-2.2,15-11.6,15-11.7,2-3.6,6.5-4.9,10.1-3,3.6,2,5,6.5,3,10.1-.3.6-8.4,15.3-24.6,19.1-2.6.6-5.3.9-8,.9Z',
-  ellipseToPath(436.5, 649.9, 20.4, 28.4),
+  LOGO_PARTS[2]?.mouthPath ?? TINY_PATH,
+  LOGO_PARTS[3]?.mouthPath ?? TINY_PATH,
+  LOGO_PARTS[4]?.mouthPath ?? TINY_PATH,
+  MOUTH_ELLIPSE
+    ? ellipseToPath(MOUTH_ELLIPSE.cx, MOUTH_ELLIPSE.cy, MOUTH_ELLIPSE.rx, MOUTH_ELLIPSE.ry)
+    : TINY_PATH,
 ]
 
 const NOSE_PATHS = [
-  'M444.3,604.6c-2.2,0-4.4-1-5.7-3-2.2-3.2-1.4-7.5,1.7-9.7l5.9-4.1c6.5-4.5,8.8-13.1,5.4-20.3l-20.4-43.4c-1.6-3.5-.1-7.7,3.4-9.3,3.5-1.6,7.7-.1,9.3,3.4l20.4,43.4c6.3,13.4,2.1,29.2-10.1,37.7l-5.9,4.1c-1.2.9-2.6,1.3-4,1.3Z',
-  'M444.3,604.6c-2.2,0-4.4-1-5.7-3-2.2-3.2-1.4-7.5,1.7-9.7l5.9-4.1c6.5-4.5,8.8-13.1,5.4-20.3l-20.4-43.4c-1.6-3.5-.1-7.7,3.4-9.3,3.5-1.6,7.7-.1,9.3,3.4l20.4,43.4c6.3,13.4,2.1,29.2-10.1,37.7l-5.9,4.1c-1.2.9-2.6,1.3-4,1.3Z',
-  'M444.3,604.6c-2.2,0-4.4-1-5.7-3-2.2-3.2-1.4-7.5,1.7-9.7l5.9-4.1c6.5-4.5,8.8-13.1,5.4-20.3l-20.4-43.4c-1.6-3.5-.1-7.7,3.4-9.3,3.5-1.6,7.7-.1,9.3,3.4l20.4,43.4c6.3,13.4,2.1,29.2-10.1,37.7l-5.9,4.1c-1.2.9-2.6,1.3-4,1.3Z',
-  'M444.3,604.6c-2.2,0-4.4-1-5.7-3-2.2-3.2-1.4-7.5,1.7-9.7l5.9-4.1c6.5-4.5,8.8-13.1,5.4-20.3l-20.4-43.4c-1.6-3.5-.1-7.7,3.4-9.3,3.5-1.6,7.7-.1,9.3,3.4l20.4,43.4c6.3,13.4,2.1,29.2-10.1,37.7l-5.9,4.1c-1.2.9-2.6,1.3-4,1.3Z',
-  'M444.3,604.6c-2.2,0-4.4-1-5.7-3-2.2-3.2-1.4-7.5,1.7-9.7l5.9-4.1c6.5-4.5,8.8-13.1,5.4-20.3l-20.4-43.4c-1.6-3.5-.1-7.7,3.4-9.3,3.5-1.6,7.7-.1,9.3,3.4l20.4,43.4c6.3,13.4,2.1,29.2-10.1,37.7l-5.9,4.1c-1.2.9-2.6,1.3-4,1.3Z',
-  'M444.3,604.8c-2.2,0-4.4-1-5.7-3-2.2-3.2-1.4-7.5,1.7-9.7l5.9-4.1c6.5-4.5,8.8-13.1,5.4-20.3l-20.4-43.4c-1.6-3.5-.1-7.7,3.4-9.3,3.5-1.6,7.7-.1,9.3,3.4l20.4,43.4c6.3,13.4,2.1,29.2-10.1,37.7l-5.9,4.1c-1.2.9-2.6,1.3-4,1.3Z',
+  LOGO_PARTS[0]?.nosePath ?? TINY_PATH,
+  LOGO_PARTS[1]?.nosePath ?? TINY_PATH,
+  LOGO_PARTS[2]?.nosePath ?? TINY_PATH,
+  LOGO_PARTS[3]?.nosePath ?? TINY_PATH,
+  LOGO_PARTS[4]?.nosePath ?? TINY_PATH,
+  LOGO_PARTS[5]?.nosePath ?? TINY_PATH,
 ]
 
 const makeInterpolators = (paths) =>

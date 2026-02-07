@@ -36,32 +36,34 @@ const Qooked = () => {
               restaurant, along with a clear and well-structured menu layout.
             </p>
           </div>
-          <div className="qooked-overview__meta">
-            <div>
-              <h4>Type</h4>
-              <p>Restaurant Menu</p>
+          <div className="qooked-overview__lower">
+            <div className="qooked-overview__meta">
+              <div>
+                <h4>Type</h4>
+                <p>Restaurant Menu</p>
+              </div>
+              <div>
+                <h4>Timeline</h4>
+                <p>May 2025</p>
+              </div>
+              <div>
+                <h4>Target Users</h4>
+                <p>Family, couple, teenagers</p>
+              </div>
+              <div>
+                <h4>Role</h4>
+                <p>Branding Designer</p>
+              </div>
             </div>
-            <div>
-              <h4>Timeline</h4>
-              <p>May 2025</p>
-            </div>
-            <div>
-              <h4>Target Users</h4>
-              <p>Family, couple, teenagers</p>
-            </div>
-            <div>
-              <h4>Role</h4>
-              <p>Branding Designer</p>
-            </div>
-          </div>
-          <div className="qooked-overview__callouts">
-            <div>
-              <h3>What I Accomplished</h3>
-              <p>xxxx</p>
-            </div>
-            <div>
-              <h3>My Role</h3>
-              <p>xxxx</p>
+            <div className="qooked-overview__callouts">
+              <div>
+                <h2>What I Accomplished</h2>
+                <p>xxxx</p>
+              </div>
+              <div>
+                <h2>My Role</h2>
+                <p>xxxx</p>
+              </div>
             </div>
           </div>
         </section>
