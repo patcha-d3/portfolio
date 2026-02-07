@@ -101,6 +101,8 @@ h2 {
   display: grid;
   gap: 14px;
   text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .home-clients__ticker {
