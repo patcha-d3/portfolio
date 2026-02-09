@@ -25,7 +25,37 @@
   padding: 64px 0 40px;
   display: grid;
   gap: 18px;
+}
 
+/* Logo row: apply only when heading is h2 */
+.about-heading-row {
+  display: flex;
+  align-items: center;
+}
+
+.about-heading-row:has(.about-heading h2) {
+  gap: 12px;
+}
+
+.about-heading__icon {
+  display: none;
+  width: 40px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.about-heading-row:has(.about-heading h2) .about-heading__icon,
+.about-section__header:has(.about-heading h2) .about-heading__icon,
+.hobby-section__header:has(.about-heading h2) .about-heading__icon {
+  display: block;
+}
+
+.about-heading h2 {
+  padding: 2px 16px;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px 8px 8px 0;
+  background: #fff;
 }
 
 .about-banner {
@@ -130,10 +160,20 @@
   gap: 64px;
 }
 
+/* Wrapper for every h2 – add your custom styles to .about-heading or .about-heading h2 */
+
+.about-section__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
 .about-section__header h2 {
-  margin: 0 0 18px;
+  margin: 0;
   font-size: 1.6rem;
 }
+
 
 .about-experience {
   display: grid;
@@ -195,6 +235,13 @@
   letter-spacing: 0.02em;
 }
 
+.about-pill__icon-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
 .about-pill__label {
   font-size: 0.95rem;
   color: #1f1f1f;
@@ -231,6 +278,12 @@
 .hobby-section {
   display: grid;
   gap: 16px;
+}
+
+.hobby-section__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .hobby-section__header h2 {

@@ -3,7 +3,26 @@ import Navigation from './components/Navigation'
 import { StackingCardsDemo } from './components/StackingCards'
 import TextHighlighter from "./components/TextHilight"
 import profileImage from './assets/about/profile.png'
+import logo from './assets/logo.svg'
 import Bubble from './components/Bubble'
+import figmaIcon from './assets/about/design/figma.svg'
+import framerIcon from './assets/about/design/framer.svg'
+import wordpressIcon from './assets/about/design/wordpress.svg'
+import adobeIllustratorIcon from './assets/about/design/adobeillustrator.svg'
+import adobePhotoshopIcon from './assets/about/design/adobephotoshop.svg'
+import adobeInDesignIcon from './assets/about/design/adobeindesign.svg'
+import adobeAfterEffectsIcon from './assets/about/design/adobeaftereffects.svg'
+import html5Icon from './assets/about/tech/html5.svg'
+import css3Icon from './assets/about/tech/css3.svg'
+import javascriptIcon from './assets/about/tech/javascript.svg'
+import reactJsIcon from './assets/about/tech/react-js.svg'
+import nextJsIcon from './assets/about/tech/next-js.svg'
+import viteIcon from './assets/about/tech/vite.svg'
+import githubIcon from './assets/about/tech/github.svg'
+import nodeIcon from './assets/about/tech/nodedotjs.svg'
+import vercelIcon from './assets/about/tech/vercel.svg'
+import vsCodeIcon from './assets/about/tech/visual-studio-code.svg'
+import cursorIcon from './assets/about/tech/cursor.svg'
 
 const experiences = [
   {
@@ -34,28 +53,28 @@ const experiences = [
 ]
 
 const designWeapons = [
-  { label: 'Figma', badge: 'Fi' },
-  { label: 'Framer', badge: 'Fr' },
-  { label: 'Wordpress', badge: 'Wp' },
-  { label: 'Adobe Illustrator', badge: 'Ai' },
-  { label: 'Adobe Photoshop', badge: 'Ps' },
-  { label: 'Adobe InDesign', badge: 'Id' },
-  { label: 'Adobe After Effects', badge: 'Ae' },
+  { label: 'Figma', badge: 'Fi', icon: figmaIcon },
+  { label: 'Framer', badge: 'Fr', icon: framerIcon },
+  { label: 'Wordpress', badge: 'Wp', icon: wordpressIcon },
+  { label: 'Adobe Illustrator', badge: 'Ai', icon: adobeIllustratorIcon },
+  { label: 'Adobe Photoshop', badge: 'Ps', icon: adobePhotoshopIcon },
+  { label: 'Adobe InDesign', badge: 'Id', icon: adobeInDesignIcon },
+  { label: 'Adobe After Effects', badge: 'Ae', icon: adobeAfterEffectsIcon },
   { label: 'Procreate', badge: 'Pr' },
 ]
 
 const techStack = [
-  { label: 'HTML5', badge: 'H5' },
-  { label: 'CSS3', badge: 'C3' },
-  { label: 'Javascript', badge: 'Js' },
-  { label: 'React.js', badge: 'Re' },
-  { label: 'Next.js', badge: 'Nx' },
-  { label: 'Vite', badge: 'Vi' },
-  { label: 'Git/Github', badge: 'Gi' },
-  { label: 'Node', badge: 'Nd' },
-  { label: 'Vercel', badge: 'Ve' },
-  { label: 'Visual Studio Code', badge: 'Vs' },
-  { label: 'CursorAI', badge: 'Cu' },
+  { label: 'HTML5', badge: 'H5', icon: html5Icon },
+  { label: 'CSS3', badge: 'C3', icon: css3Icon },
+  { label: 'Javascript', badge: 'Js', icon: javascriptIcon },
+  { label: 'React.js', badge: 'Re', icon: reactJsIcon },
+  { label: 'Next.js', badge: 'Nx', icon: nextJsIcon },
+  { label: 'Vite', badge: 'Vi', icon: viteIcon },
+  { label: 'Git/Github', badge: 'Gi', icon: githubIcon },
+  { label: 'Node', badge: 'Nd', icon: nodeIcon },
+  { label: 'Vercel', badge: 'Ve', icon: vercelIcon },
+  { label: 'Visual Studio Code', badge: 'Vs', icon: vsCodeIcon },
+  { label: 'CursorAI', badge: 'Cu', icon: cursorIcon },
 ]
 
 const About = () => {
@@ -68,7 +87,8 @@ const About = () => {
       <header className="about-hero">
         <section className="about-banner" aria-label="About hero banner">
           <div className="about-banner__copy">
-          <h2>Product Designer</h2><br/>
+            <h1>Product Designer</h1>
+            <br/>
             <p>
             I'm Pat Sricome, a <TextHighlighter>Product Designer</TextHighlighter> who started in architecture, moved into visual and marketing design, and eventually found my home in product design.
             </p><br/>
@@ -100,19 +120,29 @@ I'd love to hear from you.</h3>
       <main className="about-main">
         <section className="hobby-section">
           <div className="hobby-section__header">
-            <h2>In my quiet moments</h2>
+            <img src={logo} alt="" className="about-heading__icon" aria-hidden="true" />
+            <div className="about-heading">
+              <h2>In my quiet moments</h2>
+            </div>
           </div>
           <StackingCardsDemo />
         </section>
         <section className="about-section">
           <div className="about-section__header">
-            <h2>My Design Weapons</h2>
+            <img src={logo} alt="" className="about-heading__icon" aria-hidden="true" />
+            <div className="about-heading">
+              <h2>My Design Weapons</h2>
+            </div>
           </div>
           <div className="about-pill-grid">
             {designWeapons.map((tool) => (
               <article className="about-pill" key={tool.label}>
                 <span className="about-pill__icon" aria-hidden="true">
-                  {tool.badge}
+                  {tool.icon ? (
+                    <img src={tool.icon} alt="" className="about-pill__icon-img" />
+                  ) : (
+                    tool.badge
+                  )}
                 </span>
                 <span className="about-pill__label">{tool.label}</span>
               </article>
@@ -122,13 +152,20 @@ I'd love to hear from you.</h3>
 
         <section className="about-section">
           <div className="about-section__header">
-            <h2>My Tech Stack</h2>
+            <img src={logo} alt="" className="about-heading__icon" aria-hidden="true" />
+            <div className="about-heading">
+              <h2>My Tech Stack</h2>
+            </div>
           </div>
           <div className="about-pill-grid">
             {techStack.map((tool) => (
               <article className="about-pill" key={tool.label}>
                 <span className="about-pill__icon" aria-hidden="true">
-                  {tool.badge}
+                  {tool.icon ? (
+                    <img src={tool.icon} alt="" className="about-pill__icon-img" />
+                  ) : (
+                    tool.badge
+                  )}
                 </span>
                 <span className="about-pill__label">{tool.label}</span>
               </article>
@@ -136,15 +173,6 @@ I'd love to hear from you.</h3>
           </div>
         </section>
 
-        <section className="about-cta">
-          <h2>Let’s work together!</h2>
-          <p>I’d love to hear from you.</p>
-          <div className="about-cta__links">
-            <span>Email</span>
-            <span>LinkedIn</span>
-            <span>Github</span>
-          </div>
-        </section>
       </main>
     </div>
   )

@@ -1,8 +1,7 @@
  .hero {
   width: min(1200px, 94%);
   min-height: 90vh;
-  margin: 0 auto;
-
+  margin: 56px auto 0;
 }
 
 .hero__surface {
