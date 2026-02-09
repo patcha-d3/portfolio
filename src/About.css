@@ -35,6 +35,15 @@
   background: #ffffff;
   border: 3px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.about-banner__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-banner__copy p {

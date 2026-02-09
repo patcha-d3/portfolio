@@ -1,5 +1,7 @@
 import './About.css'
 import Navigation from './components/Navigation'
+import logo from './assets/logo.svg'
+import Bubble from './components/Bubble'
 
 const experiences = [
   {
@@ -58,11 +60,15 @@ const About = () => {
   return (
     <div className="about-page">
       <Navigation />
-
+      <Bubble>
+        Make yourself at <span className="bubble__accent">home!</span>
+      </Bubble>
       <header className="about-hero">
         <section className="about-banner" aria-label="About hero banner">
-          <div className="about-banner__art" aria-hidden="true">
-            <div className="about-banner__avatar" />
+          <div className="about-banner__art">
+            <div className="about-banner__avatar">
+              <img src={logo} alt="Pat Sricome logo" />
+            </div>
           </div>
           <div className="about-banner__copy">
             <p>

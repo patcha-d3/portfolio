@@ -1,27 +1,36 @@
 import './Navigation.css'
+import { Link } from 'react-router-dom'
 
 const Navigation = () => {
   return (
     <aside className="nav-wrapper" aria-label="Primary">
-      <div className="nav__logo">
-        <img src="/src/assets/logo.svg" alt="Pat Sricome logo" />
-      </div>
       <nav className="nav__menu">
-        <a href="./App.jsx" aria-label="Home" title="Home">
-          Home
-        </a>
-        <a href="./About.jsx" aria-label="About" title="About">
-          About
-        </a>
-        <a href="#works" aria-label="Works" title="Works">
-          Works
-        </a>
-        <a href="#resume" aria-label="Resume" title="Resume">
-          Resume
-        </a>
-        <a href="#contact" aria-label="LinkedIn" title="LinkedIn">
-          LinkedIn
-        </a>
+        <div className="nav__menu-group">
+          <Link to="/" aria-label="Home" title="Home">
+            Home
+          </Link>
+          <Link to="/about" aria-label="About" title="About">
+            About
+          </Link>
+          <a href="/works" aria-label="Works" title="Works">
+            Works
+          </a>
+        </div>
+        <div className="nav__menu-group">
+          <a href="#resume" aria-label="Resume" title="Resume">
+            Resume
+          </a>
+          <a
+            href="https://www.linkedin.com/in/patcharida-sricome/"
+            aria-label="LinkedIn"
+            title="LinkedIn"
+          >
+            LinkedIn
+          </a>
+          <a href="mailto:pat.sricome@gmail.com" aria-label="Email" title="Email">
+            Email
+          </a>
+        </div>
       </nav>
 
     </aside>

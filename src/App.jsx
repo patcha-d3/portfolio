@@ -1,4 +1,5 @@
 import './App.css'
+import { Route, Routes } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import Button from './components/Button'
 import Hero from './components/Hero'
@@ -8,20 +9,7 @@ import Craft from './graphics/Craft'
 import About from './About'
 import Bubble from './components/Bubble'
 
-const App = () => {
-  if (window.location.hash === '#qooked') {
-    return <Qooked />
-  }
-
-  if (window.location.hash === '#craft') {
-    return <Craft />
-  }
-
-  if (window.location.hash === '#about') {
-    return <About />
-  }
-
-  return (
+const Home = () => (
     <div className="page" id="home">
       <Navigation />
 
@@ -76,6 +64,16 @@ const App = () => {
         </section>
       </main>
     </div>
+  )
+
+const App = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/qooked" element={<Qooked />} />
+      <Route path="/craft" element={<Craft />} />
+    </Routes>
   )
 }
 
