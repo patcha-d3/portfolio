@@ -45,19 +45,39 @@
 .nav__menu a {
   width: 100%;
   min-width: 32px;
-  height: 40px;
+  height: 56px;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 4px;
   color: #1f1f1f;
   font-weight: 600;
   text-align: center;
 }
 
+.nav__icon {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
 .nav__menu a:hover {
   color: #4a64ff;
   border-color: #4a64ff;
+}
+
+.nav__menu a:hover .nav__icon,
+.nav__menu a:focus-visible .nav__icon {
+  background-color: #4a64ff;
 }
 
 .nav__logo img {

@@ -1,6 +1,7 @@
 import './About.css'
 import Navigation from './components/Navigation'
-import logo from './assets/logo.svg'
+
+import profileImage from './assets/about/profile.png'
 import Bubble from './components/Bubble'
 
 const experiences = [
@@ -65,71 +66,39 @@ const About = () => {
       </Bubble>
       <header className="about-hero">
         <section className="about-banner" aria-label="About hero banner">
-          <div className="about-banner__art">
-            <div className="about-banner__avatar">
-              <img src={logo} alt="Pat Sricome logo" />
-            </div>
-          </div>
           <div className="about-banner__copy">
+          <h2>UI/UX Designer &amp;<br/> Graphic Designer</h2><br/>
             <p>
-              I design user-focused digital products that combine strong visual craft
-              with data-driven UX to reduce friction, improve clarity, and help users
-              move effortlessly.
-            </p>
-          </div>
-        </section>
-        <div className="about-hero__panel">
-          <span className="about-hero__label">About Me</span>
-          <div className="about-hero__content">
-            <h2>UI/UX Designer &amp; Graphic Designer</h2>
-            <p>
-              I’m Pat Sricome, a UI/UX Designer who started in architecture, moved into
-              visual and marketing design, and eventually found my home in product
-              design.
-            </p>
+            I'm Pat Sricome, a UI/UX Designer who started in architecture, moved into visual and marketing design, and eventually found my home in product design.
+            </p><br/>
             <p>
               That career shift shaped how I think: architecture taught me structure
               and systems, graphic design sharpened my eye for detail and branding, and
               UI/UX helped me combine both to create experiences that feel intuitive
               and human.
-            </p>
+            </p><br/>
             <p>
               I help busy teams and growing businesses design digital products that are
               easy to navigate, visually consistent, and grounded in real user
               needs—whether it’s improving onboarding flows, reducing drop-offs, or
               simplifying complex content into something users can actually understand.
-            </p>
-            <p>
-              When I’m not designing, you can find me museum-hopping, collecting design
-              inspiration, exploring tech gadgets like e-readers and retro handhelds,
-              and enjoying 3rd–4th wave specialty coffee.
-            </p>
-            <div className="about-hero__cta">
-              <h3>Wanna work together?</h3>
-              <p>I’d love to hear from you.</p>
-              <button type="button">Let’s work together!</button>
+            </p><br/>
+            <h3>Wanna work together? <br/>
+I'd love to hear from you.</h3>
+              <button type="button" className="button">Let's work together!</button>
+
+          </div>
+          <div className="about-banner__art">
+            <div className="about-banner__avatar">
+              <img src={profileImage} alt="Pat Sricome profile" />
             </div>
           </div>
-        </div>
+        </section>
       </header>
 
       <main className="about-main">
-        <section className="about-section">
-          <div className="about-section__header">
-            <h2>Work experiences</h2>
-          </div>
-          <div className="about-experience">
-            {experiences.map((item) => (
-              <article
-                className="about-experience__row"
-                key={`${item.role}-${item.company}`}
-              >
-                <span className="about-experience__role">{item.role}</span>
-                <span className="about-experience__company">{item.company}</span>
-                <span className="about-experience__period">{item.period}</span>
-              </article>
-            ))}
-          </div>
+        <section className="about-hobby">
+          <h2>In my quiet moments</h2>
         </section>
 
         <section className="about-section">
