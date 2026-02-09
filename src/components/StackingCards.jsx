@@ -23,13 +23,10 @@ const STACKING_CONTENT = [
   },
   {
     id: 3,
-    title: "2022",
-    files: [
-      "moving-to-a-new-city.md",
-      "starting-a-blog.md",
-      "photography-basics.md",
-      "first-coding-project.md",
-    ],
+    title: "Video Games",
+    heading: "Video Games",
+    body: "XXXXX",
+    
   },
 
 ]

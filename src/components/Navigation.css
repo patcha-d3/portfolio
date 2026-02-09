@@ -3,7 +3,6 @@
   top: 64px;
   left: 8px;
   z-index: 12;
-  max-width: 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +29,7 @@
   color: #1f1f1f;
   border: 1px solid #e1e1e1;
   border-radius: 8px;
-  padding: 24px 12px ;
+  padding: 24px 8px ;
   height: 90vh;
 }
 
@@ -55,6 +54,7 @@
   color: #1f1f1f;
   font-weight: 600;
   text-align: center;
+  transition: background-color 200ms ease;
 }
 
 .nav__icon {
@@ -96,7 +96,7 @@
   color: #fff;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 200ms ease;
+
 }
 
 .nav__cta:hover {
@@ -106,16 +106,18 @@
 @media (max-width: 960px) {
   .nav-wrapper {
     width: 56px;
+    left: 8px;
   }
 
   .nav__menu {
-    gap: 10px;
+    gap: 8px;
   }
 }
 
 @media (max-width: 640px) {
   .nav-wrapper {
     width: 56px;
+    left: 8px;
   }
 
   .nav__cta {

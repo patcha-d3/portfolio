@@ -3,6 +3,7 @@
   display: grid;
   gap: 12px;
   
+  
 }
 
 .stacking-card-item {
@@ -22,21 +23,26 @@
 
 .hobby-stack__card {
   height: 100%;
-  background: #efefef;
   border-radius: 16px;
   padding: 24px 32px;
   display: grid;
   gap: 16px;
   grid-template-columns: minmax(0, 1fr) minmax(200px, 40%);
   align-items: center;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.16);
 }
 
-.hobby-stack__card:nth-child(1) {
-  background: #cae3ff;
+.hobby-stack__item:nth-child(1) .hobby-stack__card {
+  background: #b3d7ee;
+
 }
 
-.hobby-stack__card:nth-child(2) {
-  background: #34649a;
+.hobby-stack__item:nth-child(2) .hobby-stack__card {
+  background: #3351a2;
+}
+
+.hobby-stack__item:nth-child(3) .hobby-stack__card {
+  background: #c2572f;
 }
 
 .hobby-stack__text {

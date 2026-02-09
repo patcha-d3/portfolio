@@ -8,6 +8,7 @@ import Qooked from './graphics/Qooked'
 import Craft from './graphics/Craft'
 import About from './About'
 import Bubble from './components/Bubble'
+import CaseStudyTemplate from './components/CaseStudyTemplate'
 
 const Home = () => (
     <div className="page" id="home">
@@ -73,6 +74,7 @@ const App = () => {
       <Route path="/about" element={<About />} />
       <Route path="/qooked" element={<Qooked />} />
       <Route path="/craft" element={<Craft />} />
+      <Route path="/case-study-template" element={<CaseStudyTemplate />} />
     </Routes>
   )
 }
