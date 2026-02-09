@@ -10,12 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroui/react": "^2.8.8",
+    "@heroui/tabs": "^2.2.27",
     "flubber": "^0.4.2",
     "framer-motion": "^12.31.0",
+    "motion": "^12.33.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-folder-tabs": "^1.0.0",
     "react-router-dom": "^7.13.0",
+    "tailwindcss": "^4.1.18",
     "unframer": "^4.0.5"
   },
   "devDependencies": {

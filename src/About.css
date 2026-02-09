@@ -228,66 +228,16 @@
   border-radius: 8px;
 }
 
-.about-hobby {
+.hobby-section {
   display: grid;
   gap: 16px;
 }
 
-.about-hobby h2 {
+.hobby-section__header h2 {
   margin: 0;
   font-size: 1.6rem;
 }
 
-.about-hobby__tabs {
-  display: flex;
-  gap: 12px;
-  align-items: flex-end;
-  margin-bottom: -1px;
-}
-
-.about-hobby__tab {
-  appearance: none;
-  border: 1px solid #d7d7d7;
-  border-bottom: none;
-  background: #ffffff;
-  color: #1f1f1f;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 10px 10px 0 0;
-  cursor: pointer;
-}
-
-.about-hobby__tab.is-active {
-  box-shadow: 0 -1px 0 #ffffff;
-}
-
-.about-hobby__panel {
-  border: 1px solid #d7d7d7;
-  border-radius: 12px;
-  background: #ffffff;
-  padding: 16px;
-  display: grid;
-  grid-template-columns: minmax(160px, 200px) 1fr;
-  gap: 20px;
-}
-
-.about-hobby__media {
-  border: 1px solid #e1e1e1;
-  border-radius: 10px;
-  background: #f6f6f4;
-  min-height: 160px;
-}
-
-.about-hobby__content p {
-  margin: 0 0 12px;
-  color: #3a3a3a;
-  line-height: 1.6;
-}
-
-.about-hobby__content p:last-child {
-  margin-bottom: 0;
-}
 
 @media (max-width: 720px) {
   .about-hero {

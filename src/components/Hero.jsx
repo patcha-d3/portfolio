@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import './Hero.css'
 import Folder from './Folder'
 import FluidGradient from './FluidGradient'
+import TextHighlighter from './TextHilight'
+import './TextHilight.css'
 // import LoadingMorph from './LoadingMorph'
 
 const Hero = ({ serviceCards, Bubble }) => {
@@ -36,8 +38,8 @@ const Hero = ({ serviceCards, Bubble }) => {
                 showFolderText ? ' hero__folder-text--show' : ''
               }`}
             >
-              A Product Designer based in Vancouver, who designs cohesive digital
-              products from brand foundations to user experience, creating clean,
+              A <TextHighlighter className="text-highlight">Product Designer</TextHighlighter> based in Vancouver, who designs cohesive digital
+              products <TextHighlighter className="text-highlight">from brand foundations to user experience</TextHighlighter>, creating clean,
               intuitive, and well-structured digital systems.
             </h1>
             <div className="hero__folder-visual">

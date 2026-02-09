@@ -1,6 +1,7 @@
 import './About.css'
 import Navigation from './components/Navigation'
-
+import { StackingCardsDemo } from './components/StackingCards'
+import TextHighlighter from "./components/TextHilight"
 import profileImage from './assets/about/profile.png'
 import Bubble from './components/Bubble'
 
@@ -62,14 +63,14 @@ const About = () => {
     <div className="about-page">
       <Navigation />
       <Bubble>
-        Make yourself at <span className="bubble__accent">home!</span>
+        Welcome to my <span className="bubble__accent">about me</span> corner!
       </Bubble>
       <header className="about-hero">
         <section className="about-banner" aria-label="About hero banner">
           <div className="about-banner__copy">
-          <h2>UI/UX Designer &amp;<br/> Graphic Designer</h2><br/>
+          <h2>Product Designer</h2><br/>
             <p>
-            I'm Pat Sricome, a UI/UX Designer who started in architecture, moved into visual and marketing design, and eventually found my home in product design.
+            I'm Pat Sricome, a <TextHighlighter>Product Designer</TextHighlighter> who started in architecture, moved into visual and marketing design, and eventually found my home in product design.
             </p><br/>
             <p>
               That career shift shaped how I think: architecture taught me structure
@@ -97,10 +98,12 @@ I'd love to hear from you.</h3>
       </header>
 
       <main className="about-main">
-        <section className="about-hobby">
-          <h2>In my quiet moments</h2>
+        <section className="hobby-section">
+          <div className="hobby-section__header">
+            <h2>In my quiet moments</h2>
+          </div>
+          <StackingCardsDemo />
         </section>
-
         <section className="about-section">
           <div className="about-section__header">
             <h2>My Design Weapons</h2>

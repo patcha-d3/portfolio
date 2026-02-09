@@ -1,0 +1,94 @@
+.stacking-cards {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  
+}
+
+.stacking-card-item {
+  position: sticky;
+  transform-origin: center top;
+  
+}
+
+.hobby-stack {
+  max-width: 960px;
+}
+
+.hobby-stack__item {
+  height: fit-content;
+
+}
+
+.hobby-stack__card {
+  height: 100%;
+  background: #efefef;
+  border-radius: 16px;
+  padding: 24px 32px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(0, 1fr) minmax(200px, 40%);
+  align-items: center;
+}
+
+.hobby-stack__card:nth-child(1) {
+  background: #cae3ff;
+}
+
+.hobby-stack__card:nth-child(2) {
+  background: #34649a;
+}
+
+.hobby-stack__text {
+  display: grid;
+  gap: 12px;
+}
+
+.hobby-stack__card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.hobby-stack__card p {
+  margin: 0;
+  color: #1f1f1f;
+  line-height: 1.6;
+}
+
+.hobby-stack__files {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  color: #4a4a4a;
+}
+
+.hobby-stack__files li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px 0;
+  color: #1f1f1f;
+}
+
+.hobby-stack__image {
+  width: 80%;
+  aspect-ratio: 3 / 4;
+  border-radius: 8px;
+  background: #dedede;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 640px) {
+  .hobby-stack__item {
+    height: 220px;
+  }
+
+  .hobby-stack__card {
+    padding: 12px;
+    grid-template-columns: 1fr;
+  }
+
+  .hobby-stack__image {
+    order: -1;
+  }
+}

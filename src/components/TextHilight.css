@@ -1,0 +1,13 @@
+.text-highlighter {
+  display: inline;
+  background-repeat: no-repeat;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0 0.1em;
+  border-radius: 4px;
+  --text-highlighter-color: hsla(212, 100%, 92%, 0.687);
+}
+
+.text-highlight {
+  --text-highlighter-color: hsla(64, 100%, 89%, 0.744);
+}
