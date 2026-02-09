@@ -174,6 +174,7 @@
   border-radius: 16px;
   display: block;
   object-fit: cover;
+  aspect-ratio: 4 / 3;
   background: #ededed;
 }
 
@@ -188,14 +189,73 @@
   .case-template__hero {
     grid-template-columns: 1fr;
   }
+
+  .case-template__main {
+    width: min(940px, 92%);
+    gap: 36px;
+  }
 }
 
 @media (max-width: 640px) {
   .case-template__hero {
     margin-top: 24px;
+    gap: 16px;
+    width: min(100%, 92%);
   }
 
   .case-template__hero-card {
     order: 1;
+    padding: 18px;
+  }
+
+  .case-template__hero-card h1 {
+    font-size: 1.6rem;
+  }
+
+  .case-template__hero-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+  }
+
+  .case-template__main {
+    margin: 28px auto 80px;
+    gap: 28px;
+  }
+
+  .case-template__section h2 {
+    font-size: 1.35rem;
+  }
+
+  .case-template__summary,
+  .case-template__approach,
+  .case-template__final {
+    padding: 18px 18px;
+  }
+
+  .case-template__meta {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .case-template__accomplished,
+  .case-template__tools-grid,
+  .case-template__challenge-grid,
+  .case-template__media-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .case-template__hero {
+    width: min(100%, 94%);
+  }
+
+  .case-template__main {
+    width: min(100%, 92%);
+  }
+
+  .case-template__meta {
+    grid-template-columns: 1fr;
   }
 }
