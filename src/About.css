@@ -307,7 +307,7 @@
 }
 
 
-@media (max-width: 720px) {
+@media (min-width: 320px) and (max-width: 1199px) {
   .about-section__header,
   .hobby-section__header {
     margin-left: 0;

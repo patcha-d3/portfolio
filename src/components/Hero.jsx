@@ -38,7 +38,7 @@ const Hero = ({ serviceCards, Bubble }) => {
                 showFolderText ? ' hero__folder-text--show' : ''
               }`}
             >
-              A <TextHighlighter className="text-highlight">Product Designer</TextHighlighter> based in Vancouver, who designs cohesive digital
+              A <TextHighlighter className="text-highlight">Digital Product Designer</TextHighlighter> based in Vancouver, who designs cohesive digital
               products <TextHighlighter className="text-highlight">from brand foundations to user experience</TextHighlighter>, creating clean,
               intuitive, and well-structured digital systems.
             </h1>

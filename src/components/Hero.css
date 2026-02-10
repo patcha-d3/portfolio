@@ -156,44 +156,37 @@
   filter: blur(18px);
 }
 
-@media (max-width: 960px) {
+@media (min-width: 240px) and (max-width: 1199px) {
   .hero__surface {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 300px;
     padding: 32px;
+    flex-wrap: wrap;
   }
 
-  .hero__folder-inner {
-    --folder-scale: 0.72;
-    transform: translateY(clamp(-200px, -24vh, -120px));
+  .hero__folder-text {
+    font-size: 1.4rem;
+  text-wrap: balance;
+  padding: 0 16px;
   }
-
-  .hero__stack {
-    width: min(420px, 80%);
-  }
-}
-
-@media (max-width: 640px) {
-  .hero {
-    margin: 112px auto 0;
-  }
-
-  .hero__surface {
-    min-height: 260px;
-  }
-
   .hero__folder {
+    width: 100%;
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   .hero__folder-inner {
-    --folder-scale: 0.6;
-    transform: none;
+
     margin: 0 auto;
+    justify-self: center;
+    --folder-scale: 0.72;
   }
 
   .hero__stack {
-    width: 100%;
+    width: min(420px, 80%);
   }
 }
