@@ -33,7 +33,7 @@ export const workBlocks = [
         description:
           '',
         tone: 'dark',
-        link: '/case-study-template',
+        link: '/case-studies/uiux/gotit',
       },
       {
         id: 'healu',

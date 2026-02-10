@@ -113,7 +113,7 @@
   min-height: 200px;
   border-radius: 4px;
   background: #f0f0f0;
-  border: 1px dashed var(--border-color-default);
+
   overflow: hidden;
   position: relative;
 }

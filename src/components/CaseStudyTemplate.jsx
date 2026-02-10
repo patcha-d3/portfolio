@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { Link } from "react-router-dom"
 import "./CaseStudyTemplate.css"
 import Navigation from "./Navigation"
@@ -11,6 +12,10 @@ import { getWorkItemById } from "../data/content"
 const CaseStudyTemplate = ({ projectId, nextWork }) => {
   const workItem = projectId ? getWorkItemById(projectId) : null
   const titleHeading = workItem?.name ?? "Case study"
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div className="case-template">

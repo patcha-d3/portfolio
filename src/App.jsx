@@ -9,6 +9,7 @@ import Craft from './graphics/Craft'
 import About from './About'
 import Bubble from './components/Bubble'
 import CaseStudyTemplate from './components/CaseStudyTemplate'
+import Gotit from './case-study/uiux/gotit'
 
 const Home = () => (
     <div className="page" id="home">
@@ -46,6 +47,7 @@ const App = () => {
       <Route path="/qooked" element={<Qooked />} />
       <Route path="/craft" element={<Craft />} />
       <Route path="/case-study-template" element={<CaseStudyTemplate projectId="gotit" nextWork={{ title: "HealU", href: "/" }} />} />
+      <Route path="/case-studies/uiux/gotit" element={<Gotit />} />
     </Routes>
   )
 }

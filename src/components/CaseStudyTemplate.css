@@ -19,7 +19,8 @@
   border-radius: 8px;
   overflow: hidden;
   background: #222283;
-  border: 1px solid #e1e1e1;
+
+  border-bottom: none;
 }
 
 .case-template__hero-label {
@@ -52,7 +53,6 @@
   text-align: center;
   box-sizing: border-box;
     background: black;
-    border: 1px solid var(--border-color-default);
     border-radius: 0 0 8px 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
