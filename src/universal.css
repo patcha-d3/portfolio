@@ -1,3 +1,10 @@
+:root {
+  --border-color-default: #e0e0e0;
+  --color-primary: #b3d7ee;
+  --color-secondary: #3351a2;
+  --color-tertiary: #c2572f;
+}
+
 body {
   font-family: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
 }

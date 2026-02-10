@@ -3,6 +3,7 @@ import Navigation from "./Navigation"
 import CaseStudyToc from "./CaseStudyToc"
 import Bubble from "./Bubble"
 import gotitHero from "../case-study/uiux/gotit_hero.png"
+import figmaIcon from "../assets/about/design/figma.svg"
 import TextHighlighter from "./TextHilight"
 
 const CaseStudyTemplate = () => {
@@ -24,6 +25,7 @@ const CaseStudyTemplate = () => {
       />
 
       <header className="case-template__hero-banner" aria-label="Case study hero">
+        <span className="case-template__hero-label">Featured Work</span>
         <img
           src={gotitHero}
           alt="Got It case study hero banner"
@@ -39,7 +41,7 @@ const CaseStudyTemplate = () => {
           <h2 className="case-template__title-heading">Improved learning clarity and reduced study anxiety for trades students by designing an AI-powered, distraction-free study platform through agile, cross-functional collaboration</h2>
         </section>
 
-        <section className="case-template__section case-template__overview">
+        <section id="overview" className="case-template__section case-template__overview">
           <div className="case-template__summary">
             <h2>Overview</h2>
             <p>
@@ -74,15 +76,31 @@ Traditional trade textbooks are often overwhelming, text-heavy, and difficult to
               <div>
                 <h4>Live</h4>
                 <div className="case-template__meta-links">
-                  <a href="#" className="case-template__meta-link case-template__meta-link--primary">Figma Prototype</a>
-                  <a href="#" className="case-template__meta-link case-template__meta-link--secondary">Live Website</a>
+                  <a href="#" className="case-template__meta-link case-template__meta-link--primary">
+                    <span className="case-template__meta-link-icon" aria-hidden="true">
+                      <img src={figmaIcon} alt="" width={18} height={18} />
+                    </span>
+                    <span className="case-template__meta-link-text">Figma Prototype</span>
+                    <span className="case-template__meta-link-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="#" className="case-template__meta-link case-template__meta-link--secondary">
+                    <span className="case-template__meta-link-icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M2 12h20" />
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                      </svg>
+                    </span>
+                    <span className="case-template__meta-link-text">Visit Website</span>
+                    <span className="case-template__meta-link-arrow" aria-hidden="true">→</span>
+                  </a>
                 </div>
               </div>
             </div>
 
             <div className="case-template__accomplished">
               <div>
-                <h2>What I Accomplished</h2>
+                <h2>Working as a Product Designer and Scrum Master</h2>
                 <p>
                 I worked as <TextHighlighter>a Product Designer and Scrum Master</TextHighlighter>, supporting both product execution and team momentum across design and development.
 
@@ -109,7 +127,7 @@ I <TextHighlighter>collaborated closely with designers, developers, and marketin
           </div>
         </section>
 
-        <section className="case-template__section case-template__tools">
+        <section id="tools" className="case-template__section case-template__tools">
           <h2>Tools &amp; Methods</h2>
           <div className="case-template__tools-grid">
             <div>
@@ -130,7 +148,7 @@ I <TextHighlighter>collaborated closely with designers, developers, and marketin
           </div>
         </section>
 
-        <section className="case-template__section case-template__challenge">
+        <section id="challenge" className="case-template__section case-template__challenge">
           <h2>Identified Challenges</h2>
           <div className="case-template__challenge-grid">
             <article>
@@ -148,7 +166,7 @@ I <TextHighlighter>collaborated closely with designers, developers, and marketin
           </div>
         </section>
 
-        <section className="case-template__section case-template__approach">
+        <section id="solution" className="case-template__section case-template__approach">
           <h2>Approach</h2>
           <p>
             Simplified the habit flow into three steps, introduced visual
@@ -157,7 +175,7 @@ I <TextHighlighter>collaborated closely with designers, developers, and marketin
           </p>
         </section>
 
-        <section className="case-template__section case-template__highlights">
+        <section id="process" className="case-template__section case-template__highlights">
           <h2>Highlights</h2>
           <div className="case-template__media-grid">
             <img
@@ -175,7 +193,7 @@ I <TextHighlighter>collaborated closely with designers, developers, and marketin
           </div>
         </section>
 
-        <section className="case-template__section case-template__results">
+        <section id="results" className="case-template__section case-template__results">
           <h2>Results</h2>
           <p>
             The refined flow improved perceived clarity and reduced task
@@ -184,7 +202,7 @@ I <TextHighlighter>collaborated closely with designers, developers, and marketin
           </p>
         </section>
 
-        <section className="case-template__section case-template__final">
+        <section id="final-thoughts" className="case-template__section case-template__final">
           <h2>Final Thoughts</h2>
           <p>
             This case study reinforced how thoughtful pacing and small UI cues

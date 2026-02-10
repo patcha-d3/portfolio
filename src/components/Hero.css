@@ -1,4 +1,6 @@
- .hero {
+@import '../universal.css';
+
+.hero {
   width: min(1200px, 94%);
   min-height: 90vh;
   margin: 56px auto 0;
@@ -67,7 +69,7 @@
 
 .hero__folder-text {
   max-width: 100%;
-  margin: 0;
+  margin: -64px 0 120px;
   text-align: center;
   font-size: clamp(1.1rem, 2.2vw, 2rem);
   line-height: 1.5;
@@ -77,7 +79,7 @@
   opacity: 0;
   transform: translateY(100px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-  padding-top: 10px;
+
 }
 
 .hero__folder-text--show {
@@ -171,14 +173,24 @@
 }
 
 @media (max-width: 640px) {
+  .hero {
+    margin: 112px auto 0;
+  }
+
   .hero__surface {
-    padding: 24px;
     min-height: 260px;
+  }
+
+  .hero__folder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .hero__folder-inner {
     --folder-scale: 0.6;
-    transform: translateY(clamp(-360px, -50vh, -96px));
+    transform: none;
+    margin: 0 auto;
   }
 
   .hero__stack {

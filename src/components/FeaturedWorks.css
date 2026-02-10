@@ -1,0 +1,206 @@
+@import '../universal.css';
+
+.home-works {
+  display: grid;
+  gap: 20px;
+}
+
+.home-works__header {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+}
+
+.home-works__tabs {
+  display: inline-flex;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 999px;
+  padding: 6px;
+}
+
+.home-works__tabs button {
+  border: none;
+  background: transparent;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.home-works__tabs button.is-active {
+  background: #111;
+  color: #fff;
+}
+
+.home-works__list {
+  display: grid;
+  gap: 16px;
+}
+
+.home-work-card {
+  display: flex;
+  min-height: 320px;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.home-work-card:hover {
+  transform: scale(1.05);
+}
+
+.home-work-card__label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  color: #6b6b6b;
+  border-radius: 8px;
+}
+
+.home-work-card__label--primary {
+  background: color-mix(in srgb, var(--color-primary) 50%, transparent);
+}
+
+.home-work-card__label--secondary {
+  background: color-mix(in srgb, var(--color-secondary) 50%, transparent);
+  color: #fff;
+}
+
+.home-work-card__label--tertiary {
+  background: color-mix(in srgb, var(--color-tertiary) 50%, transparent);
+  color: #fff;
+}
+
+
+/* Body: flex สองฝั่ง – ฝั่ง image กับ ฝั่ง content */
+
+/* content */
+.home-work-card__body {
+  padding: 8px 56px 8px 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color-default);
+  background: #ffffff;
+  min-width: 1000px;
+  max-width: 1000px;
+  flex-wrap: wrap;
+  wrap-content: true;
+}
+
+.home-work-card__image {
+  flex: 0 0 40%;
+  min-height: 120px;
+  max-width: 320px;
+  border-radius: 4px;
+  background: #f0f0f0;
+  border: 1px dashed var(--border-color-default);
+}
+
+.home-work-card__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.home-work-card__meta {
+  display: flex;
+  gap: 8px;
+  font-size: 0.8rem;
+}
+
+.home-work-card__meta span {
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border-color-default);
+  color: grey;
+}
+
+.home-work-card__content h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.home-work-card__content p {
+  margin: 0;
+  color: #4f4f4f;
+  line-height: 1.5;
+}
+
+.home-work-card__cta {
+  width: fit-content;
+  border: none;
+  align-items: flex-end;
+  background: #151515;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+}
+
+
+/* mobile */
+@media (max-width: 640px) {
+  .home-works {
+margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .home-works__list {
+    max-width: 480px;
+
+  }
+
+  .home-work-card {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 480px;
+    box-sizing: border-box;
+  }
+
+  .home-work-card__body {
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 8px;
+    max-width: 480px;
+    min-width: 480px;
+    box-sizing: border-box;
+  }
+
+  .home-work-card__content {
+    max-width: 480px;
+    min-width: 480px;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+  }
+
+  .home-work-card__content p {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .home-work-card__image {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .home-work-card__label {
+    writing-mode: horizontal-tb;
+    transform: none;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color-default);
+    padding: 8px 0;
+  }
+}

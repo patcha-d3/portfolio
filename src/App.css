@@ -1,3 +1,5 @@
+@import './universal.css';
+
 h2 {
   font-size: 1.5rem;
   margin: 0;
@@ -143,108 +145,8 @@ h2 {
 }
 
 
-.home-works {
-  display: grid;
-  gap: 20px;
-}
-
-.home-works__header {
-  display: grid;
-  gap: 12px;
-  justify-items: center;
-}
-
-.home-works__tabs {
-  display: inline-flex;
-  gap: 8px;
-  background: #fff;
-  border: 1px solid #e1e1e1;
-  border-radius: 999px;
-  padding: 6px;
-}
-
-.home-works__tabs button {
-  border: none;
-  background: transparent;
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  cursor: pointer;
-}
-
-.home-works__tabs button.is-active {
-  background: #111;
-  color: #fff;
-}
-
-.home-works__list {
-  display: grid;
-  gap: 16px;
-}
-
-.home-work-card {
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  display: grid;
-  grid-template-columns: 56px 1fr;
-  min-height: 160px;
-}
-
-.home-work-card__label {
-  border-right: 1px solid #e0e0e0;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  display: grid;
-  place-items: center;
-  color: #6b6b6b;
-}
-
-.home-work-card__body {
-  padding: 18px 20px;
-  display: grid;
-  gap: 10px;
-}
-
-.home-work-card__meta {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  color: #8b8b8b;
-  font-size: 0.8rem;
-}
-
-.home-work-card__meta span {
-  background: #f2f2f2;
-  padding: 4px 8px;
-  border-radius: 999px;
-}
-
-.home-work-card__body h3 {
-  margin: 0;
-  font-size: 1.1rem;
-}
-
-.home-work-card__body p {
-  margin: 0;
-  color: #4f4f4f;
-  line-height: 1.5;
-}
-
-.home-work-card__cta {
-  width: fit-content;
-  border: none;
-  background: #151515;
-  color: #fff;
-  border-radius: 8px;
-  padding: 6px 14px;
-  font-size: 0.8rem;
-}
-
 @media (max-width: 960px) {
+
   .home {
     padding-left: 80px;
   }
@@ -258,21 +160,29 @@ h2 {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 640px) {
+  .page {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
   .home {
-    padding-left: 76px;
-    padding-right: 24px;
+    width: 92vw;
+    max-width: 92vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px 16px 100px;
+    box-sizing: border-box;
   }
 
-  .home-work-card {
-    grid-template-columns: 1fr;
+  .home-hero {
+    margin-top: 40px;
   }
 
-  .home-work-card__label {
-    writing-mode: horizontal-tb;
-    transform: none;
-    border-right: none;
-    border-bottom: 1px solid #e0e0e0;
-    padding: 8px 0;
+  .home > * {
+    max-width: 100%;
+    min-width: 0;
   }
 }

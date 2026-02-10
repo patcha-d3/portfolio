@@ -1,3 +1,5 @@
+@import '../universal.css';
+
 .text-highlighter {
   display: inline;
   background-repeat: no-repeat;

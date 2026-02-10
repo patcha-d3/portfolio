@@ -1,3 +1,5 @@
+@import '../universal.css';
+
 .nav-wrapper {
   position: fixed;
   top: 64px;
@@ -109,14 +111,48 @@
   background: #1255b5;
 }
 
-@media (max-width: 960px) {
+@media (min-width: 641px) and (max-width: 1000px) {
   .nav-wrapper {
-    width: 56px;
-    left: 8px;
+    top: auto;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(100%, 92%);
+    background: transparent;
   }
 
   .nav__menu {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     gap: 8px;
+    height: auto;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: rgba(246, 246, 244, 0.95);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  }
+
+  .nav__menu-group {
+    flex-direction: row;
+    width: auto;
+    gap: 8px;
+  }
+
+  .nav__menu a {
+    width: auto;
+    min-width: 0;
+    height: 40px;
+    padding: 0 16px;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.7rem;
+  }
+
+  .nav__icon {
+    width: 32px;
+    height: 32px;
   }
 }
 
@@ -133,7 +169,7 @@
   }
 }
 
-@media (max-width: 720px) {
+@media (min-width: 300px) and (max-width: 640px) {
   .nav-wrapper {
     top: auto;
     bottom: 12px;

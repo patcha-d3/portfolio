@@ -1,8 +1,8 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Navigation from './components/Navigation'
-import Button from './components/Button'
 import Hero from './components/Hero'
+import FeaturedWorks from './components/FeaturedWorks'
 import { clients, serviceCards, workBlocks } from './data/content'
 import Qooked from './graphics/Qooked'
 import Craft from './graphics/Craft'
@@ -33,36 +33,7 @@ const Home = () => (
           </div>
         </section>
 
-        <section className="home-works" id="works">
-          <div className="home-works__header">
-            <h2>Selected Works</h2>
-            <div className="home-works__tabs" role="tablist" aria-label="Work categories">
-              <button type="button" className="is-active">
-                Selected Works
-              </button>
-              <button type="button">UI/UX Design</button>
-              <button type="button">Graphic Design</button>
-            </div>
-          </div>
-
-          <div className="home-works__list">
-            {workBlocks[0].items.map((item) => (
-              <article className="home-work-card" key={item.name}>
-                <div className="home-work-card__label">UI/UX Designer</div>
-                <div className="home-work-card__body">
-                  <div className="home-work-card__meta">
-                    {item.tags.map((tag) => (
-                      <span key={tag}>{tag}</span>
-                    ))}
-                  </div>
-                  <h3>{item.name}</h3>
-                  <p>{item.description}</p>
-                  <Button className="home-work-card__cta">Read more</Button>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
+        <FeaturedWorks workBlocks={workBlocks} />
       </main>
     </div>
   )

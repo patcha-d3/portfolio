@@ -23,32 +23,36 @@ export const clients = [
 export const workBlocks = [
   {
     title: 'UI/UX Design Projects',
+    tabLabel: 'UI/UX Design',
+    cardLabel: 'UI/UX Project',
     items: [
       {
         tags: ['Scrum Master', 'Product Designer'],
-        name: 'Got It',
+        name: 'Reduced learning complexity for trades students by designing a structured, distraction-free AI study tool grounded in user feedback and fast, iterative prototyping',
         description:
-          'Reduced learning complexity for trades students by designing a structured, distraction-free AI study tool grounded in user feedback and fast, iterative prototyping',
+          '',
         tone: 'dark',
       },
       {
         tags: ['UI/UX Designer', 'Branding Designer'],
-        name: 'HealU',
+        name: 'Reduced learning complexity for trades students by designing a structured, distraction-free AI study tool grounded in user feedback and fast, iterative prototyping',
         description:
-          'Reduced learning complexity for trades students by designing a structured, distraction-free AI study tool grounded in user feedback and fast, iterative prototyping',
+          '',
         tone: 'blue',
       },
       {
-        tags: ['UI/UX Designer', 'Graphic Designer'],
-        name: 'VerifyVASP',
+        tags: ['UI/UX Designer', 'Branding Designer'],
+        name: 'Improved usability and product clarity for a B2B compliance platform by simplifying site structure, refining navigation, and designing clear user flows in close collaboration with developers',
         description:
-          'Improved usability and product clarity for a B2B compliance platform by simplifying site structure, refining navigation, and designing clear user flows in close collaboration with developers',
+          '',
         tone: 'dark',
       },
     ],
   },
   {
     title: 'Graphic Design Projects',
+    tabLabel: 'Graphic Design',
+    cardLabel: 'Graphic Design',
     items: [
       {
         tags: ['Branding Designer', 'Product Designer'],
@@ -56,20 +60,14 @@ export const workBlocks = [
         description: 'xxxxx',
         tone: 'yellow',
       },
-      {
-        tags: ['UI/UX Designer', 'Branding Designer'],
-        name: 'HealU',
-        description:
-          'Reduced learning complexity for trades students by designing a structured, distraction-free AI study tool grounded in user feedback and fast, iterative prototyping',
-        tone: 'blue',
-      },
-      {
-        tags: ['UI/UX Designer', 'Graphic Designer'],
-        name: 'VerifyVASP',
-        description:
-          'Improved usability and product clarity for a B2B compliance platform by simplifying site structure, refining navigation, and designing clear user flows in close collaboration with developers',
-        tone: 'dark',
-      },
+
+
     ],
+  },
+  {
+    title: 'Motion Graphics Projects',
+    tabLabel: 'Motion Graphics',
+    cardLabel: 'Motion Design',
+    items: [],
   },
 ]

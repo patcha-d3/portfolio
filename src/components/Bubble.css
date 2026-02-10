@@ -1,3 +1,5 @@
+@import '../universal.css';
+
 .header {
   position: fixed;
   background: #f6f6f4;
