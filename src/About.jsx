@@ -24,6 +24,38 @@ import vercelIcon from './assets/about/tech/vercel.svg'
 import vsCodeIcon from './assets/about/tech/visual-studio-code.svg'
 import cursorIcon from './assets/about/tech/cursor.svg'
 
+const MONTHS = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, July: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11 }
+
+function yearsFromPeriod(period) {
+  const parts = period.split(/\s*-\s*/).map((s) => s.trim())
+  if (parts.length < 2) return null
+  const parsePart = (str) => {
+    if (str.toLowerCase() === 'present') return new Date()
+    const match = str.match(/^(\w+)\s+(\d{4})$/)
+    if (!match) return null
+    const month = MONTHS[match[1]]
+    const year = parseInt(match[2], 10)
+    if (month === undefined || isNaN(year)) return null
+    return new Date(year, month, 1)
+  }
+  const start = parsePart(parts[0])
+  const end = parsePart(parts[1])
+  if (!start || !end || start > end) return null
+  const years = (end - start) / (1000 * 60 * 60 * 24 * 365.25)
+  // Only x or x.5 years: round up if fractional part > 0.3, else round down
+  const frac = years - Math.floor(years)
+  const halfDown = Math.floor(years * 2) / 2
+  const halfUp = Math.ceil(years * 2) / 2
+  return frac > 0.3 ? halfUp : halfDown
+}
+
+function formatPeriodWithYears(period) {
+  const y = yearsFromPeriod(period)
+  if (y == null) return period
+  const label = y === 1 ? '1 year' : `${y} years`
+  return `${period} (${label})`
+}
+
 const experiences = [
   {
     role: 'Regional Marketing & UX/UI Designer',
@@ -37,18 +69,18 @@ const experiences = [
   },
   {
     role: 'Restaurant Server',
-    company: 'Fat Mao Noodle',
+    company: 'Fat Mao Noodle, Vancouver, Canada',
     period: 'May 2025 - Present',
   },
   {
     role: 'Marketing Designer',
-    company: 'Upbit Exchange, Thailand',
+    company: 'Upbit Exchange, Bangkok, Thailand',
     period: 'Jan 2022 - Dec 2022',
   },
   {
     role: 'Architectural Designer',
-    company: 'PEPA Studio (Co-founder), Thailand',
-    period: 'Jul 2018 - 2024',
+    company: 'PEPA Studio (Co-founder), Bangkok, Thailand',
+    period: 'July 2018 - July 2024',
   },
 ]
 
@@ -87,10 +119,10 @@ const About = () => {
       <header className="about-hero">
         <section className="about-banner" aria-label="About hero banner">
           <div className="about-banner__copy">
-            <h1>Product Designer</h1>
+            <h1>Digital Product Designer</h1>
             <br/>
             <p>
-            I'm Pat Sricome, a <TextHighlighter>Product Designer</TextHighlighter> who started in architecture, moved into visual and marketing design, and eventually found my home in product design.
+            I'm Pat Sricome, a <TextHighlighter>Digital Product Designer</TextHighlighter> who started in architecture, moved into visual and marketing design, and eventually found my home in digital product design.
             </p><br/>
             <p>
               That career shift shaped how I think: architecture taught me structure
@@ -127,6 +159,27 @@ I'd love to hear from you.</h3>
           </div>
           <StackingCardsDemo />
         </section>
+
+        <section className="about-section">
+          <div className="about-section__header">
+            <img src={logo} alt="" className="about-heading__icon" aria-hidden="true" />
+            <div className="about-heading">
+              <h2>My Experience</h2>
+            </div>
+          </div>
+          <div className="about-experience">
+            {experiences.map((exp) => (
+              <div className="about-experience__row" key={`${exp.role}-${exp.company}`}>
+                <span className="about-experience__role">{exp.role}</span>
+                <span className="about-experience__company">{exp.company}</span>
+                <span className="about-experience__period">{formatPeriodWithYears(exp.period)}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+
+
         <section className="about-section">
           <div className="about-section__header">
             <img src={logo} alt="" className="about-heading__icon" aria-hidden="true" />
@@ -149,6 +202,8 @@ I'd love to hear from you.</h3>
             ))}
           </div>
         </section>
+
+
 
         <section className="about-section">
           <div className="about-section__header">
