@@ -45,7 +45,7 @@ const App = () => {
       <Route path="/about" element={<About />} />
       <Route path="/qooked" element={<Qooked />} />
       <Route path="/craft" element={<Craft />} />
-      <Route path="/case-study-template" element={<CaseStudyTemplate />} />
+      <Route path="/case-study-template" element={<CaseStudyTemplate projectId="gotit" nextWork={{ title: "HealU", href: "/" }} />} />
     </Routes>
   )
 }

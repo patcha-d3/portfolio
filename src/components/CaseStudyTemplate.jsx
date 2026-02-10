@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "./CaseStudyTemplate.css"
 import Navigation from "./Navigation"
 import CaseStudyToc from "./CaseStudyToc"
@@ -5,8 +6,12 @@ import Bubble from "./Bubble"
 import gotitHero from "../case-study/uiux/gotit_hero.png"
 import figmaIcon from "../assets/about/design/figma.svg"
 import TextHighlighter from "./TextHilight"
+import { getWorkItemById } from "../data/content"
 
-const CaseStudyTemplate = () => {
+const CaseStudyTemplate = ({ projectId, nextWork }) => {
+  const workItem = projectId ? getWorkItemById(projectId) : null
+  const titleHeading = workItem?.name ?? "Case study"
+
   return (
     <div className="case-template">
       <Navigation />
@@ -34,11 +39,48 @@ const CaseStudyTemplate = () => {
         />
       </header>
 
+      <div className="case-template__title-strip" aria-label="Project title">
+        <p className="case-template__title-category">UI/UX Project</p>
+        <hr className="case-template__title-divider" />
+        <div className="case-template__title-header">
+          <div className="case-template__case-logo" aria-hidden="true">
+            {/* 64×64 placeholder – replace with <img src={yourCaseStudyLogo} alt="" /> */}
+          </div>
+          <div className="case-template__title-heading-wrap">
+            <h2 className="case-template__title-heading">{titleHeading}</h2>
+          </div>
+        </div>
+      </div>
+
       <main className="case-template__main">
-        <section className="case-template__section case-template__title-block" aria-label="Project title">
-          <p className="case-template__title-category">UI/UX Project</p>
-          <hr className="case-template__title-divider" />
-          <h2 className="case-template__title-heading">Improved learning clarity and reduced study anxiety for trades students by designing an AI-powered, distraction-free study platform through agile, cross-functional collaboration</h2>
+        <section className="case-template__section" aria-label="Skills used">
+          <div className="case-template__skills">
+            <h2 className="case-template__skills-heading">Skills used</h2>
+            <div className="case-template__skills-groups">
+              <div className="case-template__skills-group">
+                <span className="case-template__skills-category">UI/UX</span>
+                <div className="case-template__skills-chips">
+                  <span className="case-template__skill-chip">Lo-fi Wireframe</span>
+                  <span className="case-template__skill-chip">Mid-fi Wireframe</span>
+                  <span className="case-template__skill-chip">Hi-fi Wireframe</span>
+                  <span className="case-template__skill-chip">Prototyping</span>
+                </div>
+              </div>
+              <div className="case-template__skills-group">
+                <span className="case-template__skills-category">Graphic Design</span>
+                <div className="case-template__skills-chips">
+                  <span className="case-template__skill-chip">Branding</span>
+                  <span className="case-template__skill-chip">Style Guide</span>
+                </div>
+              </div>
+              <div className="case-template__skills-group">
+                <span className="case-template__skills-category">Development</span>
+                <div className="case-template__skills-chips">
+                  <span className="case-template__skill-chip">Front-end Development</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section id="overview" className="case-template__section case-template__overview">
@@ -100,7 +142,7 @@ Traditional trade textbooks are often overwhelming, text-heavy, and difficult to
 
             <div className="case-template__accomplished">
               <div>
-                <h2>Working as a Product Designer and Scrum Master</h2>
+                <h2>As a Product Designer and Scrum Master,</h2>
                 <p>
                 I worked as <TextHighlighter>a Product Designer and Scrum Master</TextHighlighter>, supporting both product execution and team momentum across design and development.
 
@@ -209,6 +251,17 @@ I <TextHighlighter>collaborated closely with designers, developers, and marketin
             can make habit-building feel supportive rather than overwhelming.
           </p>
         </section>
+
+        {nextWork && (
+          <section className="case-template__section case-template__next-work">
+            <h2>Next Case Study</h2>
+            <Link to={nextWork.href} className="case-template__next-work-link">
+              <span className="case-template__next-work-label">Next project</span>
+              <span className="case-template__next-work-title">{nextWork.title}</span>
+              <span className="case-template__next-work-arrow" aria-hidden="true">→</span>
+            </Link>
+          </section>
+        )}
       </main>
     </div>
   )

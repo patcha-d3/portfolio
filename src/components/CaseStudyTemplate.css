@@ -7,6 +7,8 @@
   min-height: 100vh;
 }
 
+
+
 /* Hero banner: 1200×600px */
 .case-template__hero-banner {
   position: relative;
@@ -42,6 +44,19 @@
   object-fit: cover;
 }
 
+/* Title strip: same width as hero, directly below it */
+.case-template__title-strip {
+  width: min(1200px, 100%);
+  margin: -16px auto;
+  padding: 32px 24px;
+  text-align: center;
+  box-sizing: border-box;
+    background: black;
+    border: 1px solid var(--border-color-default);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
 .case-template__main {
   width: min(1000px, 90%);
   margin: 40px auto 120px;
@@ -54,12 +69,6 @@
   scroll-margin-top: 72px;
 }
 
-/* Title block: UI/UX Project + divider + Got It */
-.case-template__title-block {
-  padding: 32px 24px;
-  text-align: center;
-}
-
 .case-template__title-category {
   margin: 0;
   font-size: 0.95rem;
@@ -68,19 +77,104 @@
 }
 
 .case-template__title-divider {
-  width: min(1200px, 100%);
+  width: min(1200px, 80%);
   margin: 8px auto;
   border: none;
   border-top: 1px solid #d8d8d8;
 }
 
+/* Title header: case study logo placeholder + h2 */
+.case-template__title-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
 
-/* Project title heading  */
+.case-template__case-logo {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  background: #f2f2f0;
+  border: 1px solid var(--border-color-default);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-template__case-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Project title heading – pill style like About */
 .case-template__title-heading {
   margin: 0;
+  padding: 2px 16px;
   font-family: 'Instrument Sans', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 8px 8px 8px 0;
+}
+
+/* Skills used – label chips */
+.case-template__skills {
+  margin-top: 80px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.case-template__skills-heading {
+  margin: 0 0 12px;
   font-weight: 600;
   color: #151515;
+}
+
+.case-template__skills-groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 12px;
+}
+
+.case-template__skills-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 12px;
+}
+
+.case-template__skills-category {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6d6d6d;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  flex-basis: 100%;
+  margin-bottom: 2px;
+}
+
+.case-template__skills-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.case-template__skill-chip {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  background: #f2f2f0;
+  color: #353535;
+  border: 1px solid var(--border-color-default);
 }
 
 .case-template__section h2 {
@@ -315,6 +409,49 @@
   border: 1px solid #e0e0de;
 }
 
+/* Next Work */
+.case-template__next-work {
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color-default);
+}
+
+.case-template__next-work h2 {
+  margin-bottom: 16px;
+}
+
+.case-template__next-work-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: #151515;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.case-template__next-work-link:hover {
+  opacity: 0.9;
+}
+
+.case-template__next-work-label {
+  font-size: 0.8rem;
+  opacity: 0.85;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.case-template__next-work-title {
+  font-size: 1.1rem;
+}
+
+.case-template__next-work-arrow {
+  margin-left: 4px;
+  font-size: 1.2rem;
+}
+
 @media (max-width: 900px) {
   .case-template__main {
     width: min(940px, 92%);
@@ -327,10 +464,14 @@
 
 }
 
-@media (min-width: 320px) and(max-width: 1199px) {
+@media (min-width: 320px) and (max-width: 1199px) {
   .case-template__hero-banner {
     width: min(100%, 94%);
     margin: 64px auto 0;
+  }
+
+  .case-template__title-strip {
+    width: min(100%, 94%);
   }
 
   .case-template__main {
@@ -358,6 +499,10 @@
   .case-template__hero-banner {
     width: min(100%, 94%);
     margin: 64px auto 0;
+  }
+
+  .case-template__title-strip {
+    width: min(100%, 94%);
   }
 
   .case-template__main {

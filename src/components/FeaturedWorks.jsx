@@ -1,6 +1,8 @@
 import { useState, useMemo } from "react"
+import { Link } from "react-router-dom"
 import "./FeaturedWorks.css"
 import Button from "./Button"
+import gotitHero from "../case-study/uiux/gotit_hero.png"
 
 const getLabelVariant = (cardLabel) => {
   if (!cardLabel) return "primary"
@@ -63,32 +65,50 @@ const FeaturedWorks = ({ workBlocks = [] }) => {
       </div>
 
       <div className="home-works__list">
-        {items.map((item, index) => (
-          <article className="home-work-card" key={`${item.name}-${index}`}>
-            <div
-              className={`home-work-card__label home-work-card__label--${getLabelVariant(
-                cardLabel !== null ? cardLabel : item._cardLabel
-              )}`}
-            >
-              {cardLabel !== null ? cardLabel : item._cardLabel}
-            </div>
-            <div className="home-work-card__body">
-              <div className="home-work-card__image" aria-hidden="true">
-                {/* Image placeholder – use item.image when available */}
+        {items.map((item, index) => {
+          const CardContent = () => (
+            <>
+              <div
+                className={`home-work-card__label home-work-card__label--${getLabelVariant(
+                  cardLabel !== null ? cardLabel : item._cardLabel
+                )}`}
+              >
+                {cardLabel !== null ? cardLabel : item._cardLabel}
               </div>
-              <div className="home-work-card__content">
-                <div className="home-work-card__meta">
-                  {item.tags.map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
+              <div className="home-work-card__body">
+                <div className="home-work-card__image" aria-hidden="true">
+                  {item.id === "gotit" && (
+                    <img
+                      src={gotitHero}
+                      alt="Got It"
+                      className="home-work-card__image-img"
+                    />
+                  )}
                 </div>
-                <h3>{item.name}</h3>
-                <p>{item.description}</p>
-              
+                <div className="home-work-card__content">
+                  <div className="home-work-card__meta">
+                    {item.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                  <h3>{item.name}</h3>
+                  <p>{item.description}</p>
+                </div>
               </div>
-            </div>
-          </article>
-        ))}
+            </>
+          )
+          return (
+            <article className="home-work-card" key={`${item.name}-${index}`}>
+              {item.link ? (
+                <Link to={item.link} className="home-work-card__link">
+                  <CardContent />
+                </Link>
+              ) : (
+                <CardContent />
+              )}
+            </article>
+          )
+        })}
       </div>
     </section>
   )

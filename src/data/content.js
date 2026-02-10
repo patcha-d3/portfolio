@@ -27,13 +27,16 @@ export const workBlocks = [
     cardLabel: 'UI/UX Project',
     items: [
       {
+        id: 'gotit',
         tags: ['Scrum Master', 'Product Designer'],
         name: 'Reduced learning complexity for trades students by designing a structured, distraction-free AI study tool grounded in user feedback and fast, iterative prototyping',
         description:
           '',
         tone: 'dark',
+        link: '/case-study-template',
       },
       {
+        id: 'healu',
         tags: ['UI/UX Designer', 'Branding Designer'],
         name: 'Reduced learning complexity for trades students by designing a structured, distraction-free AI study tool grounded in user feedback and fast, iterative prototyping',
         description:
@@ -41,6 +44,7 @@ export const workBlocks = [
         tone: 'blue',
       },
       {
+        id: 'verifyvasp',
         tags: ['UI/UX Designer', 'Branding Designer'],
         name: 'Improved usability and product clarity for a B2B compliance platform by simplifying site structure, refining navigation, and designing clear user flows in close collaboration with developers',
         description:
@@ -55,8 +59,9 @@ export const workBlocks = [
     cardLabel: 'Graphic Design',
     items: [
       {
+        id: 'qooked',
         tags: ['Branding Designer', 'Product Designer'],
-        name: 'Qooked',
+        name: 'Brunch Restaurant Menu Design for Qooked',
         description: 'xxxxx',
         tone: 'yellow',
       },
@@ -71,3 +76,11 @@ export const workBlocks = [
     items: [],
   },
 ]
+
+export const getWorkItemById = (id) => {
+  for (const block of workBlocks) {
+    const item = block.items.find((i) => i.id === id)
+    if (item) return item
+  }
+  return null
+}
