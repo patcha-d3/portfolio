@@ -5,6 +5,7 @@ import Navigation from "./Navigation"
 import CaseStudyToc from "./CaseStudyToc"
 import Bubble from "./Bubble"
 import gotitHero from "../case-study/uiux/gotit_hero.png"
+import logo from "../assets/logo.svg"
 import figmaIcon from "../assets/about/design/figma.svg"
 import TextHighlighter from "./TextHilight"
 import { getWorkItemById } from "../data/content"
@@ -60,7 +61,12 @@ const CaseStudyTemplate = ({ projectId, nextWork }) => {
       <main className="case-template__main">
         <section className="case-template__section" aria-label="Skills used">
           <div className="case-template__skills">
-            <h2 className="case-template__skills-heading">Skills used</h2>
+            <div className="section-heading">
+              <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+              <div className="section-heading__label">
+                <h2 className="case-template__skills-heading">Skills used</h2>
+              </div>
+            </div>
             <div className="case-template__skills-groups">
               <div className="case-template__skills-group">
                 <span className="case-template__skills-category">UI/UX</span>
@@ -89,8 +95,15 @@ const CaseStudyTemplate = ({ projectId, nextWork }) => {
         </section>
 
         <section id="overview" className="case-template__section case-template__overview">
+        <div className="section-heading">
+              <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+              <div className="section-heading__label">
+                <h2>Overview</h2>
+              </div>
+            </div>
           <div className="case-template__summary">
-            <h2>Overview</h2>
+    
+
             <p>
             Got It is a student-led educational technology initiative at British Columbia Institute of Technology (BCIT), created to support underrepresented trades students who struggle with limited study time, dense technical manuals, and learning anxiety.
 
@@ -157,8 +170,7 @@ I <TextHighlighter>collaborated closely with designers, developers, and marketin
                 </p>
               </div>
               <div>
-                <h2>My Role</h2>
-                <p>My responsibilities included:</p>
+                <h2>My Responsibilities included:</h2>
                 <ul className="case-template__role-list">
                   <li>Designing and refining user flows focused on clarity and low cognitive load</li>
                   <li>Supporting UI decisions to create a calm, distraction-free interface</li>
@@ -175,7 +187,12 @@ I <TextHighlighter>collaborated closely with designers, developers, and marketin
         </section>
 
         <section id="tools" className="case-template__section case-template__tools">
-          <h2>Tools &amp; Methods</h2>
+          <div className="section-heading">
+            <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+            <div className="section-heading__label">
+              <h2>Tools &amp; Methods</h2>
+            </div>
+          </div>
           <div className="case-template__tools-grid">
             <div>
               <h4>Design</h4>
@@ -196,7 +213,12 @@ I <TextHighlighter>collaborated closely with designers, developers, and marketin
         </section>
 
         <section id="challenge" className="case-template__section case-template__challenge">
-          <h2>Identified Challenges</h2>
+          <div className="section-heading">
+            <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+            <div className="section-heading__label">
+              <h2>Identified Challenges</h2>
+            </div>
+          </div>
           <div className="case-template__challenge-grid">
             <article>
               <h3>Low retention</h3>
@@ -213,8 +235,13 @@ I <TextHighlighter>collaborated closely with designers, developers, and marketin
           </div>
         </section>
 
-        <section id="solution" className="case-template__section case-template__approach">
-          <h2>Approach</h2>
+        <section id="solution" className="case-template__section case-template__results">
+          <div className="section-heading">
+            <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+            <div className="section-heading__label">
+              <h2>Approach</h2>
+            </div>
+          </div>
           <p>
             Simplified the habit flow into three steps, introduced visual
             milestones, and paired micro-copy with calming UI patterns to keep
@@ -223,7 +250,12 @@ I <TextHighlighter>collaborated closely with designers, developers, and marketin
         </section>
 
         <section id="process" className="case-template__section case-template__highlights">
-          <h2>Highlights</h2>
+          <div className="section-heading">
+            <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+            <div className="section-heading__label">
+              <h2>Highlights</h2>
+            </div>
+          </div>
           <div className="case-template__media-grid">
             <img
               src="https://placehold.co/520x360?text=Screen+1"
@@ -241,7 +273,12 @@ I <TextHighlighter>collaborated closely with designers, developers, and marketin
         </section>
 
         <section id="results" className="case-template__section case-template__results">
-          <h2>Results</h2>
+          <div className="section-heading">
+            <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+            <div className="section-heading__label">
+              <h2>Results</h2>
+            </div>
+          </div>
           <p>
             The refined flow improved perceived clarity and reduced task
             completion time during testing. Users reported higher motivation and
@@ -249,17 +286,30 @@ I <TextHighlighter>collaborated closely with designers, developers, and marketin
           </p>
         </section>
 
-        <section id="final-thoughts" className="case-template__section case-template__final">
-          <h2>Final Thoughts</h2>
+        <section id="results" className="case-template__section case-template__results">
+          <div className="section-heading">
+            <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+            <div className="section-heading__label">
+              <h2>Final Thoughts</h2>
+            </div>
+          </div>
           <p>
-            This case study reinforced how thoughtful pacing and small UI cues
+          This case study reinforced how thoughtful pacing and small UI cues
             can make habit-building feel supportive rather than overwhelming.
           </p>
         </section>
 
+  
+
+
         {nextWork && (
           <section className="case-template__section case-template__next-work">
-            <h2>Next Case Study</h2>
+            <div className="section-heading">
+              <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+              <div className="section-heading__label">
+                <h2>Next Case Study</h2>
+              </div>
+            </div>
             <Link to={nextWork.href} className="case-template__next-work-link">
               <span className="case-template__next-work-label">Next project</span>
               <span className="case-template__next-work-title">{nextWork.title}</span>

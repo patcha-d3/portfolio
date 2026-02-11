@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import "./FeaturedWorks.css"
 import Button from "./Button"
 import gotitHero from "../case-study/uiux/gotit_hero.png"
+import logo from "../assets/logo.svg"
 
 const getLabelVariant = (cardLabel) => {
   if (!cardLabel) return "primary"
@@ -47,7 +48,12 @@ const FeaturedWorks = ({ workBlocks = [] }) => {
   return (
     <section className="home-works" id="works">
       <div className="home-works__header">
-        <h2>Featured Works</h2>
+        <div className="section-heading">
+          <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+          <div className="section-heading__label">
+            <h2>Featured Works</h2>
+          </div>
+        </div>
         <div className="home-works__tabs" role="tablist" aria-label="Work categories">
           {tabs.map((tab, index) => (
             <button

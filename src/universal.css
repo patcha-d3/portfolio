@@ -16,3 +16,48 @@ h2 {
 p {
   font-size: 16px;
 }
+
+/* Section heading with logo (same look as About) */
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  /* ขยับซ้ายให้หัวข้อ (h2) align กับขอบซ้ายของ content ข้างล่าง (~24px) */
+  margin-left: -28px;
+}
+
+.section-heading__icon {
+  width: 40px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  /* โลโก้ขยับซ้ายอีกนิด */
+  margin-left: -8px;
+}
+
+.section-heading__label {
+  margin-left: 8px;
+}
+
+.section-heading__label h2,
+.section-heading .section-heading__label h2 {
+  margin: 0;
+  padding: 2px 16px;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px 8px 8px 0;
+  background: #fff;
+  font-size: 1.6rem;
+}
+
+@media (max-width: 1199px) {
+  .section-heading {
+    margin-left: 0;
+  }
+  .section-heading__icon {
+    margin-left: 0;
+  }
+  .section-heading__label {
+    margin-left: 0;
+  }
+}

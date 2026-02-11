@@ -4,6 +4,7 @@ import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import FeaturedWorks from './components/FeaturedWorks'
 import { clients, serviceCards, workBlocks } from './data/content'
+import logo from './assets/logo.svg'
 import Qooked from './graphics/Qooked'
 import Craft from './graphics/Craft'
 import About from './About'
@@ -19,7 +20,12 @@ const Home = () => (
         <Hero serviceCards={serviceCards} Bubble={Bubble} />
 
         <section className="home-clients">
-          <h2>People I've worked with</h2>
+          <div className="section-heading">
+            <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+            <div className="section-heading__label">
+              <h2>People I've worked with</h2>
+            </div>
+          </div>
           <div className="home-clients__ticker" aria-label="Client logos">
             <div className="home-clients__row">
               {[...clients, ...clients].map((client, index) => (

@@ -100,11 +100,13 @@ h2 {
 }
 
 .home-clients {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 14px;
   text-align: center;
   justify-content: center;
   align-items: center;
+  margin: auto;
 }
 
 .home-clients__ticker {

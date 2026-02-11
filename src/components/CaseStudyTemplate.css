@@ -132,6 +132,11 @@
   gap: 12px;
 }
 
+/* ขอบหัวข้อ (h2) align กับขอบซ้ายของ content ด้านล่าง – ใช้ร่วมทุก section */
+.case-template__main .section-heading {
+  margin-left: -48px;
+}
+
 .case-template__skills-heading {
   margin: 0 0 12px;
   font-weight: 600;
@@ -485,5 +490,9 @@
   .case-template__challenge-grid,
   .case-template__media-grid {
     grid-template-columns: 1fr;
+  }
+
+  .case-template__main .section-heading {
+    margin-left: 0;
   }
 }
