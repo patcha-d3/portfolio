@@ -2,7 +2,8 @@
 
 .stacking-cards {
   position: relative;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
   
   
@@ -30,7 +31,7 @@
   border-radius: 8px;
   padding: 8px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 24px;
   align-items: stretch;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
@@ -44,6 +45,11 @@
 .hobby-stack__item:nth-child(2) .hobby-stack__card {
   border: 1px solid var(--color-secondary);
   background: white;
+}
+
+/* The Joy of Distraction-Free Design: text ซ้าย ภาพขวา (Desktop) */
+.hobby-stack__item:nth-child(2) .hobby-stack__image {
+  order: 0;
 }
 
 .hobby-stack__item:nth-child(3) .hobby-stack__card {
@@ -92,7 +98,7 @@
   color: #1f1f1f;
 }
 
-/* ภาพกว้าง 1/4 ของ card, ยืดเต็มความสูง fit ขอบ div รูปอยู่ด้านบน (order: -1) */
+/* ภาพกว้าง 1/4 ของ card */
 .hobby-stack__image {
   flex: 1;
   min-width: 0;
