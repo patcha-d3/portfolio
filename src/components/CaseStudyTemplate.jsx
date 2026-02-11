@@ -10,7 +10,7 @@ import figmaIcon from "../assets/about/design/figma.svg"
 import TextHighlighter from "./TextHilight"
 import { getWorkItemById } from "../data/content"
 
-const CaseStudyTemplate = ({ projectId, nextWork }) => {
+const CaseStudyTemplate = ({ projectId, nextWork, caseLogo }) => {
   const workItem = projectId ? getWorkItemById(projectId) : null
   const titleHeading = workItem?.name ?? "Case study"
 
@@ -50,7 +50,7 @@ const CaseStudyTemplate = ({ projectId, nextWork }) => {
         <hr className="case-template__title-divider" />
         <div className="case-template__title-header">
           <div className="case-template__case-logo" aria-hidden="true">
-            {/* 64×64 placeholder – replace with <img src={yourCaseStudyLogo} alt="" /> */}
+            {caseLogo ? <img src={caseLogo} alt="" /> : null}
           </div>
           <div className="case-template__title-heading-wrap">
             <h2 className="case-template__title-heading">{titleHeading}</h2>
@@ -286,7 +286,7 @@ I <TextHighlighter>collaborated closely with designers, developers, and marketin
           </p>
         </section>
 
-        <section id="results" className="case-template__section case-template__results">
+        <section id="final-thoughts" className="case-template__section case-template__results">
           <div className="section-heading">
             <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
             <div className="section-heading__label">

@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import './About.css'
 import Navigation from './components/Navigation'
 import { StackingCardsDemo } from './components/StackingCards'
@@ -110,6 +111,10 @@ const techStack = [
 ]
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="about-page">
       <Navigation />

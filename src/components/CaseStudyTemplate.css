@@ -5,9 +5,23 @@
   background: #f6f6f4;
   color: #151515;
   min-height: 100vh;
+  animation: case-template-fadein 1.4s ease both;
 }
 
+@keyframes case-template-fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
+@media (prefers-reduced-motion: reduce) {
+  .case-template {
+    animation: none;
+  }
+}
 
 /* Hero banner: 1200×600px */
 .case-template__hero-banner {
@@ -67,6 +81,29 @@
 
 .case-template__section[id] {
   scroll-margin-top: 72px;
+}
+
+.case-template__section--fadein {
+  animation: case-section-fadein 0.8s ease both;
+}
+
+@keyframes case-section-fadein {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-template__section--fadein {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .case-template__title-category {

@@ -8,6 +8,22 @@ const slugFromItem = (item) => {
 const CaseStudyToc = ({ title = 'Table of Contents', items = [] }) => {
   const [activeId, setActiveId] = useState(null)
 
+  const handleLinkClick = (e, id) => {
+    e.preventDefault()
+    const el = document.getElementById(id)
+    if (!el) return
+    document.querySelectorAll('.case-template__section--fadein').forEach((s) =>
+      s.classList.remove('case-template__section--fadein')
+    )
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        el.classList.add('case-template__section--fadein')
+      })
+    })
+    window.history.pushState(null, '', `#${id}`)
+  }
+
   useEffect(() => {
     const ids = items.map(slugFromItem)
 
@@ -56,7 +72,9 @@ const CaseStudyToc = ({ title = 'Table of Contents', items = [] }) => {
               <a
                 href={`#${id}`}
                 className={`case-toc__link${isActive ? ' case-toc__link--active' : ''}`}
+                onClick={(e) => handleLinkClick(e, id)}
               >
+                <span className="case-toc__arrow" aria-hidden>→ </span>
                 {item}
               </a>
             </li>
