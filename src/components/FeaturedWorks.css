@@ -191,12 +191,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: min(300px, 100%);
+    max-width: 100%;
   }
 
   .home-works__tabs {
     width: 100%;
-    max-width: min(300px, 100%);
+    max-width: 100%;
     margin: auto;
     justify-content: space-between;
     gap: 2px;
@@ -210,9 +210,10 @@
     white-space: wrap;
   }
   .home-works {
-margin: auto;
+    margin: auto;
     box-sizing: border-box;
-    max-width: min(300px, 100%);
+    max-width: 100%;
+    width: 100%;
   }
 
   .home-works__list {
@@ -220,26 +221,29 @@ margin: auto;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: min(300px, 100%);
+    max-width: 100%;
     width: 100%;
   }
 
   .home-work-card__link {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
-    max-width: min(300px, 100%);
+    max-width: 100%;
+    width: 100%;
+    min-width: 0;
   }
 
   .home-work-card {
     display: flex;
     flex-direction: column;
     margin: auto;
-    max-width: min(300px, 100%);
+    max-width: 100%;
     width: 100%;
     min-width: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .home-work-card__body {
@@ -248,9 +252,10 @@ margin: auto;
     flex-wrap: wrap;
     padding: 8px;
     max-width: 100%;
-    min-width: 0;
+    min-width: 0 !important;
     width: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .home-work-card__content {
@@ -259,13 +264,19 @@ margin: auto;
     width: 100%;
     box-sizing: border-box;
     overflow-wrap: break-word;
-    padding: 0 12px;
+    word-break: break-word;
+    overflow-x: hidden;
+    padding: 0 8px;
+  }
+
+  .home-work-card__content h3 {
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   .home-work-card__content p {
     overflow-wrap: break-word;
     word-break: break-word;
-
   }
 
   .home-work-card__image {
