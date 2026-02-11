@@ -3,7 +3,7 @@
 .stacking-cards {
   position: relative;
   display: grid;
-  gap: 12px;
+  gap: 8px;
   
   
 }
@@ -16,57 +16,64 @@
 
 .hobby-stack {
   max-width: 960px;
+  margin: auto;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .hobby-stack__item {
-  height: fit-content;
-
+  height: 320px;
 }
 
 .hobby-stack__card {
   height: 100%;
   border-radius: 8px;
-  padding: 24px 32px;
+  padding: 8px;
   display: flex;
-  flex-direction: row;
-  gap: 16px;
-  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+  align-items: stretch;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hobby-stack__item:nth-child(1) .hobby-stack__card {
-  background: var(--color-primary);
-  
-
+  border: 1px solid var(--color-primary);
+  background: white;
 }
 
 .hobby-stack__item:nth-child(2) .hobby-stack__card {
-  background: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  background: white;
 }
 
 .hobby-stack__item:nth-child(3) .hobby-stack__card {
-  background: var(--color-tertiary);
+  border: 1px solid var(--color-tertiary);
+  background: white;
 }
 
+/* เนื้อหา text กว้าง 3/4 ของ card */
 .hobby-stack__text {
+  flex: 3;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 12px;
-
+  padding: 32px;
 }
 
 .hobby-stack__card h3 {
   margin: 0;
-  font-size: 1.2rem;
-  color: white;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: black;
 }
 
 .hobby-stack__card p {
   margin: 0;
-  color: white;
+  color: black;
   line-height: 1.6;
+  font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 
@@ -85,24 +92,116 @@
   color: #1f1f1f;
 }
 
+/* ภาพกว้าง 1/4 ของ card, ยืดเต็มความสูง fit ขอบ div รูปอยู่ด้านบน (order: -1) */
 .hobby-stack__image {
-  width: 80%;
-  border-radius: 8px;
-  background: #dedede;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  flex: 1;
+  min-width: 0;
+  align-self: stretch;
+  order: -1;
+  padding: 4px 12px 4px 48px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.25s ease;
 }
 
+.hobby-stack__image:hover {
+  transform: rotate(3deg);
+}
+
+.hobby-stack__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.hobby-stack__img-default,
+.hobby-stack__img-hover {
+  position: absolute;
+  inset: 12px;
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+  max-width: calc(100% - 24px);
+  max-height: calc(100% - 24px);
+  object-fit: contain;
+  object-position: center;
+  transform: scale(0.85);
+  transform-origin: center;
+  transition: opacity 0.2s ease;
+}
+
+.hobby-stack__img-hover {
+  opacity: 0;
+}
+
+.hobby-stack__image:hover .hobby-stack__img-default {
+  opacity: 0;
+}
+
+.hobby-stack__image:hover .hobby-stack__img-hover {
+  opacity: 1;
+}
+
+/* Tablet & Mobile: ความกว้างเท่า navigation (92vw), ยืดหดตาม viewport */
 @media (min-width: 240px) and (max-width: 1199px) {
+  .hobby-stack {
+    width: min(92vw, 100%);
+    max-width: min(92vw, 100%);
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
   .hobby-stack__item {
-    height: 220px;
+    max-height: 480px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .hobby-stack__card {
-    padding: 12px;
-    grid-template-columns: 1fr;
+    padding: 12px 16px;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .hobby-stack__text {
+    flex: 3;
+    min-height: 0;
+    overflow-y: auto;
   }
 
   .hobby-stack__image {
+    flex: 1;
     order: -1;
+    align-self: stretch;
+  }
+}
+
+/* Mobile: การ์ดสูงพอให้เนื้อหาอยู่ padding เล็กลง */
+@media (min-width: 240px) and (max-width: 599px) {
+  .hobby-stack {
+    width: min(92vw, 100%);
+  }
+
+  .hobby-stack__item {
+    min-height: 420px;
+  }
+
+  .hobby-stack__card {
+    padding: 0 4px;
+    gap: 4px;
+  }
+
+  .hobby-stack__text {
+    gap: 8px;
+  }
+
+  .hobby-stack__image {
+    min-height: 40%;
+    max-height: 40%;
   }
 }

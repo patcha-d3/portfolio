@@ -122,19 +122,13 @@ const About = () => {
             <h1>Digital Product Designer</h1>
             <br/>
             <p>
-            I'm Pat Sricome, a <TextHighlighter>Digital Product Designer</TextHighlighter> who started in architecture, moved into visual and marketing design, and eventually found my home in digital product design.
+            I'm Pat Sricome, a <TextHighlighter>Digital Product Designer</TextHighlighter> with a background in architecture and visual design, now focused on crafting thoughtful UI/UX experiences.
             </p><br/>
             <p>
-              That career shift shaped how I think: architecture taught me structure
-              and systems, graphic design sharpened my eye for detail and branding, and
-              UI/UX helped me combine both to create experiences that feel intuitive
-              and human.
+            Architecture taught me systems and structure. Graphic design trained my eye for clarity and consistency. <TextHighlighter>UI/UX is where those disciplines meet — turning complexity into intuitive, human-centered digital products.</TextHighlighter>
             </p><br/>
             <p>
-              I help busy teams and growing businesses design digital products that are
-              easy to navigate, visually consistent, and grounded in real user
-              needs—whether it’s improving onboarding flows, reducing drop-offs, or
-              simplifying complex content into something users can actually understand.
+            <TextHighlighter>I design interfaces that feel effortless to navigate, reduce friction, and align business goals with real user needs — from refining onboarding flows to simplifying dense, complex content into experiences people actually understand and enjoy using. With a working knowledge of HTML, CSS, and JavaScript</TextHighlighter>, I’m able to think beyond static screens, understand technical constraints, and communicate seamlessly with developers to bring ideas to life.
             </p><br/>
             <h3>Wanna work together? <br/>
 I'd love to hear from you.</h3>

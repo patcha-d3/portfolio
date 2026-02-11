@@ -4,6 +4,11 @@ import { createContext, useContext, useMemo, useRef } from "react"
 import { motion, useScroll, useTransform } from "motion/react"
 import "./StackingCards.css"
 import { cn } from "../lib/utils"
+import imgCoffeeDefault from "../assets/about/01.svg"
+import imgCoffeeHover from "../assets/about/02.svg"
+import imgReading from "../assets/about/reading.svg"
+import imgGaming from "../assets/about/gaming.svg"
+import TextHighlighter from "../components/TextHilight"
 
 const StackingCardsContext = createContext(null)
 
@@ -12,23 +17,45 @@ const STACKING_CONTENT = [
     id: 1,
     title: "Specialty Coffee",
     heading: "Specialty Coffee",
-    body:
-      "When I’m not designing, you’ll probably find me immersed in the world of third-wave coffee. Making pour-over coffee has become a daily ritual for me—almost like a form of meditation. It’s a quiet moment where I slow down, focus on what’s right in front of me, and enjoy the process as much as the result. I love taking in the aroma and exploring the delicate aftertaste of light-roast beans.\n\nIf we ever get the chance, I’d love to make a cup of coffee for you.",
+    image: { default: imgCoffeeDefault, hover: imgCoffeeHover },
+    body: (
+      <>
+<p>
+  When I'm not designing, I’m immersed in third-wave coffee. <TextHighlighter>Pour-over is my daily ritual — a quiet moment where I slow down, focus on what’s right in front of me, and enjoy the process as much as the result.</TextHighlighter> It reminds me that good experiences are crafted with intention and care.
+</p>
+<p>
+  I’d love to make you a cup someday.
+</p>
+
+      </>
+    ),
   },
   {
     id: 2,
     title: "Tech Gadgets",
-    heading: "Learning new tech gadgets",
-    body: "Learning new tech gadgets",
+    heading: "The Joy of Distraction-Free Design",
+    image: { default: imgReading, hover: imgReading },
+    body: (
+      <>
+        <p>
+          I've loved reading since I was young, but carrying books everywhere hurt my back—so I fell in love with <TextHighlighter>e-readers.</TextHighlighter> I'm <TextHighlighter>fascinated by how their simple, distraction-free UX/UI creates such a calm, focused experience.</TextHighlighter> Over time, I started collecting different brands and sizes, each serving a unique reading purpose!
+        </p>
+      </>
+    ),
   },
   {
     id: 3,
-    title: "Video Games",
-    heading: "Video Games",
-    body: "XXXXX",
-    
+    title: "For My Inner Child",
+    heading: "For My Inner Child",
+    image: { default: imgGaming, hover: imgGaming },
+    body: (
+      <>
+        <p>
+        No matter how busy I am, I always make time for video games.<TextHighlighter> I’m drawn to game design, mechanics, and interfaces</TextHighlighter> — and I see every game as a lesson in crafting meaningful experiences. I don't mind about pixel art or 3D models, as long as the game is fun to play.
+        </p>
+      </>
+    ),
   },
-
 ]
 
 const StackingCards = ({
@@ -111,9 +138,13 @@ export const StackingCardsDemo = () => {
             <div className="hobby-stack__text">
               <h3>{tab.heading ?? tab.title}</h3>
               {tab.body ? (
-                tab.body.split("\n\n").map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))
+                typeof tab.body === "string" ? (
+                  tab.body.split("\n\n").map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))
+                ) : (
+                  tab.body
+                )
               ) : (
                 <ul className="hobby-stack__files">
                   {tab.files.map((file) => (
@@ -122,7 +153,14 @@ export const StackingCardsDemo = () => {
                 </ul>
               )}
             </div>
-            <div className="hobby-stack__image" aria-hidden="true" />
+            <div className="hobby-stack__image" aria-hidden="true">
+              {tab.image ? (
+                <>
+                  <img src={tab.image.default} alt="" className="hobby-stack__img-default" />
+                  <img src={tab.image.hover} alt="" className="hobby-stack__img-hover" />
+                </>
+              ) : null}
+            </div>
           </article>
         </StackingCardItem>
       ))}
