@@ -130,7 +130,7 @@ hr {
   color: #6f6f6f;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 240px) and (max-width: 1199px) {
   .qooked-overview__lower {
     grid-template-columns: 1fr;
   }

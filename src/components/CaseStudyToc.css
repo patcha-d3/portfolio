@@ -48,14 +48,7 @@
   color: #151515;
 }
 
-@media (min-width: 641px) and (max-width: 1000px) {
-  .case-toc {
-    display: none;
-    visibility: hidden;
-  }
-}
-
-@media (max-width: 640px) {
+@media (min-width: 240px) and (max-width: 1199px) {
   .case-toc {
     display: none;
     visibility: hidden;

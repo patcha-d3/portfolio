@@ -87,13 +87,12 @@
 
 .hobby-stack__image {
   width: 80%;
-  aspect-ratio: 3 / 4;
   border-radius: 8px;
   background: #dedede;
   border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-@media (max-width: 640px) {
+@media (min-width: 240px) and (max-width: 1199px) {
   .hobby-stack__item {
     height: 220px;
   }

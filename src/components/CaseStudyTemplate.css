@@ -452,19 +452,7 @@
   font-size: 1.2rem;
 }
 
-@media (max-width: 900px) {
-  .case-template__main {
-    width: min(940px, 92%);
-    gap: 36px;
-  }
-
-  .case-template__overview-row {
-    grid-template-columns: 1fr;
-  }
-
-}
-
-@media (min-width: 320px) and (max-width: 1199px) {
+@media (min-width: 240px) and (max-width: 1199px) {
   .case-template__hero-banner {
     width: min(100%, 94%);
     margin: 64px auto 0;
@@ -475,7 +463,12 @@
   }
 
   .case-template__main {
-    width: min(100%, 92%);
+    width: min(940px, 92%);
+    gap: 36px;
+  }
+
+  .case-template__overview-row {
+    grid-template-columns: 1fr;
   }
 
   .case-template__section h2 {
@@ -492,20 +485,5 @@
   .case-template__challenge-grid,
   .case-template__media-grid {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 640px) {
-  .case-template__hero-banner {
-    width: min(100%, 94%);
-    margin: 64px auto 0;
-  }
-
-  .case-template__title-strip {
-    width: min(100%, 94%);
-  }
-
-  .case-template__main {
-    width: min(100%, 92%);
   }
 }

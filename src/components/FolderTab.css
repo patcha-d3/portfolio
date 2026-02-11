@@ -107,7 +107,7 @@
   color: #1f1f1f;
 }
 
-@media (max-width: 640px) {
+@media (min-width: 240px) and (max-width: 1199px) {
   .folder-tab__panel {
     height: 200px;
   }
