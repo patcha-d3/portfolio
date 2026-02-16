@@ -255,11 +255,12 @@ const CaseStudyTemplate = ({ projectId, content, nextWork, caseLogo }) => {
                 <h2>Defining the Opportunity</h2>
               </div>
             </div>
-            <div className="case-template__defining-intro">
-              <p>{definingOpportunity.intro}</p>
-            </div>
-            <div className="case-template__defining-cards">
-              {definingOpportunity.cards.map((card) => {
+            <div className="case-template__defining-card-wrap">
+              <div className="case-template__defining-intro">
+                <p>{definingOpportunity.intro}</p>
+              </div>
+              <div className="case-template__defining-cards">
+                {definingOpportunity.cards.map((card) => {
                 const Icon = card.icon
                 return (
                   <article key={card.title} className="case-template__defining-card">
@@ -275,6 +276,7 @@ const CaseStudyTemplate = ({ projectId, content, nextWork, caseLogo }) => {
                   </article>
                 )
               })}
+              </div>
             </div>
           </section>
         )}
@@ -321,27 +323,29 @@ const CaseStudyTemplate = ({ projectId, content, nextWork, caseLogo }) => {
 
         {/* 05 — Designing the Experience */}
         {designingExperience && (
-          <section id="designing-experience" className="case-template__section case-template__subsections">
+          <section id="designing-experience" className="case-template__section case-template__designing-experience">
             <div className="section-heading">
               <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
               <div className="section-heading__label">
                 <h2>Designing the Experience</h2>
               </div>
             </div>
-            <div className="case-template__subsections-list">
-              {designingExperience.subsections.map((sub) => (
-                <div key={sub.title} className="case-template__subsection">
-                  <h3>{sub.title}</h3>
-                  <div className="case-template__subsection-body">
-                    <HtmlOrReact content={sub.body} as="div" />
-                  </div>
-                  {sub.image && (
-                    <div className="case-template__subsection-image">
-                      <img src={sub.image.src} alt={sub.image.alt ?? ''} />
+            <div className="case-template__defining-card-wrap">
+              <div className="case-template__defining-cards">
+                {designingExperience.subsections.map((sub) => (
+                  <article key={sub.title} className="case-template__defining-card">
+                    <h3>{sub.title}</h3>
+                    <div className="case-template__defining-card-body">
+                      <HtmlOrReact content={sub.body} as="div" />
                     </div>
-                  )}
-                </div>
-              ))}
+                    {sub.image && (
+                      <div className="case-template__subsection-image">
+                        <img src={sub.image.src} alt={sub.image.alt ?? ''} />
+                      </div>
+                    )}
+                  </article>
+                ))}
+              </div>
             </div>
           </section>
         )}
@@ -402,7 +406,7 @@ const CaseStudyTemplate = ({ projectId, content, nextWork, caseLogo }) => {
 
         {/* 08 — Final Thoughts */}
         {outcomes && (
-          <section id="final-thoughts" className="case-template__section case-template__final-thoughts">
+          <section id="final-thoughts" className="case-template__section">
             <div className="section-heading">
               <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
               <div className="section-heading__label">

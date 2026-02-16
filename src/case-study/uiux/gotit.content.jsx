@@ -8,6 +8,7 @@ import projectManagementImage from './gotit/jira.png'
 import figmaIcon from '../../assets/about/design/figma.svg'
 import digitalProductDesignImage from './gotit/happypath.png'
 import personaImage from './gotit/persona.png'
+import brand1Image from './gotit/brand1.png'
 import TextHighlighter from '../../components/TextHilight'
 
 export const gotitContent = {
@@ -147,17 +148,17 @@ export const gotitContent = {
       {
         icon: Target,
         title: 'Design Principles',
-        body: '<ul><li>Clarity over complexity</li><li>Structure over volume</li><li>Accessibility by default</li><li>Accuracy as a requirement, not a feature</li></ul><p>If the material is overwhelming, the interface must reduce friction — not add to it.</p>',
+        body: '<ul><li>Clarity over complexity</li><li>Structure over volume</li><li>Accessibility by default</li><li>Accuracy as a requirement, not a feature</li></ul>',
       },
       {
         icon: Compass,
         title: 'Product Direction',
-        body: '<p>We focused on transforming dense manuals into structured, manageable learning experiences. Instead of replacing content, the goal was to reformat how apprentices interact with it using simplifying language, visualizing structure, and guiding next steps.</p>',
+        body: '<p>Focused on transforming dense manuals into structured, manageable learning experiences.</p>',
       },
       {
         icon: CheckCircle,
         title: 'Success Criteria',
-        body: '<ul><li>Reduce cognitive overload</li><li>Provide clear starting points</li><li>Support diverse learning styles</li><li>Deliver accurate, trade-aligned outputs</li></ul><p>Success meant apprentices could move from "I can\'t start" to "I know what to do next."</p>',
+        body: '<ul><li>Reduce cognitive overload</li><li>Provide clear starting points</li><li>Support diverse learning styles</li><li>Deliver accurate, trade-aligned outputs</li></ul>',
       },
     ],
   },
@@ -208,6 +209,7 @@ export const gotitContent = {
       {
         title: 'Brand & Identity',
         body: '<p><strong>Tone of voice</strong> — Supportive and clear, never overwhelming.</p><p><strong>Messaging</strong> — "Confidence starts with clarity" and similar phrases reinforce the value proposition.</p><p><strong>Calm visual direction</strong> — Minimal chrome, intentional spacing, and predictable layouts.</p><p><strong>Sticker pack</strong> — A cohesive set that strengthens product identity and community.</p><p><strong>Presentation visual system</strong> — Consistent branding across pitches, handoffs, and external communication.</p>',
+        image: { src: brand1Image, alt: 'Brand & Identity' },
       },
     ],
   },

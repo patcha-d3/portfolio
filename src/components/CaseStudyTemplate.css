@@ -392,6 +392,14 @@ height: 100%;
 }
 
 /* Defining the Opportunity */
+.case-template__defining-card-wrap {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
 .case-template__defining-opportunity .case-template__defining-intro {
   margin-bottom: 24px;
 }
@@ -403,19 +411,23 @@ height: 100%;
 
 .case-template__defining-cards {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 16px;
 }
 
 .case-template__defining-card {
   flex: 1 1 0;
   min-width: 0;
-  padding: 48px;
+  padding: 48px 24px;
   background: #fff;
   border: 1px solid #e5e5e5;
   border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(156, 255, 217, 0.06);
+  box-shadow: inset 0px 0px 20px 10px rgba(124, 9, 232, 0.1);
   transition: box-shadow 0.2s ease;
+}
+
+.case-template__defining-card:has(.case-template__subsection-image) {
+  padding-bottom: 0;
 }
 
 
@@ -424,13 +436,14 @@ height: 100%;
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 14px;
-  color: #4f4f4f;
+  color: #522A70;
 }
 
 .case-template__defining-card h3 {
   margin: 0 0 12px;
   font-size: 1.15rem;
   font-weight: 600;
+  color: #522A70;
 }
 
 .case-template__defining-card-body {
