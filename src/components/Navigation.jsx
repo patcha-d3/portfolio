@@ -34,7 +34,7 @@ const Navigation = () => {
             />
             About
           </Link>
-          <a href="/works" aria-label="Works" title="Works">
+          <Link to="/projects" aria-label="Works" title="Works">
             <span
               className="nav__icon"
               aria-hidden="true"
@@ -44,7 +44,7 @@ const Navigation = () => {
               }}
             />
             Works
-          </a>
+          </Link>
         </div>
         <div className="nav__menu-group">
           <a href="#resume" aria-label="Resume" title="Resume">

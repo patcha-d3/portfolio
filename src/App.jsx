@@ -8,8 +8,8 @@ import logo from './assets/logo.svg'
 import Qooked from './graphics/Qooked'
 import Craft from './graphics/Craft'
 import About from './About'
+import Projects from './Projects'
 import Bubble from './components/Bubble'
-import CaseStudyTemplate from './components/CaseStudyTemplate'
 import Gotit from './case-study/uiux/gotit'
 
 const Home = () => (
@@ -50,9 +50,10 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
+      <Route path="/projects" element={<Projects />} />
       <Route path="/qooked" element={<Qooked />} />
       <Route path="/craft" element={<Craft />} />
-      <Route path="/case-study-template" element={<CaseStudyTemplate projectId="gotit" nextWork={{ title: "HealU", href: "/" }} />} />
+      <Route path="/case-study-template" element={<Gotit />} />
       <Route path="/case-studies/uiux/gotit" element={<Gotit />} />
     </Routes>
   )

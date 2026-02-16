@@ -24,6 +24,10 @@ import nodeIcon from './assets/about/tech/nodedotjs.svg'
 import vercelIcon from './assets/about/tech/vercel.svg'
 import vsCodeIcon from './assets/about/tech/visual-studio-code.svg'
 import cursorIcon from './assets/about/tech/cursor.svg'
+import slackIcon from './assets/about/comm/slack.svg'
+import discordIcon from './assets/about/comm/discord.svg'
+import googleIcon from './assets/about/comm/google.svg'
+import jiraIcon from './assets/about/comm/jira.svg'
 
 const MONTHS = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, July: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11 }
 
@@ -108,6 +112,14 @@ const techStack = [
   { label: 'Vercel', badge: 'Ve', icon: vercelIcon },
   { label: 'Visual Studio Code', badge: 'Vs', icon: vsCodeIcon },
   { label: 'CursorAI', badge: 'Cu', icon: cursorIcon },
+]
+
+/* แก้ไขข้อมูล My Communication Tools ได้ที่นี่ */
+const communicationTools = [
+  { label: 'Slack', badge: 'Sl', icon: slackIcon },
+  { label: 'Jira', badge: 'Ji', icon: jiraIcon },
+  { label: 'Discord', badge: 'Di', icon: discordIcon },
+  { label: 'Google Workspace', badge: 'Go', icon: googleIcon },
 ]
 
 const About = () => {
@@ -213,6 +225,30 @@ I'd love to hear from you.</h3>
           </div>
           <div className="about-pill-grid">
             {techStack.map((tool) => (
+              <article className="about-pill" key={tool.label}>
+                <span className="about-pill__icon" aria-hidden="true">
+                  {tool.icon ? (
+                    <img src={tool.icon} alt="" className="about-pill__icon-img" />
+                  ) : (
+                    tool.badge
+                  )}
+                </span>
+                <span className="about-pill__label">{tool.label}</span>
+              </article>
+            ))}
+          </div>
+        </section>
+
+
+        <section className="about-section">
+          <div className="about-section__header">
+            <img src={logo} alt="" className="about-heading__icon" aria-hidden="true" />
+            <div className="about-heading">
+              <h2>My Communication Tools</h2>
+            </div>
+          </div>
+          <div className="about-pill-grid">
+            {communicationTools.map((tool) => (
               <article className="about-pill" key={tool.label}>
                 <span className="about-pill__icon" aria-hidden="true">
                   {tool.icon ? (

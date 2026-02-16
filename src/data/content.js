@@ -60,9 +60,16 @@ export const workBlocks = [
     items: [
       {
         id: 'qooked',
-        tags: ['Branding Designer', 'Product Designer'],
+        tags: ['Branding Designer', 'Graphic Designer'],
         name: 'Brunch Restaurant Menu Design for Qooked',
-        description: 'xxxxx',
+        description: 'need redone',
+        tone: 'yellow',
+      },
+      {
+        id: 'bacchuss',
+        tags: ['Branding Designer', 'Graphic Designer'],
+        name: 'Package Design for the japanese plum wine brand named Bacchuss',
+        description: 'need redone',
         tone: 'yellow',
       },
 

@@ -2,11 +2,20 @@ import { useState, useEffect } from 'react'
 import './CaseStudyToc.css'
 
 const slugFromItem = (item) => {
-  return item.toLowerCase().replace(/\s+/g, '-')
+  if (typeof item === 'object' && item?.id) return item.id
+  return String(item).toLowerCase().replace(/\s+/g, '-')
 }
 
-const CaseStudyToc = ({ title = 'Table of Contents', items = [] }) => {
+const labelFromItem = (item) => {
+  return typeof item === 'object' && item?.label ? item.label : String(item)
+}
+
+const CaseStudyToc = ({ title = 'Table of Contents', items = [], onActiveChange }) => {
   const [activeId, setActiveId] = useState(null)
+
+  useEffect(() => {
+    if (onActiveChange && activeId) onActiveChange(activeId)
+  }, [activeId, onActiveChange])
 
   const handleLinkClick = (e, id) => {
     e.preventDefault()
@@ -66,16 +75,17 @@ const CaseStudyToc = ({ title = 'Table of Contents', items = [] }) => {
       <ul>
         {items.map((item) => {
           const id = slugFromItem(item)
+          const label = labelFromItem(item)
           const isActive = activeId === id
           return (
-            <li key={item}>
+            <li key={id}>
               <a
                 href={`#${id}`}
                 className={`case-toc__link${isActive ? ' case-toc__link--active' : ''}`}
                 onClick={(e) => handleLinkClick(e, id)}
               >
                 <span className="case-toc__arrow" aria-hidden>→ </span>
-                {item}
+                {label}
               </a>
             </li>
           )
