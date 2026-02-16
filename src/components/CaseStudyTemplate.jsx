@@ -215,21 +215,33 @@ const CaseStudyTemplate = ({ projectId, content, nextWork, caseLogo }) => {
                 <h2>{problem.title}</h2>
               </div>
             </div>
-            <div className="case-template__challenge-grid">
-              {problem.items.map((item) => (
-                <article key={item.title}>
-                  {item.image && (
-                    <div className="case-template__challenge-image-wrap">
-                      <img src={item.image.src} alt={item.image.alt ?? ''} className="case-template__challenge-image" />
-                    </div>
-                  )}
-                  <h3>{item.title}</h3>
-                  <HtmlOrReact content={item.description} as="p" className="case-template__challenge-description" />
-                  {item.body && (
-                    <HtmlOrReact content={item.body} as="div" className="case-template__challenge-body" />
-                  )}
-                </article>
-              ))}
+            <div className="case-template__challenge-card">
+              {problem.intro && (
+                <div className="case-template__challenge-intro">
+                  <HtmlOrReact content={problem.intro} as="div" />
+                </div>
+              )}
+              <div className="case-template__challenge-grid">
+                {problem.items.map((item) => (
+                  <article key={item.title}>
+                    {item.image && (
+                      <div className="case-template__challenge-image-wrap">
+                        <img src={item.image.src} alt={item.image.alt ?? ''} className="case-template__challenge-image" />
+                      </div>
+                    )}
+                    <h3>{item.title}</h3>
+                    <HtmlOrReact content={item.description} as="p" className="case-template__challenge-description" />
+                    {item.body && (
+                      <HtmlOrReact content={item.body} as="div" className="case-template__challenge-body" />
+                    )}
+                  </article>
+                ))}
+              </div>
+              {problem.image && (
+                <div className="case-template__subsection-image">
+                  <img src={problem.image.src} alt={problem.image.alt ?? ''} />
+                </div>
+              )}
             </div>
           </section>
         )}
@@ -388,18 +400,18 @@ const CaseStudyTemplate = ({ projectId, content, nextWork, caseLogo }) => {
           </section>
         )}
 
-        {/* 08 — Outcomes & Impact */}
+        {/* 08 — Final Thoughts */}
         {outcomes && (
-          <section id="outcomes" className="case-template__section case-template__subsections">
+          <section id="final-thoughts" className="case-template__section case-template__final-thoughts">
             <div className="section-heading">
               <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
               <div className="section-heading__label">
-                <h2>Outcomes & Impact</h2>
+                <h2>Final Thoughts</h2>
               </div>
             </div>
-            <div className="case-template__subsections-list">
+            <div className="case-template__outcomes-card">
               {outcomes.subsections.map((sub) => (
-                <div key={sub.title} className="case-template__subsection">
+                <div key={sub.title} className="case-template__outcomes-item">
                   <h3>{sub.title}</h3>
                   <div className="case-template__subsection-body">
                     <HtmlOrReact content={sub.body} as="div" />

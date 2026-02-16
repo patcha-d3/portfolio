@@ -7,6 +7,7 @@ import visualLanguageImage from './gotit/visual.png'
 import projectManagementImage from './gotit/jira.png'
 import figmaIcon from '../../assets/about/design/figma.svg'
 import digitalProductDesignImage from './gotit/happypath.png'
+import personaImage from './gotit/persona.png'
 import TextHighlighter from '../../components/TextHilight'
 
 export const gotitContent = {
@@ -27,7 +28,7 @@ export const gotitContent = {
     { id: 'designing-experience', label: 'Designing the Experience' },
     { id: 'design-system', label: 'Product Design System' },
     { id: 'leadership', label: 'Project Leadership & Execution' },
-    { id: 'outcomes', label: 'Outcomes & Impact' },
+    { id: 'final-thoughts', label: 'Final Thoughts' },
   ],
 
   hero: {
@@ -108,31 +109,32 @@ export const gotitContent = {
 
   // 02 — The Problem
   problem: {
+    intro:
+      'User interviews revealed a clear pattern. Apprentices weren’t struggling because they lacked discipline — they were overwhelmed before they even began.<br /><br />Textbooks felt like a different language. Ten weeks moved too fast. Chapters piled up faster than they could process. For some, neurodiverse learning styles made dense, unstructured material even harder to navigate.',
+
     title: 'What Level 1 Electrical Apprentices in BC Face',
+    image: { src: personaImage, alt: 'User persona' },
     items: [
       {
-        image: { src: 'https://placehold.co/400x200?text=Challenge+1', alt: 'Overwhelmed by Volume' },
         title: 'Overwhelmed by Volume',
         description: '8 textbooks. Thousands of pages. Dense technical language.',
-        body: 'Level 1 electrical theory includes multiple textbooks totaling hundreds of pages, packed with unfamiliar terminology and minimal visual support.<br /><br />The challenge isn\'t intelligence.<br />It\'s cognitive overload.',
+        body: 'Level 1 electrical theory includes multiple textbooks totaling hundreds of pages, packed with unfamiliar terminology and minimal visual support.',
       },
       {
-        image: { src: 'https://placehold.co/400x200?text=Challenge+2', alt: 'Extreme Time Compression' },
+
         title: 'Extreme Time Compression',
         description: '10 weeks to absorb everything before taking the exam.',
-        body: 'That means:<br /><br />- Over 200 pages per week<br />- Continuous assessments<br />- No buffer to fall behind<br />- If someone misses even a few days, the backlog compounds immediately.<br /><br />There is no gradual catch-up curve.',
+        body: 'That means:<br /><br />- Over 200 pages per week<br />- Continuous assessments<br />- No buffer to fall behind<br />- If someone misses even a few days, the backlog compounds immediately.',
       },
       {
-        image: { src: 'https://placehold.co/400x200?text=Challenge+3', alt: 'Where Do I Even Start Paralysis' },
         title: '"Where Do I Even Start?" Paralysis',
         description: 'Lack of structure → Functional Freeze',
-        body: 'When faced with massive content and tight deadlines, many apprentices experience:<br /><br />- Difficulty prioritizing chapters<br />- No clear study roadmap<br />- Inability to break material into manageable parts<br />- Starting anxiety → avoidance → guilt cycle',
+        body: 'When faced with massive content and tight deadlines, many apprentices experience:<br /><br />- Difficulty prioritizing chapters<br />- No clear study roadmap<br />- Inability to break material into manageable parts',
       },
       {
-        image: { src: 'https://placehold.co/400x200?text=Challenge+4', alt: 'Neurodiversity & Learning Gaps' },
         title: 'Neurodiversity & Learning Gaps',
         description: 'ADHD, dyslexia, autism spectrum, or years out of formal education',
-        body: 'Many apprentices have ADHD, dyslexia, are on the autism spectrum, or haven\'t been in formal education for years. Traditional manuals assume high reading stamina, strong working memory, and fast information processing—yet dense paragraphs, abstract theory, and heavy jargon create cognitive friction instead of clarity. The system expects uniform learners, but the classroom is not uniform.',
+        body: 'Many apprentices have ADHD, dyslexia, or years out of formal education. Dense manuals assume strong reading stamina and fast processing—yet jargon and abstract theory create cognitive friction instead of clarity.',
       },
     ],
   },
@@ -252,15 +254,14 @@ export const gotitContent = {
     ],
   },
 
-  // 08 — Outcomes & Impact
+  // 08 — Final Thoughts
   outcomes: {
     subsections: [
       {
         title: 'What Worked',
         body: (
           <p>
-            The refined flow improved perceived clarity and reduced task completion time during
-            testing. Users reported higher motivation and confidence in daily use.
+            Assumption is not problem-solving. Strong design decisions came from user testing, not personal opinion. What may feel clear and intuitive during design can feel confusing or overwhelming to users. Iterative testing revealed blind spots early and ensured the product reduced friction instead of creating new learning curves.
           </p>
         ),
       },
@@ -268,18 +269,26 @@ export const gotitContent = {
         title: 'What I Learned',
         body: (
           <p>
-            This case study reinforced how thoughtful pacing and small UI cues can make habit-building
-            feel supportive rather than overwhelming.
+            This project strengthened more than just design execution.
+Project management became a daily practice — structuring sprints, facilitating discussions, and keeping momentum under pressure. Listening openly, mediating disagreements, and making timely decisions proved just as critical as wireframes or UI.
+<br /><br />Good products are built on clarity. Strong teams are built on trust and communication.
           </p>
         ),
       },
       {
         title: 'Skills Gained',
         body: (
-          <p>
-            UX flows, UI decisions, branding alignment, front-end implementation, agile facilitation,
-            stand-ups, planning sessions, sprint alignment, and cross-functional collaboration.
-          </p>
+          <ul>
+            <li>Agile project management and sprint planning</li>
+            <li>Cross-functional collaboration between design and development</li>
+            <li>Decision-making under scope and time constraints</li>
+            <li>Next.js application structure and routing</li>
+            <li>AI API integration and prompt refinement</li>
+            <li>Front-end implementation with React and CSS</li>
+            <li>User testing synthesis and iterative design improvements</li>
+            <li>Branding direction and merchandise design</li>
+            <li>Long-term product vision and roadmap development</li>
+          </ul>
         ),
       },
     ],
