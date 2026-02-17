@@ -40,7 +40,7 @@ const Hero = ({ serviceCards, Bubble }) => {
             >
               A <TextHighlighter className="text-highlight">Digital Product Designer</TextHighlighter> based in Vancouver, who designs cohesive digital
               products <TextHighlighter className="text-highlight">from brand foundations to user experience</TextHighlighter>, creating clean,
-              intuitive, and well-structured digital systems.
+              intuitive, and well-structured digital systems to your web and mobile applications.
             </h1>
             <div className="hero__folder-visual">
               <Folder width={360} height={260} variant={folderVariant} />
