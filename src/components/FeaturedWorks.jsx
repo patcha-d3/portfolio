@@ -3,7 +3,13 @@ import { Link } from "react-router-dom"
 import "./FeaturedWorks.css"
 import Button from "./Button"
 import gotitHero from "../case-study/uiux/gotit_hero.png"
+import uberThumbnail from "../case-study/motion/uber/banner.png"
 import logo from "../assets/logo.svg"
+
+const CARD_IMAGES = {
+  gotit: gotitHero,
+  uber: uberThumbnail,
+}
 
 const getLabelVariant = (cardLabel) => {
   if (!cardLabel) return "primary"
@@ -83,10 +89,10 @@ const FeaturedWorks = ({ workBlocks = [] }) => {
               </div>
               <div className="home-work-card__body">
                 <div className="home-work-card__image" aria-hidden="true">
-                  {item.id === "gotit" && (
+                  {CARD_IMAGES[item.id] && (
                     <img
-                      src={gotitHero}
-                      alt="Got It"
+                      src={CARD_IMAGES[item.id]}
+                      alt={item.name}
                       className="home-work-card__image-img"
                     />
                   )}

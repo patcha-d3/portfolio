@@ -84,7 +84,7 @@ export const workBlocks = [
       {
         id: 'uber',
         tags: ['Motion Designer'],
-        name: 'Motion design project for Uber',
+        name: 'Beat the Clock with Uber',
         description: '',
         tone: 'green',
         link: '/case-studies/motion/uber',
