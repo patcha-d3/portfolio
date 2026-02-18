@@ -52,7 +52,8 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-.case-template__hero-banner img {
+.case-template__hero-banner img,
+.case-template__hero-banner video {
   width: 100%;
   height: 100%;
   display: block;
@@ -121,7 +122,7 @@
   border-top: 1px solid #d8d8d8;
 }
 
-/* Title header: case study logo placeholder + h2 */
+/* Title header */
 .case-template__title-header {
   display: flex;
   flex-direction: column;
@@ -129,25 +130,6 @@
   justify-content: center;
   gap: 12px;
   margin-top: 8px;
-}
-
-.case-template__case-logo {
-  width: 64px;
-  height: 64px;
-  flex-shrink: 0;
-  background: #f2f2f0;
-  border: 1px solid var(--border-color-default);
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.case-template__case-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 
 /* Project title heading – pill style like About */
@@ -233,6 +215,20 @@
 .case-template__overview {
   display: grid;
   gap: 24px;
+}
+
+.case-template__design-process-body {
+  line-height: 1.6;
+}
+
+.case-template__design-process-body p,
+.case-template__design-process-body ul {
+  margin: 0 0 12px;
+}
+
+.case-template__design-process-body p:last-child,
+.case-template__design-process-body ul:last-child {
+  margin-bottom: 0;
 }
 
 .case-template__summary {
@@ -372,6 +368,103 @@ height: 100%;
     max-width: 100%;
       border: 1px 0 0 0 solid #e5e5e583;
   }
+}
+
+/* Storyboard section: flex column layout */
+.case-template__storyboard {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.case-template__storyboard-images {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 32px;
+    padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.case-template__storyboard-images .case-template__subsection-image {
+  flex: 1;
+  min-width: 0;
+  margin-top: 0;
+    padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* Workflow cards */
+.case-template__workflow-cards {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.case-template__workflow-card {
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.5s ease, border-color 0.3s ease;
+  color: #121212;
+}
+
+.case-template__workflow-card:hover {
+  box-shadow: 0 6px 20px rgba(94, 169, 255, 0.25);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.case-template__workflow-card-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px 12px;
+  align-items: flex-start;
+}
+
+.case-template__workflow-card-number {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #121212;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 99px;
+}
+
+.case-template__workflow-card-content {
+  min-width: 0;
+}
+
+.case-template__workflow-card h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #121212;
+}
+
+.case-template__workflow-card-description {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.75);
+  line-height: 1.5;
 }
 
 .case-template__subsection-image {

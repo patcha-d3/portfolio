@@ -4,8 +4,13 @@ import "./CaseStudyTemplate.css"
 import Navigation from "./Navigation"
 import CaseStudyToc from "./CaseStudyToc"
 import Bubble from "./Bubble"
+import ImageZoom from "./ImageZoom"
+import AnimatedGradient from "./AnimatedGradient"
 import logo from "../assets/logo.svg"
 import { getWorkItemById } from "../data/content"
+
+/* Same colors as FluidGradient: #5EA9FF, #E0E1FF, #CAE3FF */
+const WORKFLOW_GRADIENT_COLORS = ['#5EA9FF', '#E0E1FF', '#CAE3FF']
 
 /** Renders string (with HTML) or React node. Use for content that may include <br />, <strong>, etc. */
 const HtmlOrReact = ({ content, as: Tag = 'div', className }) => {
@@ -16,7 +21,7 @@ const HtmlOrReact = ({ content, as: Tag = 'div', className }) => {
   return <Tag className={className}>{content}</Tag>
 }
 
-const CaseStudyTemplate = ({ projectId, content, nextWork, caseLogo }) => {
+const CaseStudyTemplate = ({ projectId, content, nextWork }) => {
   const workItem = projectId ? getWorkItemById(projectId) : null
   const titleHeading = content?.projectTitle ?? workItem?.name ?? "Case study"
   const [activeSectionId, setActiveSectionId] = useState(null)
@@ -39,6 +44,9 @@ const CaseStudyTemplate = ({ projectId, content, nextWork, caseLogo }) => {
     category,
     skills,
     context,
+    storyboard,
+    designProcess,
+    workflow,
     problem,
     definingOpportunity,
     howWeSolvedIt,
@@ -76,22 +84,32 @@ const CaseStudyTemplate = ({ projectId, content, nextWork, caseLogo }) => {
       <CaseStudyToc items={tocItems} onActiveChange={setActiveSectionId} />
 
       <header className="case-template__hero-banner" aria-label="Case study hero">
-        <span className="case-template__hero-label">Featured Work</span>
-        <img
-          src={hero.image}
-          alt={hero.alt}
-          width={1200}
-          height={640}
-        />
+        {hero.video ? (
+          <video
+            src={hero.video}
+            poster={hero.image}
+            controls
+            controlsList="nodownload"
+            playsInline
+            onContextMenu={(e) => e.preventDefault()}
+            width={1200}
+            height={640}
+            aria-label={hero.alt}
+          />
+        ) : (
+          <img
+            src={hero.image}
+            alt={hero.alt}
+            width={1200}
+            height={640}
+          />
+        )}
       </header>
 
       <div className="case-template__title-strip" aria-label="Project title">
         <p className="case-template__title-category">{category}</p>
         <hr className="case-template__title-divider" />
         <div className="case-template__title-header">
-          <div className="case-template__case-logo" aria-hidden="true">
-            {caseLogo ? <img src={caseLogo} alt="" /> : null}
-          </div>
           <div className="case-template__title-heading-wrap">
             <h2 className="case-template__title-heading">{titleHeading}</h2>
           </div>
@@ -203,6 +221,87 @@ const CaseStudyTemplate = ({ projectId, content, nextWork, caseLogo }) => {
               </div>
               </div>
             )}
+          </section>
+        )}
+
+        {/* 01b — Workflow */}
+        {workflow && (
+          <section id="workflow" className="case-template__section case-template__workflow">
+            <div className="section-heading">
+              <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+              <div className="section-heading__label">
+                <h2>Workflow</h2>
+              </div>
+            </div>
+            <div className="case-template__workflow-cards">
+              <AnimatedGradient
+                colors={WORKFLOW_GRADIENT_COLORS}
+                speed={12}
+                flow
+                blur="medium"
+              />
+              {workflow.steps.map((step) => (
+                <article key={step.number} className="case-template__workflow-card">
+                  <div className="case-template__workflow-card-inner">
+                    <span className="case-template__workflow-card-number">{step.number}</span>
+                    <div className="case-template__workflow-card-content">
+                      <h3>{step.title}</h3>
+                      {step.description && (
+                        <p className="case-template__workflow-card-description">{step.description}</p>
+                      )}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* 01c — Storyboard */}
+        {storyboard && (
+          <section id="storyboard" className="case-template__section case-template__storyboard">
+            <div className="section-heading">
+              <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+              <div className="section-heading__label">
+                <h2>Storyboard</h2>
+              </div>
+            </div>
+            <div className="case-template__defining-card-wrap">
+              <div className="case-template__design-process-body">
+                <HtmlOrReact content={storyboard.body} as="div" />
+              </div>
+              <div className="case-template__storyboard-images">
+                {storyboard.images?.map((img, i) => (
+                  <div key={i} className="case-template__subsection-image">
+                    <ImageZoom src={img.src} alt={img.alt ?? ''}>
+                      <img src={img.src} alt={img.alt ?? ''} />
+                    </ImageZoom>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* 01d — Design Process */}
+        {designProcess && (
+          <section id="design-process" className="case-template__section case-template__design-process">
+            <div className="section-heading">
+              <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+              <div className="section-heading__label">
+                <h2>Design Process</h2>
+              </div>
+            </div>
+            <div className="case-template__defining-card-wrap">
+              <div className="case-template__design-process-body">
+                <HtmlOrReact content={designProcess.body} as="div" />
+              </div>
+              {designProcess.image && (
+                <div className="case-template__subsection-image">
+                  <img src={designProcess.image.src} alt={designProcess.image.alt ?? ''} />
+                </div>
+              )}
+            </div>
           </section>
         )}
 

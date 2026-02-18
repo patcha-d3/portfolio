@@ -80,7 +80,16 @@ export const workBlocks = [
     title: 'Motion Graphics Projects',
     tabLabel: 'Motion Graphics',
     cardLabel: 'Motion Design',
-    items: [],
+    items: [
+      {
+        id: 'uber',
+        tags: ['Motion Designer'],
+        name: 'Motion design project for Uber',
+        description: '',
+        tone: 'green',
+        link: '/case-studies/motion/uber',
+      },
+    ],
   },
 ]
 

@@ -11,6 +11,7 @@ import About from './About'
 import Projects from './Projects'
 import Bubble from './components/Bubble'
 import Gotit from './case-study/uiux/gotit'
+import Uber from './case-study/motion/uber'
 
 const Home = () => (
     <div className="page" id="home">
@@ -55,6 +56,7 @@ const App = () => {
       <Route path="/craft" element={<Craft />} />
       <Route path="/case-study-template" element={<Gotit />} />
       <Route path="/case-studies/uiux/gotit" element={<Gotit />} />
+      <Route path="/case-studies/motion/uber" element={<Uber />} />
     </Routes>
   )
 }
