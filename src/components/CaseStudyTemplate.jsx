@@ -47,6 +47,7 @@ const CaseStudyTemplate = ({ projectId, content, nextWork }) => {
     storyboard,
     designProcess,
     workflow,
+    preDesign,
     problem,
     definingOpportunity,
     howWeSolvedIt,
@@ -257,6 +258,46 @@ const CaseStudyTemplate = ({ projectId, content, nextWork }) => {
           </section>
         )}
 
+        {/* Pre-Design (custom subsections) */}
+        {preDesign && (
+          <section id="pre-design" className="case-template__section case-template__subsections">
+            <div className="section-heading">
+              <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+              <div className="section-heading__label">
+                <h2>Pre-Design</h2>
+              </div>
+            </div>
+            <div className="case-template__subsections-list">
+              {preDesign.subsections.map((sub) => (
+                <div key={sub.title} className="case-template__subsection">
+                  <h3>{sub.title}</h3>
+                  <div className="case-template__subsection-body">
+                    <HtmlOrReact content={sub.body} as="div" />
+                  </div>
+                  {sub.image && (
+                    sub.image.label ? (
+                      <div className="case-template__image-box">
+                        <span className="case-template__image-box-label">{sub.image.label}</span>
+                        <div className="case-template__subsection-image">
+                          <ImageZoom src={sub.image.src} alt={sub.image.alt ?? ''}>
+                            <img src={sub.image.src} alt={sub.image.alt ?? ''} />
+                          </ImageZoom>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="case-template__subsection-image">
+                        <ImageZoom src={sub.image.src} alt={sub.image.alt ?? ''}>
+                          <img src={sub.image.src} alt={sub.image.alt ?? ''} />
+                        </ImageZoom>
+                      </div>
+                    )
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* 01c — Storyboard */}
         {storyboard && (
           <section id="storyboard" className="case-template__section case-template__storyboard">
@@ -292,56 +333,217 @@ const CaseStudyTemplate = ({ projectId, content, nextWork }) => {
                 <h2>Design Process</h2>
               </div>
             </div>
-            <div className="case-template__defining-card-wrap">
-              <div className="case-template__design-process-body">
-                <HtmlOrReact content={designProcess.body} as="div" />
+            {designProcess.subsections ? (
+              <div className="case-template__subsections-list">
+                {designProcess.subsections.map((sub) => (
+                  <div key={sub.title} className="case-template__subsection">
+                    {(sub.layout === 'three-block' && sub.imageBefore && sub.body && sub.image) || (sub.layout === 'card' && sub.body) ? (
+                      <div className={`case-template__subsection-three-block${sub.layout === 'card' ? ` case-template__subsection-three-block--card${sub.image ? ' case-template__subsection-three-block--card-with-image' : ''}` : ''}`}>
+                        <h3>{sub.title}</h3>
+                        {sub.layout === 'three-block' && (
+                          <>
+                            <div className="case-template__subsection-block">
+                              <div className="case-template__subsection-image">
+                                <ImageZoom src={sub.imageBefore.src} alt={sub.imageBefore.alt ?? ''}>
+                                  <img src={sub.imageBefore.src} alt={sub.imageBefore.alt ?? ''} />
+                                </ImageZoom>
+                              </div>
+                            </div>
+                            <div className="case-template__subsection-block case-template__subsection-body">
+                              <HtmlOrReact content={sub.body} as="div" />
+                            </div>
+                            <div className="case-template__subsection-block">
+                              <div className="case-template__subsection-image">
+                                <ImageZoom src={sub.image.src} alt={sub.image.alt ?? ''}>
+                                  <img src={sub.image.src} alt={sub.image.alt ?? ''} />
+                                </ImageZoom>
+                              </div>
+                            </div>
+                          </>
+                        )}
+                        {sub.layout === 'card' && (
+                          <>
+                            <div className="case-template__subsection-block case-template__subsection-body">
+                              <HtmlOrReact content={sub.body} as="div" />
+                            </div>
+                            {sub.image && (
+                              <div className="case-template__subsection-block">
+                                <div className="case-template__subsection-image">
+                                  <ImageZoom src={sub.image.src} alt={sub.image.alt ?? ''}>
+                                    <img src={sub.image.src} alt={sub.image.alt ?? ''} />
+                                  </ImageZoom>
+                                </div>
+                              </div>
+                            )}
+                          </>
+                        )}
+                      </div>
+                    ) : (
+                      <>
+                        <h3>{sub.title}</h3>
+                        {sub.imageBefore && (
+                          sub.imageBefore.label ? (
+                            <div className="case-template__image-box">
+                              <span className="case-template__image-box-label">{sub.imageBefore.label}</span>
+                              <div className="case-template__subsection-image">
+                                <ImageZoom src={sub.imageBefore.src} alt={sub.imageBefore.alt ?? ''}>
+                                  <img src={sub.imageBefore.src} alt={sub.imageBefore.alt ?? ''} />
+                                </ImageZoom>
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="case-template__subsection-image">
+                              <ImageZoom src={sub.imageBefore.src} alt={sub.imageBefore.alt ?? ''}>
+                                <img src={sub.imageBefore.src} alt={sub.imageBefore.alt ?? ''} />
+                              </ImageZoom>
+                            </div>
+                          )
+                        )}
+                        <div className="case-template__subsection-body">
+                          <HtmlOrReact content={sub.body} as="div" />
+                        </div>
+                        {sub.image && (
+                          sub.image.label ? (
+                            <div className="case-template__image-box">
+                              <span className="case-template__image-box-label">{sub.image.label}</span>
+                              <div className="case-template__subsection-image">
+                                <ImageZoom src={sub.image.src} alt={sub.image.alt ?? ''}>
+                                  <img src={sub.image.src} alt={sub.image.alt ?? ''} />
+                                </ImageZoom>
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="case-template__subsection-image">
+                              <ImageZoom src={sub.image.src} alt={sub.image.alt ?? ''}>
+                                <img src={sub.image.src} alt={sub.image.alt ?? ''} />
+                              </ImageZoom>
+                            </div>
+                          )
+                        )}
+                      </>
+                    )}
+                  </div>
+                ))}
               </div>
-              {designProcess.image && (
-                <div className="case-template__subsection-image">
-                  <img src={designProcess.image.src} alt={designProcess.image.alt ?? ''} />
+            ) : (
+              <div className="case-template__defining-card-wrap">
+                <div className="case-template__design-process-body">
+                  <HtmlOrReact content={designProcess.body} as="div" />
                 </div>
-              )}
-            </div>
+                {designProcess.image && (
+                  <div className="case-template__subsection-image">
+                    <img src={designProcess.image.src} alt={designProcess.image.alt ?? ''} />
+                  </div>
+                )}
+              </div>
+            )}
           </section>
         )}
 
         {/* 02 — The Problem */}
         {problem && (
-          <section id="problem" className="case-template__section case-template__challenge">
+          <section id="problem" className={`case-template__section ${problem.subsections ? 'case-template__design-process' : 'case-template__challenge'}`}>
             <div className="section-heading">
               <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
               <div className="section-heading__label">
                 <h2>{problem.title}</h2>
               </div>
             </div>
-            <div className="case-template__challenge-card">
-              {problem.intro && (
-                <div className="case-template__challenge-intro">
-                  <HtmlOrReact content={problem.intro} as="div" />
-                </div>
-              )}
-              <div className="case-template__challenge-grid">
-                {problem.items.map((item) => (
-                  <article key={item.title}>
-                    {item.image && (
-                      <div className="case-template__challenge-image-wrap">
-                        <img src={item.image.src} alt={item.image.alt ?? ''} className="case-template__challenge-image" />
-                      </div>
-                    )}
-                    <h3>{item.title}</h3>
-                    <HtmlOrReact content={item.description} as="p" className="case-template__challenge-description" />
-                    {item.body && (
-                      <HtmlOrReact content={item.body} as="div" className="case-template__challenge-body" />
-                    )}
-                  </article>
-                ))}
+            {problem.subsections ? (
+              <div className="case-template__subsections-list">
+                  {problem.subsections.map((sub) => (
+                    <div key={sub.title} className="case-template__subsection">
+                      {(sub.layout === 'three-block' && sub.imageBefore && sub.body && sub.image) || (sub.layout === 'card' && sub.body) ? (
+                        <div className={`case-template__subsection-three-block${sub.layout === 'card' ? ` case-template__subsection-three-block--card${sub.image ? ' case-template__subsection-three-block--card-with-image' : ''}` : ''}`}>
+                          <h3>{sub.title}</h3>
+                          {sub.layout === 'three-block' && (
+                            <>
+                              <div className="case-template__subsection-block">
+                                <div className="case-template__subsection-image">
+                                  <ImageZoom src={sub.imageBefore.src} alt={sub.imageBefore.alt ?? ''}>
+                                    <img src={sub.imageBefore.src} alt={sub.imageBefore.alt ?? ''} />
+                                  </ImageZoom>
+                                </div>
+                              </div>
+                              <div className="case-template__subsection-block case-template__subsection-body">
+                                <HtmlOrReact content={sub.body} as="div" />
+                              </div>
+                              <div className="case-template__subsection-block">
+                                <div className="case-template__subsection-image">
+                                  <ImageZoom src={sub.image.src} alt={sub.image.alt ?? ''}>
+                                    <img src={sub.image.src} alt={sub.image.alt ?? ''} />
+                                  </ImageZoom>
+                                </div>
+                              </div>
+                            </>
+                          )}
+                          {sub.layout === 'card' && (
+                            <>
+                              <div className="case-template__subsection-block case-template__subsection-body">
+                                <HtmlOrReact content={sub.body} as="div" />
+                              </div>
+                              {sub.image && (
+                                <div className="case-template__subsection-block">
+                                  <div className="case-template__subsection-image">
+                                    <ImageZoom src={sub.image.src} alt={sub.image.alt ?? ''}>
+                                      <img src={sub.image.src} alt={sub.image.alt ?? ''} />
+                                    </ImageZoom>
+                                  </div>
+                                </div>
+                              )}
+                            </>
+                          )}
+                        </div>
+                      ) : (
+                        <>
+                          <h3>{sub.title}</h3>
+                          {sub.body && (
+                            <div className="case-template__subsection-body">
+                              <HtmlOrReact content={sub.body} as="div" />
+                            </div>
+                          )}
+                          {sub.image && (
+                            <div className="case-template__subsection-image">
+                              <ImageZoom src={sub.image.src} alt={sub.image.alt ?? ''}>
+                                <img src={sub.image.src} alt={sub.image.alt ?? ''} />
+                              </ImageZoom>
+                            </div>
+                          )}
+                        </>
+                      )}
+                    </div>
+                  ))}
               </div>
-              {problem.image && (
-                <div className="case-template__subsection-image">
-                  <img src={problem.image.src} alt={problem.image.alt ?? ''} />
-                </div>
-              )}
-            </div>
+            ) : (
+              <div className="case-template__challenge-card">
+                {problem.intro && (
+                    <div className="case-template__challenge-intro">
+                      <HtmlOrReact content={problem.intro} as="div" />
+                    </div>
+                  )}
+                  <div className="case-template__challenge-grid">
+                    {problem.items?.map((item) => (
+                      <article key={item.title}>
+                        {item.image && (
+                          <div className="case-template__challenge-image-wrap">
+                            <img src={item.image.src} alt={item.image.alt ?? ''} className="case-template__challenge-image" />
+                          </div>
+                        )}
+                        <h3>{item.title}</h3>
+                        <HtmlOrReact content={item.description} as="p" className="case-template__challenge-description" />
+                        {item.body && (
+                          <HtmlOrReact content={item.body} as="div" className="case-template__challenge-body" />
+                        )}
+                      </article>
+                    ))}
+                  </div>
+                {problem.image && (
+                  <div className="case-template__subsection-image">
+                    <img src={problem.image.src} alt={problem.image.alt ?? ''} />
+                  </div>
+                )}
+              </div>
+            )}
           </section>
         )}
 

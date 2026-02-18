@@ -3,7 +3,7 @@ import baoyauLogo from '../assets/clients/baoyau.svg'
 import karakedLogo from '../assets/clients/karaked shaded.svg'
 import upbitLogo from '../assets/clients/upbit.svg'
 import verifyvaspLogo from '../assets/clients/verifyvasp.svg'
-import qookedLogo from '../assets/clients/qooked.svg'
+
 
 export const serviceCards = [
   { title: 'UI/UX Design', tone: 'blue' },
@@ -17,7 +17,7 @@ export const clients = [
   { name: 'Upbit', logo: upbitLogo },
   { name: 'Bao Yau', logo: baoyauLogo },
   { name: 'VerifyVASP', logo: verifyvaspLogo },
-  { name: 'Qooked', logo: qookedLogo },
+
 ]
 
 export const workBlocks = [
@@ -64,6 +64,7 @@ export const workBlocks = [
         name: 'Brunch Restaurant Menu Design for Qooked',
         description: 'need redone',
         tone: 'yellow',
+        link: '/case-studies/graphics/qooked',
       },
       {
         id: 'bacchuss',

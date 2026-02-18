@@ -12,6 +12,7 @@ import Projects from './Projects'
 import Bubble from './components/Bubble'
 import Gotit from './case-study/uiux/gotit'
 import Uber from './case-study/motion/uber'
+import QookedCaseStudy from './case-study/graphics/qooked'
 
 const Home = () => (
     <div className="page" id="home">
@@ -29,7 +30,7 @@ const Home = () => (
           </div>
           <div className="home-clients__ticker" aria-label="Client logos">
             <div className="home-clients__row">
-              {[...clients, ...clients].map((client, index) => (
+              {clients.map((client, index) => (
                 <img
                   key={`${client.name}-${index}`}
                   className="home-clients__logo"
@@ -57,6 +58,7 @@ const App = () => {
       <Route path="/case-study-template" element={<Gotit />} />
       <Route path="/case-studies/uiux/gotit" element={<Gotit />} />
       <Route path="/case-studies/motion/uber" element={<Uber />} />
+      <Route path="/case-studies/graphics/qooked" element={<QookedCaseStudy />} />
     </Routes>
   )
 }

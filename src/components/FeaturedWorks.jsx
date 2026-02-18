@@ -4,11 +4,13 @@ import "./FeaturedWorks.css"
 import Button from "./Button"
 import gotitHero from "../case-study/uiux/gotit_hero.png"
 import uberThumbnail from "../case-study/motion/uber/banner.png"
+import qookedThumbnail from "../case-study/graphics/qooked/banner.png"
 import logo from "../assets/logo.svg"
 
 const CARD_IMAGES = {
   gotit: gotitHero,
   uber: uberThumbnail,
+  qooked: qookedThumbnail,
 }
 
 const getLabelVariant = (cardLabel) => {

@@ -116,11 +116,10 @@ h2 {
 
 .home-clients__row {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 32px;
-  width: max-content;
-  animation: clients-ticker 24s linear infinite;
 }
 
 .home-clients__logo {
@@ -128,22 +127,6 @@ h2 {
   width: auto;
   object-fit: contain;
   opacity: 0.8;
-}
-
-@keyframes clients-ticker {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .home-clients__row {
-    animation: none;
-    transform: none;
-  }
 }
 
 

@@ -484,6 +484,67 @@ height: 100%;
   object-fit: contain;
 }
 
+/* Labeled image box (e.g. Brand Direction style) */
+.case-template__image-box {
+  position: relative;
+  margin-top: 32px;
+  padding: 8px;
+  border: 1px solid #f5e6b0;
+  border-radius: 12px;
+  background: #f8f4ed;
+}
+
+.case-template__image-box-label {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #151515;
+  background: #f5e6b0;
+  border-radius: 6px;
+}
+
+.case-template__image-box .case-template__subsection-image {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+/* Three-block layout: card style like Pre-Design (section 3) */
+.case-template__subsection-three-block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 0;
+  padding: 48px 48px 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.case-template__subsection-three-block .case-template__subsection-block {
+  margin: 0;
+}
+
+.case-template__subsection-three-block .case-template__subsection-image {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.case-template__subsection-three-block--card {
+  padding-bottom: 48px;
+}
+
+/* Card with image: image flush with bottom like section 4 */
+.case-template__subsection-three-block--card-with-image {
+  padding-bottom: 0;
+}
+
 /* Defining the Opportunity */
 .case-template__defining-card-wrap {
   background: #ffffff;
