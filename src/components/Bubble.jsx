@@ -33,7 +33,7 @@ const Bubble = ({ children }) => {
         onMouseLeave={handleMouseLeave}
       >
         <Link to="/" aria-label="Go to home">
-          <img src={currentLogo} alt="Pat Sricome logo" />
+          <img key={currentLogo} src={currentLogo} alt="Pat Sricome logo" />
         </Link>
       </div>
       <span className="bubble" role="note" aria-label="Greeting bubble">

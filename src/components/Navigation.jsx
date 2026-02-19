@@ -6,6 +6,8 @@ import homeIcon from '../assets/nav/contact_home.svg'
 import linkedinIcon from '../assets/nav/contact_linkedin.svg'
 import resumeIcon from '../assets/nav/contact_resume.svg'
 import workIcon from '../assets/nav/contact_work.svg'
+import { trackEvent } from "../utils/analytics";
+
 
 const Navigation = () => {
   return (
@@ -47,7 +49,21 @@ const Navigation = () => {
           </Link>
         </div>
         <div className="nav__menu-group">
-          <a href="#resume" aria-label="Resume" title="Resume">
+          <a
+            href="/Pat Sricome_Resume2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Resume"
+            title="Resume"
+            download
+            onClick={() =>
+              trackEvent("resume_download", {
+                event_category: "engagement",
+                event_label: "Resume PDF",
+              })
+            
+          }
+          >
             <span
               className="nav__icon"
               aria-hidden="true"
@@ -62,6 +78,12 @@ const Navigation = () => {
             href="https://www.linkedin.com/in/patcharida-sricome/"
             aria-label="LinkedIn"
             title="LinkedIn"
+            onClick={() =>
+              trackEvent("linkedin_click", {
+                event_category: "outbound",
+                event_label: "LinkedIn Profile",
+              })
+            }
           >
             <span
               className="nav__icon"
