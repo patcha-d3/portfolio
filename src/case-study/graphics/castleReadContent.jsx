@@ -1,10 +1,14 @@
 import TextHighlighter from '../../components/TextHilight'
 import castleReadBanner from './castle-read/thumbnail.png'
+import concept02 from './castle-read/concept-02.svg'
+import concept03 from './castle-read/concept-03.svg'
+import concept04 from './castle-read/concept-04.svg'
+import logoConceptsImage from './castle-read/02_research.png'
 import brandDirectionImage from './castle-read/03_brand_direction.png'
-import visual1Image from './castle-read/04_visual1.png'
-import visual2Image from './castle-read/04_visual2.jpg'
+
+import visual2Image from './castle-read/04_visual2.png'
 import totebagImage from './castle-read/05.png'
-import outcomeImage from './castle-read/06_outcome.jpg'
+import outcomeImage from './castle-read/06_outcome.png'
 
 export const castleReadContent = {
   bubbleWelcome: (
@@ -81,9 +85,9 @@ export const castleReadContent = {
         body: (
           <p>
             The concept began with defining CastleRead as more than a bookstore, but a sanctuary built for immersive storytelling. Inspired by my love for spending time in bookstores, I elevated the challenge by shaping the brand around a castle theme to attract readers of fantasy, historical fiction, and epic period narratives. The goal was to establish a clear emotional direction rooted in imagination, timelessness, and quiet grandeur before moving into visual development.
-          </p>
+          <br/><br/></p>
         ),
-        image: { src: brandDirectionImage, alt: 'Brand exploration for CastleRead' },
+
       },
     ],
   },
@@ -94,14 +98,30 @@ export const castleReadContent = {
         title: '2. Logo Concept Development',
         layout: 'card',
         body: (
-          <p>
+          <>
+            <div className="logo-concept-cards">
+              <div className="logo-concept-cards__item">
+                <img src={concept02} alt="Logo concept 1: symmetry and top-down castle layout" />
+                <p>Symmetry and a top-down castle layout formed by repeated book shapes.</p>
+              </div>
+              <div className="logo-concept-cards__item">
+                <img src={concept03} alt="Logo concept 2: open book and castle silhouette (selected)" />
+                <p>Fluid curves from intersecting circles—an open book transforming into a castle silhouette.</p>
+              </div>
+              <div className="logo-concept-cards__item">
+                <img src={concept04} alt="Logo concept 3: isometric fortress and stacked books" />
+                <p>Isometric perspective connecting fortress architecture with stacked books.</p>
+              </div>
+            </div>
+            <p>
 Three distinct logo directions were explored to translate the CastleRead concept into visual form. Each concept combined the symbolism of books and castle architecture using simplified geometric shapes, while maintaining clarity in black and white.<br /><br />
 The first direction focused on symmetry and a top-down castle layout formed by repeated book shapes.<br/><TextHighlighter className="text-highlight">The second direction achieved its fluid curves through the intersection of multiple circles, creating smooth, organic lines that resemble an open book transforming into a castle silhouette.</TextHighlighter><br/> The third adopted an isometric perspective, emphasizing structure and repetition to connect fortress architecture with stacked books.<br /><br />
 From these explorations, the strongest direction was selected based on conceptual clarity, visual balance, and scalability.<br/><br/>
 Option two was selected <TextHighlighter className="text-highlight">because it most clearly communicates the image of an open book while still embedding recognizable castle architecture within the form, creating a balanced and immersive visual identity.</TextHighlighter> 
-          </p>
+            </p>
+          </>
         ),
-        image: { src: visual1Image, alt: 'CastleRead logo concepts' },
+        image: { src: logoConceptsImage, alt: 'CastleRead logo concepts' },
       },
       {
         title: '3. Poster Series Development',
