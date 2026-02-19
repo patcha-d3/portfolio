@@ -5,12 +5,8 @@ import Navigation from "./Navigation"
 import CaseStudyToc from "./CaseStudyToc"
 import Bubble from "./Bubble"
 import ImageZoom from "./ImageZoom"
-import AnimatedGradient from "./AnimatedGradient"
 import logo from "../assets/logo.svg"
 import { getWorkItemById } from "../data/content"
-
-/* Same colors as FluidGradient: #5EA9FF, #E0E1FF, #CAE3FF */
-const WORKFLOW_GRADIENT_COLORS = ['#5EA9FF', '#E0E1FF', '#CAE3FF']
 
 /** Renders string (with HTML) or React node. Use for content that may include <br />, <strong>, etc. */
 const HtmlOrReact = ({ content, as: Tag = 'div', className }) => {
@@ -235,12 +231,6 @@ const CaseStudyTemplate = ({ projectId, content, nextWork }) => {
               </div>
             </div>
             <div className="case-template__workflow-cards">
-              <AnimatedGradient
-                colors={WORKFLOW_GRADIENT_COLORS}
-                speed={12}
-                flow
-                blur="medium"
-              />
               {workflow.steps.map((step) => (
                 <article key={step.number} className="case-template__workflow-card">
                   <div className="case-template__workflow-card-inner">

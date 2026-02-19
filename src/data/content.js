@@ -35,22 +35,22 @@ export const workBlocks = [
         tone: 'dark',
         link: '/case-studies/uiux/gotit',
       },
-      {
-        id: 'healu',
-        tags: ['UI/UX Designer', 'Branding Designer'],
-        name: 'Reduced learning complexity for trades students by designing a structured, distraction-free AI study tool grounded in user feedback and fast, iterative prototyping',
-        description:
-          'under construction',
-        tone: 'blue',
-      },
-      {
-        id: 'verifyvasp',
-        tags: ['UI/UX Designer', 'Branding Designer'],
-        name: 'Improved usability and product clarity for a B2B compliance platform by simplifying site structure, refining navigation, and designing clear user flows in close collaboration with developers',
-        description:
-          'under construction',
-        tone: 'dark',
-      },
+      // {
+      //   id: 'healu',
+      //   tags: ['UI/UX Designer', 'Branding Designer'],
+      //   name: 'Reduced learning complexity for trades students by designing a structured, distraction-free AI study tool grounded in user feedback and fast, iterative prototyping',
+      //   description:
+      //     'under construction',
+      //   tone: 'blue',
+      // },
+      // {
+      //   id: 'verifyvasp',
+      //   tags: ['UI/UX Designer', 'Branding Designer'],
+      //   name: 'Improved usability and product clarity for a B2B compliance platform by simplifying site structure, refining navigation, and designing clear user flows in close collaboration with developers',
+      //   description:
+      //     'under construction',
+      //   tone: 'dark',
+      // },
     ],
   },
   {
@@ -74,13 +74,13 @@ export const workBlocks = [
         tone: 'yellow',
         link: '/case-studies/graphics/castleread',
       },
-      {
-        id: 'bacchuss',
-        tags: ['Branding Designer', 'Graphic Designer'],
-        name: 'Package Design for the japanese plum wine brand named Bacchuss',
-        description: 'under construction',
-        tone: 'yellow',
-      },
+      // {
+      //   id: 'bacchuss',
+      //   tags: ['Branding Designer', 'Graphic Designer'],
+      //   name: 'Package Design for the japanese plum wine brand named Bacchuss',
+      //   description: 'under construction',
+      //   tone: 'yellow',
+      // },
 
 
     ],

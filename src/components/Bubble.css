@@ -51,6 +51,6 @@
 
 
 .bubble__accent {
-  color: #3b5bff;
+  color: var(--color-secondary);
   font-weight: 700;
 }
