@@ -7,6 +7,11 @@ import Bubble from "./Bubble"
 import ImageZoom from "./ImageZoom"
 import logo from "../assets/logo.svg"
 import { getWorkItemById } from "../data/content"
+import logo2 from "../assets/head/logo-02.svg"
+import logo3 from "../assets/head/logo-03.svg"
+import logo4 from "../assets/head/logo-04.svg"
+import logo5 from "../assets/head/logo-05.svg"
+import logo6 from "../assets/head/logo-06.svg"
 
 /** Renders string (with HTML) or React node. Use for content that may include <br />, <strong>, etc. */
 const HtmlOrReact = ({ content, as: Tag = 'div', className }) => {
@@ -118,7 +123,7 @@ const CaseStudyTemplate = ({ projectId, content, prevWork, nextWork }) => {
           <section className="case-template__section" aria-label="Skills used">
             <div className="case-template__skills">
               <div className="section-heading">
-                <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+                <img src={logo2} alt="" className="section-heading__icon" aria-hidden="true" />
                 <div className="section-heading__label">
                   <h2 className="case-template__skills-heading">Skills used</h2>
                 </div>
@@ -145,7 +150,7 @@ const CaseStudyTemplate = ({ projectId, content, prevWork, nextWork }) => {
         {context && (
           <section id="context" className="case-template__section case-template__overview">
             <div className="section-heading">
-              <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+              <img src={logo4} alt="" className="section-heading__icon" aria-hidden="true" />
               <div className="section-heading__label">
                 <h2>Context</h2>
               </div>
@@ -225,7 +230,7 @@ const CaseStudyTemplate = ({ projectId, content, prevWork, nextWork }) => {
         {workflow && (
           <section id="workflow" className="case-template__section case-template__workflow">
             <div className="section-heading">
-              <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+              <img src={logo3} alt="" className="section-heading__icon" aria-hidden="true" />
               <div className="section-heading__label">
                 <h2>Workflow</h2>
               </div>
@@ -252,7 +257,7 @@ const CaseStudyTemplate = ({ projectId, content, prevWork, nextWork }) => {
         {preDesign && (
           <section id="pre-design" className="case-template__section case-template__subsections">
             <div className="section-heading">
-              <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+              <img src={logo5} alt="" className="section-heading__icon" aria-hidden="true" />
               <div className="section-heading__label">
                 <h2>Pre-Design</h2>
               </div>
@@ -318,7 +323,7 @@ const CaseStudyTemplate = ({ projectId, content, prevWork, nextWork }) => {
         {designProcess && (
           <section id="design-process" className="case-template__section case-template__design-process">
             <div className="section-heading">
-              <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+              <img src={logo6} alt="" className="section-heading__icon" aria-hidden="true" />
               <div className="section-heading__label">
                 <h2>Design Process</h2>
               </div>
@@ -645,7 +650,7 @@ const CaseStudyTemplate = ({ projectId, content, prevWork, nextWork }) => {
         {designSystem && (
           <section id="design-system" className="case-template__section case-template__subsections">
             <div className="section-heading">
-              <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+              <img src={logo5} alt="" className="section-heading__icon" aria-hidden="true" />
               <div className="section-heading__label">
                 <h2>Product Design System</h2>
               </div>
@@ -672,7 +677,7 @@ const CaseStudyTemplate = ({ projectId, content, prevWork, nextWork }) => {
         {leadership && (
           <section id="leadership" className="case-template__section case-template__subsections">
             <div className="section-heading">
-              <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+              <img src={logo4} alt="" className="section-heading__icon" aria-hidden="true" />
               <div className="section-heading__label">
                 <h2>Project Leadership & Execution</h2>
               </div>
@@ -720,7 +725,7 @@ const CaseStudyTemplate = ({ projectId, content, prevWork, nextWork }) => {
         {(prevWork || nextWork) && (
           <section className="case-template__section case-template__next-work">
             <div className="section-heading">
-              <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+              <img src={logo2} alt="" className="section-heading__icon" aria-hidden="true" />
               <div className="section-heading__label">
                 <h2>Explore more</h2>
               </div>
