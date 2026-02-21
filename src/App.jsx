@@ -14,6 +14,7 @@ import Gotit from './case-study/uiux/gotit'
 import Uber from './case-study/motion/uber'
 import QookedCaseStudy from './case-study/graphics/qooked'
 import CastleReadCaseStudy from './case-study/graphics/castleRead'
+import BacchussCaseStudy from './case-study/graphics/bacchuss'
 
 const Home = () => (
     <div className="page" id="home">
@@ -61,6 +62,7 @@ const App = () => {
       <Route path="/case-studies/motion/uber" element={<Uber />} />
       <Route path="/case-studies/graphics/qooked" element={<QookedCaseStudy />} />
       <Route path="/case-studies/graphics/castleread" element={<CastleReadCaseStudy />} />
+      <Route path="/case-studies/graphics/bacchuss" element={<BacchussCaseStudy />} />
     </Routes>
   )
 }

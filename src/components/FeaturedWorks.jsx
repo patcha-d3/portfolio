@@ -6,6 +6,7 @@ import gotitHero from "../case-study/uiux/gotit_hero.png"
 import uberThumbnail from "../case-study/motion/uber/banner.png"
 import qookedThumbnail from "../case-study/graphics/qooked/banner.png"
 import castleReadThumbnail from "../case-study/graphics/castle-read/thumbnail.png"
+import bacchussThumbnail from "../case-study/graphics/bacchuss/banner.png"
 import logo from "../assets/logo.svg"
 
 const CARD_IMAGES = {
@@ -13,6 +14,7 @@ const CARD_IMAGES = {
   uber: uberThumbnail,
   qooked: qookedThumbnail,
   castleread: castleReadThumbnail,
+  bacchuss: bacchussThumbnail,
 }
 
 const getLabelVariant = (cardLabel) => {

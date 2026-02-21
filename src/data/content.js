@@ -3,6 +3,8 @@ import baoyauLogo from '../assets/clients/baoyau.svg'
 import karakedLogo from '../assets/clients/karaked shaded.svg'
 import upbitLogo from '../assets/clients/upbit.svg'
 import verifyvaspLogo from '../assets/clients/verifyvasp.svg'
+import sipthesceneLogo from '../assets/clients/sip.svg'
+import karaked2Logo from '../assets/clients/karaked.svg'
 
 
 export const serviceCards = [
@@ -12,11 +14,13 @@ export const serviceCards = [
 ]
 
 export const clients = [
-  { name: '1st Street Garage', logo: streetGarageLogo },
-  { name: 'Karaked', logo: karakedLogo },
   { name: 'Upbit', logo: upbitLogo },
-  { name: 'Bao Yau', logo: baoyauLogo },
   { name: 'VerifyVASP', logo: verifyvaspLogo },
+  { name: '1st Street Garage', logo: streetGarageLogo },
+  { name: 'Sip the Scene', logo: sipthesceneLogo },
+  { name: 'Karaked2', logo: karaked2Logo },
+  { name: 'Karaked', logo: karakedLogo },
+  { name: 'Bao Yau', logo: baoyauLogo }
 
 ]
 
@@ -74,13 +78,14 @@ export const workBlocks = [
         tone: 'yellow',
         link: '/case-studies/graphics/castleread',
       },
-      // {
-      //   id: 'bacchuss',
-      //   tags: ['Branding Designer', 'Graphic Designer'],
-      //   name: 'Package Design for the japanese plum wine brand named Bacchuss',
-      //   description: 'under construction',
-      //   tone: 'yellow',
-      // },
+{
+   id: 'bacchuss',
+    tags: ['Branding Designer', 'Graphic Designer'],
+   name: 'Where Tradition Umeshu Meets a Modern Can Design',
+ description: 'Bacchuss transforms traditional Japanese plum wine into a bold, shelf-ready can design crafted for modern Canadian consumers and retail impact.',
+  tone: 'yellow',
+  link: '/case-studies/graphics/bacchuss',
+   },
 
 
     ],
