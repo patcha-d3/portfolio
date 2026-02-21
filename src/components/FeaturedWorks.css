@@ -82,7 +82,8 @@
 }
 
 .home-work-card__body:hover {
-  border: 1px solid var(--color-primary);
+  border: 0;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .home-work-card__label--primary {
@@ -115,7 +116,7 @@
   background: #ffffff;
   min-width: 1100px;
   max-width: 1000px;
-  min-height: 500px;
+  min-height: 320px;
   flex-wrap: wrap;
   wrap-content: true;
 }
@@ -238,6 +239,7 @@
     max-width: 100%;
     width: 100%;
     min-width: 0;
+    padding: 8px 0;
   }
 
   .home-work-card {
@@ -254,6 +256,7 @@
   .home-work-card__body {
     margin: auto;
     flex-direction: column;
+    min-height: 500px;
     flex-wrap: wrap;
     padding: 8px;
     max-width: 100%;
