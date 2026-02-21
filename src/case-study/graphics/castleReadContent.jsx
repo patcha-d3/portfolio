@@ -4,7 +4,6 @@ import concept02 from './castle-read/concept-02.svg'
 import concept03 from './castle-read/concept-03.svg'
 import concept04 from './castle-read/concept-04.svg'
 import logoConceptsImage from './castle-read/02_research.png'
-import brandDirectionImage from './castle-read/03_brand_direction.png'
 
 import visual2Image from './castle-read/04_visual2.png'
 import totebagImage from './castle-read/05.png'

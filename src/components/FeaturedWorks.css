@@ -113,8 +113,9 @@
   border-radius: 8px;
   border: 1px solid var(--border-color-default);
   background: #ffffff;
-  min-width: 1000px;
+  min-width: 1100px;
   max-width: 1000px;
+  min-height: 320px;
   flex-wrap: wrap;
   wrap-content: true;
 }
@@ -122,8 +123,8 @@
 .home-work-card__image {
   flex: 0 0 40%;
   width: 100%;
-  max-width: 320px;
-  height: 200px;
+  min-width: 480px;
+  height: 320px;
   min-height: 200px;
   border-radius: 4px;
   background: #f0f0f0;
@@ -145,13 +146,16 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-self: stretch;
+  justify-content: space-around;
+
+  gap: 0px;
   min-width: 0;
 }
 
 .home-work-card__meta {
   display: flex;
-  gap: 8px;
+  gap: 4px;
   font-size: 0.8rem;
 }
 
@@ -164,7 +168,8 @@
 
 .home-work-card__content h3 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 
 .home-work-card__content p {
