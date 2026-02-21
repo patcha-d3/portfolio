@@ -17,7 +17,7 @@ const HtmlOrReact = ({ content, as: Tag = 'div', className }) => {
   return <Tag className={className}>{content}</Tag>
 }
 
-const CaseStudyTemplate = ({ projectId, content, nextWork }) => {
+const CaseStudyTemplate = ({ projectId, content, prevWork, nextWork }) => {
   const workItem = projectId ? getWorkItemById(projectId) : null
   const titleHeading = content?.projectTitle ?? workItem?.name ?? "Case study"
   const [activeSectionId, setActiveSectionId] = useState(null)
@@ -717,19 +717,38 @@ const CaseStudyTemplate = ({ projectId, content, nextWork }) => {
           </section>
         )}
 
-        {nextWork && (
+        {(prevWork || nextWork) && (
           <section className="case-template__section case-template__next-work">
             <div className="section-heading">
               <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
               <div className="section-heading__label">
-                <h2>Next Case Study</h2>
+                <h2>Explore more</h2>
               </div>
             </div>
-            <Link to={nextWork.href} className="case-template__next-work-link">
-              <span className="case-template__next-work-label">Next project</span>
-              <span className="case-template__next-work-title">{nextWork.title}</span>
-              <span className="case-template__next-work-arrow" aria-hidden="true">→</span>
-            </Link>
+            <div className="case-template__nav-links">
+              <div className="case-template__nav-link-col">
+                <span className="case-template__nav-link-label">Previous Read</span>
+                {prevWork ? (
+                  <Link to={prevWork.href} className="case-template__nav-link">
+                    <span className="case-template__nav-link-arrow" aria-hidden="true">←</span>
+                    <span className="case-template__nav-link-title">{prevWork.title}</span>
+                  </Link>
+                ) : (
+                  <span className="case-template__nav-link case-template__nav-link--disabled">—</span>
+                )}
+              </div>
+              <div className="case-template__nav-link-col">
+                <span className="case-template__nav-link-label">Next Work</span>
+                {nextWork ? (
+                  <Link to={nextWork.href} className="case-template__nav-link">
+                    <span className="case-template__nav-link-title">{nextWork.title}</span>
+                    <span className="case-template__nav-link-arrow" aria-hidden="true">→</span>
+                  </Link>
+                ) : (
+                  <span className="case-template__nav-link case-template__nav-link--disabled">—</span>
+                )}
+              </div>
+            </div>
           </section>
         )}
       </main>

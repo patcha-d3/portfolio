@@ -6,6 +6,7 @@ const BacchussCaseStudy = () => (
   <CaseStudyTemplate
     projectId="bacchuss"
     content={bacchussContent}
+    prevWork={{ title: "CastleRead", href: "/case-studies/graphics/castleread" }}
     nextWork={{ title: "Qooked", href: "/case-studies/graphics/qooked" }}
   />
 )

@@ -5,7 +5,7 @@ const QookedCaseStudy = () => (
   <CaseStudyTemplate
     projectId="qooked"
     content={qookedContent}
-    nextWork={{ title: "Bacchuss", href: "/" }}
+    nextWork={{ title: "CastleRead", href: "/case-studies/graphics/castleread" }}
   />
 )
 
