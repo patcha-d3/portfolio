@@ -15,7 +15,7 @@ export const bacchussContent = {
     </>
   ),
 
-  projectTitle: 'Brunch Restaurant Menu Design for Bacchuss',
+  projectTitle: 'Where Tradition Umeshu Meets a Modern Can Design',
 
   tocItems: [
     { id: 'context', label: 'Context' },
