@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Navigation from './components/Navigation'
@@ -50,6 +51,12 @@ const Home = () => (
   )
 
 const App = () => {
+  useEffect(() => {
+    const preventContextMenu = (e) => e.preventDefault()
+    document.addEventListener('contextmenu', preventContextMenu)
+    return () => document.removeEventListener('contextmenu', preventContextMenu)
+  }, [])
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />
