@@ -12,7 +12,7 @@ export const uberContent = {
   ),
 
   projectTitle:
-    'Beat the Clock with Uber',
+    'Late for Class? How Uber Beats the Clock',
 
   tocItems: [
     { id: 'context', label: 'Context' },
@@ -46,7 +46,7 @@ export const uberContent = {
     overview: {
       summary: (
       <p>
-        This midterm project <TextHighlighter className="text-highlight">focuses on creating a 1-minute motion graphics video that explains how to use a service</TextHighlighter>. The concept demonstrates how to use Uber through a simple and relatable story. The narrative follows a female student who wakes up late and needs to commute to BCIT. Instead of taking the bus, which would take too long, she chooses Uber to arrive at school on time.
+        This project <TextHighlighter className="text-highlight">focuses on creating a 1-minute motion graphics video that explains how to use a service</TextHighlighter>. The concept demonstrates how to use Uber through a simple and relatable story. The narrative follows a female student who wakes up late and needs to commute to BCIT. Instead of taking the bus, which would take too long, she chooses Uber to arrive at school on time.
       </p>
     ),
       meta: [

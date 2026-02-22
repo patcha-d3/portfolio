@@ -1091,9 +1091,14 @@ height: 100%;
     margin: 64px auto 0;
   }
 
-  .case-template__meta {
+  .case-template__workflow-cards {
     flex-direction: column;
-    align-items: center;
+    display: flex;
+  }
+
+  .case-template__meta {
+    flex-direction: row;
+    align-items: start;
     gap: 24px;
   }
 
