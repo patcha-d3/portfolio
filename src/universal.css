@@ -3,6 +3,7 @@
   --color-primary: #b3d7ee;
   --color-secondary: #3351a2;
   --color-tertiary: #c2572f;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 body {

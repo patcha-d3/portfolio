@@ -226,11 +226,16 @@ const CaseStudyTemplate = ({ projectId, content, prevWork, nextWork }) => {
             )}
 
             {context.whyThisMatters && (
-              <div className="case-template__subsection">
-                <h3>Why This Matters</h3>
-                <div className="case-template__subsection-body">
-                <HtmlOrReact content={context.whyThisMatters.content} as="div" />
-              </div>
+              <div className="case-template__why-this-matters">
+                <div className="section-heading">
+                  <img src={logo4} alt="" className="section-heading__icon" aria-hidden="true" />
+                  <div className="section-heading__label">
+                    <h2>Why This Matters</h2>
+                  </div>
+                </div>
+                <div className="case-template__summary">
+                  <HtmlOrReact content={context.whyThisMatters.content} as="div" className="case-template__subsection-body" />
+                </div>
               </div>
             )}
           </section>

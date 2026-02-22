@@ -83,10 +83,10 @@ export const gotitContent = {
     targetUsers: {
       content: (
         <>
-          <p>Electrical apprentices, trades students, and underrepresented learners.</p>
-          <p>
-          Level 1 Electrical Apprentices in British Columbia, particularly those who struggle with dense technical manuals, time pressure, or diverse learning styles such as ADHD, dyslexia, or returning adult learners.
-          </p>
+          <p>Level 1 Electrical Apprentices in BC,</p>
+          <p>Underrepresented learners</p>
+
+          
         </>
       ),
     },

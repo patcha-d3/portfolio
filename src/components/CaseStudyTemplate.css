@@ -256,6 +256,15 @@
   margin-bottom: 0;
 }
 
+/* Why This Matters: หัวข้อ + โลโก้ + การ์ด (เหมือน Problem section) */
+.case-template__why-this-matters {
+  margin-top: 48px;
+}
+
+.case-template__why-this-matters .case-template__summary {
+  margin-top: 16px;
+}
+
 /* Meta stacked: label + value แยกกัน, มีเส้นคั่น */
 .case-template__meta--stacked {
   display: flex;
@@ -297,7 +306,6 @@
 .case-template__design-process-body p,
 .case-template__design-process-body ul {
   margin: 0 0 12px;
-  line-height: 1.6;
 }
 
 .case-template__design-process-body p:last-child,
@@ -310,6 +318,7 @@
   border: 1px solid #e4e4e4;
   padding: 48px;
   border-radius: 16px;
+  box-shadow: var(--card-shadow);
 }
 
 .case-template__summary h3 {
@@ -361,6 +370,7 @@
   background: #fff;
   border: 1px solid #e5e5e5;
   border-radius: 16px;
+  box-shadow: var(--card-shadow);
 }
 
 /* Logo concept cards: 3-column flex within subsection body */
@@ -412,7 +422,7 @@
   border: 1px solid #e5e5e5;
   border-radius: 16px;
   padding: 48px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--card-shadow);
 }
 
 .case-template__outcomes-item {
@@ -648,6 +658,7 @@ height: 100%;
   border: 1px solid #e5e5e5;
   border-radius: 16px;
   background: #fff;
+  box-shadow: var(--card-shadow);
 }
 
 .case-template__subsection-three-block .case-template__subsection-block {
@@ -676,7 +687,7 @@ height: 100%;
   border: 1px solid #e5e5e5;
   border-radius: 16px;
   padding: 48px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--card-shadow);
 }
 
 .case-template__defining-opportunity .case-template__defining-intro {
@@ -694,6 +705,7 @@ height: 100%;
   gap: 16px;
 }
 
+/* การ์ดย่อย (Design Principles, Product Direction, Success Criteria) – อยู่ในการ์ด ไม่ใช้ shadow กลาง */
 .case-template__defining-card {
   flex: 1 1 0;
   min-width: 0;
@@ -920,7 +932,7 @@ height: 100%;
   border: 1px solid #e5e5e5;
   border-radius: 14px;
   padding: 48px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--card-shadow);
 }
 
 .case-template__challenge-intro {
@@ -985,7 +997,7 @@ height: 100%;
   border-radius: 16px;
   padding: 48px;
   border: 1px solid #e5e5e5;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--card-shadow);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
@@ -998,7 +1010,7 @@ height: 100%;
 }
 
 .case-template__bento-grid .case-template__bento-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 .case-template__bento-card--large {
