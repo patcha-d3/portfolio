@@ -213,8 +213,81 @@
 }
 
 .case-template__overview {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
+}
+
+/* Two-column: ซ้าย = meta + target users, ขวา = overview */
+.case-template__overview-row {
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+  align-items: flex-start;
+  margin-top: 16px;
+  padding: 24px 0;
+}
+
+.case-template__overview-left {
+  flex: 0 0 280px;
+  min-width: 220px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  text-align: left;
+}
+
+.case-template__overview-right {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+
+}
+
+.case-template__overview-right h3 {
+  margin: 0 0 12px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.case-template__subsection--overview {
+  margin-bottom: 0;
+}
+
+/* Meta stacked: label + value แยกกัน, มีเส้นคั่น */
+.case-template__meta--stacked {
+  display: flex;
+  flex-direction: column;
+
+  text-align: left;
+  gap: 0;
+}
+
+.case-template__meta--stacked .case-template__meta-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 4px;
+  padding: 12px 100px 12px 0;
+  border-bottom: 1px solid #c1c1c1;
+  text-align: left;
+}
+
+.case-template__meta--stacked .case-template__meta-item:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .case-template__overview-row {
+    flex-direction: column;
+  }
+
+  .case-template__overview-left {
+    max-width: none;
+  }
 }
 
 .case-template__design-process-body {
@@ -224,6 +297,7 @@
 .case-template__design-process-body p,
 .case-template__design-process-body ul {
   margin: 0 0 12px;
+  line-height: 1.6;
 }
 
 .case-template__design-process-body p:last-child,
@@ -236,6 +310,12 @@
   border: 1px solid #e4e4e4;
   padding: 48px;
   border-radius: 16px;
+}
+
+.case-template__summary h3 {
+  margin: 0 0 12px;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
 /* Subsections (e.g. Context, Defining Opportunity, Design System) */
@@ -662,15 +742,6 @@ height: 100%;
   margin-bottom: 0;
 }
 
-/* Two-column row: meta (left) + accomplished/role (right) */
-.case-template__overview-row {
-  display: grid;
-  grid-template-columns: minmax(220px, 300px) 1fr;
-  gap: 64px;
-  align-items: start;
-  padding: 24px 0;
-}
-
 .case-template__meta {
   display: flex;
   flex-direction: row;
@@ -678,12 +749,28 @@ height: 100%;
   gap: 56px;
 }
 
+.case-template__meta.case-template__meta--stacked {
+  flex-direction: column;
+  gap: 0;
+}
+
 .case-template__meta > div {
   background: transparent;
   padding: 0;
   border-radius: 0;
   border: none;
-  margin: 0 auto;
+  margin: 0;
+}
+
+.case-template__meta--stacked h4,
+.case-template__meta--stacked p,
+.case-template__meta--stacked .case-template__meta-value,
+.case-template__meta--stacked .case-template__meta-value p {
+  text-align: left;
+}
+
+.case-template__meta--stacked .case-template__meta-value p {
+  margin: 0;
 }
 
 .case-template__meta h4 {
@@ -706,6 +793,7 @@ height: 100%;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  align-items: flex-start;
 }
 
 .case-template__meta-link {
@@ -1112,7 +1200,7 @@ height: 100%;
   }
 
   .case-template__overview-row {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
   .case-template__section h2 {

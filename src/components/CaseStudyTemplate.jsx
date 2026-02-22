@@ -157,21 +157,23 @@ const CaseStudyTemplate = ({ projectId, content, prevWork, nextWork }) => {
             </div>
 
             {context.overview && (
-              <>
-                <div className="case-template__subsection">
-                  <h3>Overview</h3>
-                  <div className="case-template__summary">
-                    <HtmlOrReact content={context.overview.summary} as="div" />
-                  </div>
-                  <div className="case-template__meta">
+              <div className="case-template__overview-row">
+                <div className="case-template__overview-left">
+                  <div className="case-template__meta case-template__meta--stacked">
                     {context.overview.meta.map((item) => (
-                      <div key={item.label}>
+                      <div key={item.label} className="case-template__meta-item">
                         <h4>{item.label}</h4>
                         <HtmlOrReact content={item.value} as="p" />
                       </div>
                     ))}
+                    {context.targetUsers && (
+                      <div className="case-template__meta-item">
+                        <h4>Target Users</h4>
+                        <HtmlOrReact content={context.targetUsers.content} as="div" className="case-template__meta-value" />
+                      </div>
+                    )}
                     {context.overview.metaLinks && context.overview.metaLinks.length > 0 && (
-                      <div>
+                      <div className="case-template__meta-item">
                         <h4>Live</h4>
                         <div className="case-template__meta-links">
                           {context.overview.metaLinks.map((link) => (
@@ -203,15 +205,23 @@ const CaseStudyTemplate = ({ projectId, content, prevWork, nextWork }) => {
                     )}
                   </div>
                 </div>
-              </>
+                <div className="case-template__overview-right">
+                  <div className="case-template__summary">
+                    <h3>Overview</h3>
+                    <div className="case-template__subsection-body">
+                      <HtmlOrReact content={context.overview.summary} as="div" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             )}
 
-            {context.targetUsers && (
+            {context.targetUsers && !context.overview && (
               <div className="case-template__subsection">
                 <h3>Target Users</h3>
                 <div className="case-template__subsection-body">
-                <HtmlOrReact content={context.targetUsers.content} as="div" />
-              </div>
+                  <HtmlOrReact content={context.targetUsers.content} as="div" />
+                </div>
               </div>
             )}
 
