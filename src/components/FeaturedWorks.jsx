@@ -66,6 +66,9 @@ const FeaturedWorks = ({ workBlocks = [] }) => {
             <h2>Featured Works</h2>
           </div>
         </div>
+        <div className="home-works__subtitle">
+          <h3>This is a collection of professional and academic projects that I’m proud to present.</h3>
+        </div>
         <div className="home-works__tabs" role="tablist" aria-label="Work categories">
           {tabs.map((tab, index) => (
             <button

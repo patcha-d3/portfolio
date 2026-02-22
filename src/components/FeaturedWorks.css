@@ -11,6 +11,19 @@
   justify-items: center;
 }
 
+.home-works__subtitle {
+  margin-top: 4px;
+}
+
+.home-works__subtitle h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  margin-bottom: 48px;
+  font-weight: 400;
+  color: #4f4f4f;
+  text-align: center;
+}
+
 .home-works__tabs {
   display: inline-flex;
   gap: 8px;
@@ -246,6 +259,8 @@
     min-width: 0;
     padding: 8px 0;
   }
+
+
 
   .home-work-card {
     display: flex;
