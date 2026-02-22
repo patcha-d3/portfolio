@@ -126,6 +126,18 @@ export const qookedContent = {
             <p>
               All elements are proofread carefully to eliminate errors and ensure the final menu is polished, cohesive, and aligned with the intended brand personality.
             </p>
+            <div className="qooked-flipbook">
+              <iframe
+                style={{ width: '100%', maxWidth: '840px', height: '510px', display: 'block', margin: '48px auto' }}
+                src="https://online.anyflip.com/frsff/absi/index.html"
+                seamless
+                scrolling="no"
+                frameBorder="0"
+                allowTransparency
+                allowFullScreen
+                title="Qooked menu flipbook"
+              />
+            </div>
           </>
         ),
         image: { src: outcomeImage, alt: 'Qooked final menu outcome' },

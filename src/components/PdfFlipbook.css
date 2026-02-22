@@ -1,0 +1,95 @@
+.pdf-flipbook {
+  min-width: 100%;
+  margin: 24px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.pdf-flipbook__book {
+  margin: 0 auto;
+}
+
+/* Two-up spread: ซ้าย + ขวา */
+.pdf-flipbook__spread {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.pdf-flipbook__spread-half {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.pdf-flipbook__spread-left {
+  border-right: 1px solid #e5e5e5;
+}
+
+.pdf-flipbook__spread-half img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.pdf-flipbook__spread-blank {
+  flex: 1;
+  background: #f8f8f8;
+  min-height: 100%;
+}
+
+.pdf-flipbook__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.pdf-flipbook__btn {
+  padding: 8px 16px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.pdf-flipbook__btn:hover {
+  opacity: 0.9;
+}
+
+.pdf-flipbook__pagenum {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.pdf-flipbook--loading,
+.pdf-flipbook--error {
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f8f8f8;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.pdf-flipbook__spinner {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.pdf-flipbook__hint {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #888;
+}
