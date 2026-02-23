@@ -5,12 +5,14 @@ import Button from "./Button"
 import gotitHero from "../case-study/uiux/gotit_hero.png"
 import uberThumbnail from "../case-study/motion/uber/banner.png"
 import qookedThumbnail from "../case-study/graphics/qooked/banner.png"
+import healUBanner from "../case-study/uiux/healU/banner.png"
 import castleReadThumbnail from "../case-study/graphics/castle-read/thumbnail.png"
 import bacchussThumbnail from "../case-study/graphics/bacchuss/banner.png"
 import logo from "../assets/logo.svg"
 
 const CARD_IMAGES = {
   gotit: gotitHero,
+  healu: healUBanner,
   uber: uberThumbnail,
   qooked: qookedThumbnail,
   castleread: castleReadThumbnail,

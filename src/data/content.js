@@ -39,14 +39,15 @@ export const workBlocks = [
         tone: 'dark',
         link: '/case-studies/uiux/gotit',
       },
-      // {
-      //   id: 'healu',
-      //   tags: ['UI/UX Designer', 'Branding Designer'],
-      //   name: 'Reduced learning complexity for trades students by designing a structured, distraction-free AI study tool grounded in user feedback and fast, iterative prototyping',
-      //   description:
-      //     'under construction',
-      //   tone: 'blue',
-      // },
+      {
+        id: 'healu',
+        tags: ['UI/UX Designer', 'Branding Designer'],
+        name: 'HealU Turns Body Pain into a Guided Recovery Journey',
+        description:
+          'Transforming body discomfort into structured digital care, I crafted HealU’s diagnostic journey and exercise system through research, IA, prototyping, coding, and brand development.',
+        tone: 'blue',
+        link: '/case-studies/uiux/healu',
+      },
       // {
       //   id: 'verifyvasp',
       //   tags: ['UI/UX Designer', 'Branding Designer'],

@@ -5,7 +5,7 @@ const Gotit = () => (
   <CaseStudyTemplate
     projectId="gotit"
     content={gotitContent}
-    nextWork={{ title: "HealU", href: "/" }}
+    nextWork={{ title: "HealU", href: "/case-studies/uiux/healu" }}
   />
 )
 

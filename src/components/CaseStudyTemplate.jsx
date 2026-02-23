@@ -278,29 +278,37 @@ const CaseStudyTemplate = ({ projectId, content, prevWork, nextWork }) => {
               </div>
             </div>
             <div className="case-template__subsections-list">
-              {preDesign.subsections.map((sub) => (
-                <div key={sub.title} className="case-template__subsection">
-                  <h3>{sub.title}</h3>
-                  <div className="case-template__subsection-body">
-                    <HtmlOrReact content={sub.body} as="div" />
-                  </div>
-                  {sub.image && (
-                    sub.image.label ? (
-                      <div className="case-template__image-box">
-                        <span className="case-template__image-box-label">{sub.image.label}</span>
-                        <div className="case-template__subsection-image">
-                          <ImageZoom src={sub.image.src} alt={sub.image.alt ?? ''}>
-                            <img src={sub.image.src} alt={sub.image.alt ?? ''} />
-                          </ImageZoom>
-                        </div>
+              {preDesign.subsections.map((sub, idx) => (
+                <div key={sub.title || sub.quote || idx} className={`case-template__subsection${sub.quote ? ' case-template__subsection--quote' : ''}`}>
+                  {sub.quote ? (
+                    <blockquote className="case-template__quote">
+                      <HtmlOrReact content={sub.quote} as="p" />
+                    </blockquote>
+                  ) : (
+                    <>
+                      <h3>{sub.title}</h3>
+                      <div className="case-template__subsection-body">
+                        <HtmlOrReact content={sub.body} as="div" />
                       </div>
-                    ) : (
-                      <div className="case-template__subsection-image">
-                        <ImageZoom src={sub.image.src} alt={sub.image.alt ?? ''}>
-                          <img src={sub.image.src} alt={sub.image.alt ?? ''} />
-                        </ImageZoom>
-                      </div>
-                    )
+                      {sub.image && (
+                        sub.image.label ? (
+                          <div className="case-template__image-box">
+                            <span className="case-template__image-box-label">{sub.image.label}</span>
+                            <div className="case-template__subsection-image">
+                              <ImageZoom src={sub.image.src} alt={sub.image.alt ?? ''}>
+                                <img src={sub.image.src} alt={sub.image.alt ?? ''} />
+                              </ImageZoom>
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="case-template__subsection-image">
+                            <ImageZoom src={sub.image.src} alt={sub.image.alt ?? ''}>
+                              <img src={sub.image.src} alt={sub.image.alt ?? ''} />
+                            </ImageZoom>
+                          </div>
+                        )
+                      )}
+                    </>
                   )}
                 </div>
               ))}
