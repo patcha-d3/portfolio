@@ -6,10 +6,10 @@ import prob3Image from './healU/prob3.png'
 import briefImage from './healU/01.png'
 import researchImage from './healU/02.png'
 import brandDirectionImage from '../graphics/qooked/03_brand_direction.png'
-import visual1Image from '../graphics/qooked/04_visual1.png'
 import visual2Image from './healU/04.png'
-import menuSystemImage from '../graphics/qooked/05.png'
-import outcomeImage from '../graphics/qooked/06_outcome.jpg'
+import menuSystemImage from './healU/05.png'
+import outcomeImage from './healU/06.png'
+import styleguideImage from './healU/051.png'
 
 export const healUContent = {
   bubbleWelcome: (
@@ -135,7 +135,7 @@ export const healUContent = {
             These keywords guide the tone, visual language, and overall design decisions moving forward.
           </p>
         ),
-        image: { src: brandDirectionImage, alt: 'Brand direction for HealU' },
+        // image: { src: brandDirectionImage, alt: 'Brand direction for HealU' },
       },
     ],
   },
@@ -146,8 +146,7 @@ export const healUContent = {
     subsections: [
       {
         title: '4. Wireframing',
-        layout: 'three-block',
-        imageBefore: { src: visual1Image, alt: 'HealU visual identity' },
+        layout: 'card',
         body: (
           <p>
             The visual identity translates the brand keywords into a cohesive system. The wordmark logo is developed from the name HealU, with creative typography that emphasizes the brunch concept and a sense of warmth. Texture is incorporated into the typography to resemble seasonings sprinkled over food.<br /><br />
@@ -161,28 +160,36 @@ export const healUContent = {
         layout: 'card',
         body: (
           <>
+            <div className="healu-proto-card">
+              {/* เปลี่ยน src เป็น protoImage เมื่อเพิ่มรูปใน healU/proto.png */}
+              <img src={styleguideImage} alt="HealU prototype overview" className="healu-proto-card__img" />
+              <p className="healu-proto-card__caption">For more details about the design system, please visit <a href="https://github.com/rosielee09/Heal_U-A5Styleguide" target="_blank" rel="noopener noreferrer">https://github.com/rosielee09/Heal_U-A5Styleguide</a></p>
+            </div>
             <p>
-              A structured modular grid is created to organize content clearly and consistently. Menu categories are arranged strategically to support natural reading flow.
+            The visual direction did not emerge instantly. Early iterations revealed inconsistencies in layout, spacing, and hierarchy. Through trial and refinement, a structured style guide was developed to bring clarity and alignment to the team. The guide defined typography, color usage, components, spacing systems, and UI patterns, ensuring every screen followed a cohesive visual language. Establishing this foundation allowed the team to design with confidence and consistency.
+<br/><br/>
+With the design system in place, prototyping began in parallel. The experience was divided into two primary user flows for presentation clarity: new users and current users.
+<br/><br/>
+For new users, the journey begins with onboarding, followed by a diagnostic survey. Once the diagnosis is complete, users receive a personalized exercise plan and gain access to guided workout videos and the full navigation menu.
+<br/><br/>
+For current users, the experience opens with a daily check in. Users are prompted to reflect on how they feel, identify pain areas, and indicate pain levels. If significant improvement or worsening is detected, the system recommends re diagnosis to adjust the recovery plan accordingly. After check in, users can proceed to their assigned exercises and explore other sections of the app.
+<br/><br/>
+Separating these flows allowed the product to feel responsive and adaptive, while maintaining clarity in interaction and purpose.
             </p>
-            <p>
-              Paragraph and character styles are carefully divided to make the content easier to manage and maintain consistency throughout the layout. The styles include:
-            </p>
-            <ul>
-              <li>Slogan</li>
-              <li>Footer</li>
-              <li>Food Category</li>
-              <li>Food Header</li>
-              <li>Glyph Header</li>
-              <li>Food Subheader</li>
-              <li>Menu Name</li>
-              <li>Menu Ingredients</li>
-              <li>Add/Modify</li>
-              <li>Sticker Text</li>
-              <li>Sticker Subtext</li>
-            </ul>
-            <p>
-              This system allows clear hierarchy and quick updates without disrupting the overall layout. The structure ensures dish names, prices, and add-ons are easy to distinguish, prioritizing readability and effortless scanning.
-            </p>
+            <div className="healu-prototypes">
+              <iframe
+                style={{ width: '100%', maxWidth: '1200px', height: '510px', display: 'block', margin: '48px auto' }}
+                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FCpVhC0bbc4mRIikES7zP8n%2FHeal_U-Copy%3Fnode-id%3D17-6%26p%3Df%26viewport%3D869%252C458%252C0.06%26t%3DSvJpYZ84sYGDZ4tD-0%26scaling%3Dscale-down%26content-scaling%3Dfixed%26starting-point-node-id%3D418%253A2067%26show-proto-sidebar%3D1"
+                allowFullScreen
+                title="HealU Figma prototype - flow 1"
+              />
+              <iframe
+                style={{ width: '100%', maxWidth: '1200px', height: '510px', display: 'block', margin: '48px auto' }}
+                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FCpVhC0bbc4mRIikES7zP8n%2FHeal_U-Copy%3Fnode-id%3D17-6%26p%3Df%26viewport%3D869%252C458%252C0.06%26t%3DSvJpYZ84sYGDZ4tD-0%26scaling%3Dscale-down%26content-scaling%3Dfixed%26starting-point-node-id%3D1045%253A4541%26show-proto-sidebar%3D1"
+                allowFullScreen
+                title="HealU Figma prototype - flow 2"
+              />
+            </div>
           </>
         ),
         image: { src: menuSystemImage, alt: 'HealU menu system design' },
@@ -199,23 +206,11 @@ export const healUContent = {
         body: (
           <>
             <p>
-              The final stage focuses on refinement and quality control. Spacing, alignment, consistency, and typographic balance are adjusted.
+            After conducting usability testing, design improvements were made based on the findings to enhance overall usability and clarity.<br/><br/>
+<TextHighlighter className="text-highlight">Seven participants tested the high fidelity prototype. Three users struggled with small tutorial text. Six users felt confused by unclear graphics in the daily check in. Clickable elements were not immediately obvious, and the save button interaction lacked clarity. Six users found the pop up layout and wording confusing. All seven users were confused by the missing back button, and the checkmark icon caused navigation misunderstandings.</TextHighlighter><br/><br/>
+These iterations significantly improved clarity, interaction feedback, and overall user flow.
             </p>
-            <p>
-              All elements are proofread carefully to eliminate errors and ensure the final menu is polished, cohesive, and aligned with the intended brand personality.
-            </p>
-            <div className="qooked-flipbook">
-              <iframe
-                style={{ width: '100%', maxWidth: '840px', height: '510px', display: 'block', margin: '48px auto' }}
-                src="https://online.anyflip.com/frsff/absi/index.html"
-                seamless
-                scrolling="no"
-                frameBorder="0"
-                allowTransparency
-                allowFullScreen
-                title="HealU menu flipbook"
-              />
-            </div>
+
           </>
         ),
         image: { src: outcomeImage, alt: 'HealU final menu outcome' },
