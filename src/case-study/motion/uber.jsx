@@ -5,7 +5,7 @@ const Uber = () => (
   <CaseStudyTemplate
     projectId="uber"
     content={uberContent}
-    nextWork={{ title: "Next Project", href: "/" }}
+    nextWork={{ title: "WhatSUP", href: "/case-studies/motion/whatsup" }}
   />
 )
 

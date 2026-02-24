@@ -46,6 +46,7 @@ const CaseStudyTemplate = ({ projectId, content, prevWork, nextWork }) => {
     skills,
     context,
     storyboard,
+    ideaDevelopment,
     designProcess,
     workflow,
     preDesign,
@@ -312,6 +313,32 @@ const CaseStudyTemplate = ({ projectId, content, prevWork, nextWork }) => {
                   )}
                 </div>
               ))}
+            </div>
+          </section>
+        )}
+
+        {/* 01b — Idea Development */}
+        {ideaDevelopment && (
+          <section id="idea-development" className="case-template__section case-template__storyboard">
+            <div className="section-heading">
+              <img src={logo} alt="" className="section-heading__icon" aria-hidden="true" />
+              <div className="section-heading__label">
+                <h2>Idea Development</h2>
+              </div>
+            </div>
+            <div className="case-template__defining-card-wrap">
+              <div className="case-template__design-process-body">
+                <HtmlOrReact content={ideaDevelopment.body} as="div" />
+              </div>
+              <div className="case-template__storyboard-images">
+                {ideaDevelopment.images?.map((img, i) => (
+                  <div key={i} className="case-template__subsection-image">
+                    <ImageZoom src={img.src} alt={img.alt ?? ''}>
+                      <img src={img.src} alt={img.alt ?? ''} />
+                    </ImageZoom>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
         )}

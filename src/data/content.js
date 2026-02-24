@@ -104,6 +104,14 @@ export const workBlocks = [
         tone: 'green',
         link: '/case-studies/motion/uber',
       },
+      {
+        id: 'whatsup',
+        tags: ['Motion Designer'],
+        name: 'Late for Class? How Uber Beats the Clock',
+        description: 'A relatable morning rush brought to life through motion graphics. This project follows a student racing to BCIT, using layered collage visuals and animated UI elements to show how Uber turns stress into a smooth arrival.',
+        tone: 'green',
+        link: '/case-studies/motion/whatsup',
+      },
     ],
   },
 ]

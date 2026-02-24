@@ -14,6 +14,7 @@ import Bubble from './components/Bubble'
 import Gotit from './case-study/uiux/gotit'
 import HealU from './case-study/uiux/healU'
 import Uber from './case-study/motion/uber'
+import WhatSUP from './case-study/motion/whatsup'
 import QookedCaseStudy from './case-study/graphics/qooked'
 import CastleReadCaseStudy from './case-study/graphics/castleRead'
 import BacchussCaseStudy from './case-study/graphics/bacchuss'
@@ -69,6 +70,7 @@ const App = () => {
       <Route path="/case-studies/uiux/gotit" element={<Gotit />} />
       <Route path="/case-studies/uiux/healu" element={<HealU />} />
       <Route path="/case-studies/motion/uber" element={<Uber />} />
+      <Route path="/case-studies/motion/whatsup" element={<WhatSUP />} />
       <Route path="/case-studies/graphics/qooked" element={<QookedCaseStudy />} />
       <Route path="/case-studies/graphics/castleread" element={<CastleReadCaseStudy />} />
       <Route path="/case-studies/graphics/bacchuss" element={<BacchussCaseStudy />} />

@@ -4,6 +4,7 @@ import "./FeaturedWorks.css"
 import Button from "./Button"
 import gotitHero from "../case-study/uiux/gotit_hero.png"
 import uberThumbnail from "../case-study/motion/uber/banner.png"
+import whatsupThumbnail from "../case-study/motion/whatsup/banner.png"
 import qookedThumbnail from "../case-study/graphics/qooked/banner.png"
 import healUBanner from "../case-study/uiux/healU/banner.png"
 import castleReadThumbnail from "../case-study/graphics/castle-read/thumbnail.png"
@@ -14,10 +15,13 @@ const CARD_IMAGES = {
   gotit: gotitHero,
   healu: healUBanner,
   uber: uberThumbnail,
+  whatsup: whatsupThumbnail,
   qooked: qookedThumbnail,
   castleread: castleReadThumbnail,
   bacchuss: bacchussThumbnail,
 }
+
+const SELECTED_WORK_IDS = ['gotit', 'healu', 'qooked', 'castleread', 'uber']
 
 const getLabelVariant = (cardLabel) => {
   if (!cardLabel) return "primary"
@@ -49,7 +53,8 @@ const FeaturedWorks = ({ workBlocks = [] }) => {
           _cardLabel: block.cardLabel || block.title,
         }))
       )
-      return { items: combined, cardLabel: null }
+      const selected = combined.filter((item) => SELECTED_WORK_IDS.includes(item.id))
+      return { items: selected, cardLabel: null }
     }
     const block = workBlocks[activeTabIndex - 1]
     if (!block) return { items: [], cardLabel: "" }
