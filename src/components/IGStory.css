@@ -1,0 +1,114 @@
+.ig-story {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.ig-story--empty {
+  max-height: 600px;
+  color: #666;
+  text-align: center;
+}
+
+.ig-story__container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 600px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.ig-story__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ig-story__nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 35%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
+}
+
+.ig-story__nav--prev {
+  left: 0;
+}
+
+.ig-story__nav--next {
+  right: 0;
+}
+
+.ig-story__header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 20px 20px;
+  z-index: 1;
+}
+
+.ig-story__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.ig-story__indicators {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.ig-story__indicator-bg {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.ig-story__indicator-fill {
+  height: 100%;
+  width: 0;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.ig-story__indicator-fill--done {
+  width: 100% !important;
+  animation: none;
+}
+
+.ig-story__indicator-fill--active {
+  animation: ig-story-progress linear forwards;
+}
+
+@keyframes ig-story-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.ig-story__username {
+  position: relative;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}

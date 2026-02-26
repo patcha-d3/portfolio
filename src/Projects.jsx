@@ -14,7 +14,7 @@ const Projects = () => {
     <div className="projects-page">
       <Navigation />
       <Bubble>
-        Take your time to look at my <span className="bubble__accent">projects gallery!</span> 
+        Take your time to look at my <span className="bubble__accent">case studies!</span> 
       </Bubble>
       <main className="projects-main">
         <FeaturedWorks workBlocks={workBlocks} />

@@ -94,10 +94,7 @@
   min-height: 0;
 }
 
-.home-work-card__body:hover {
-  border: 0;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-}
+
 
 .home-work-card__label--primary {
   background: color-mix(in srgb, var(--color-primary) 50%, transparent);

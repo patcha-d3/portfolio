@@ -10,6 +10,7 @@ import Qooked from './graphics/Qooked'
 import Craft from './graphics/Craft'
 import About from './About'
 import Projects from './Projects'
+import Gallery from './gallery'
 import Bubble from './components/Bubble'
 import Gotit from './case-study/uiux/gotit'
 import HealU from './case-study/uiux/healU'
@@ -64,6 +65,7 @@ const App = () => {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/projects" element={<Projects />} />
+      <Route path="/gallery" element={<Gallery />} />
       <Route path="/qooked" element={<Qooked />} />
       <Route path="/craft" element={<Craft />} />
       <Route path="/case-study-template" element={<Gotit />} />

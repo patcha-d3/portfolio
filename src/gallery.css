@@ -1,0 +1,50 @@
+@import './universal.css';
+
+.gallery-page {
+  background: #f6f6f4;
+  color: #151515;
+  min-height: 100vh;
+  animation: gallery-page-fadein 0.6s ease both;
+}
+
+@keyframes gallery-page-fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-page {
+    animation: none;
+  }
+}
+
+.gallery-main {
+  max-width: 1200px;
+  margin: 48px auto;
+  padding: 32px 40px 80px;
+  box-sizing: border-box;
+}
+
+.gallery-section h2 {
+  margin: 0 0 16px;
+}
+
+.gallery-section p {
+  margin: 0;
+  color: #4f4f4f;
+  line-height: 1.6;
+}
+
+@media (min-width: 240px) and (max-width: 1199px) {
+  .gallery-main {
+    width: 92vw;
+    max-width: 92vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px 16px 100px;
+  }
+}
