@@ -5,6 +5,7 @@ import upbitLogo from '../assets/clients/upbit.svg'
 import verifyvaspLogo from '../assets/clients/verifyvasp.svg'
 import sipthesceneLogo from '../assets/clients/sip.svg'
 import karaked2Logo from '../assets/clients/karaked.svg'
+import pepaLogo from '../assets/clients/pepa.svg'
 
 
 export const serviceCards = [
@@ -16,6 +17,7 @@ export const serviceCards = [
 export const clients = [
   { name: 'Upbit', logo: upbitLogo },
   { name: 'VerifyVASP', logo: verifyvaspLogo },
+  { name: 'Pepa', logo: pepaLogo },
   { name: '1st Street Garage', logo: streetGarageLogo },
   { name: 'Sip the Scene', logo: sipthesceneLogo },
   { name: 'Karaked2', logo: karaked2Logo },
