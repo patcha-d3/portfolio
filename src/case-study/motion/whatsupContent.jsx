@@ -1,4 +1,4 @@
-import uberVid from './whatsup/whatsup.mp4'
+import uberVid from './whatsup/whatSup.mp4'
 import TextHighlighter from '../../components/TextHilight'
 import storyboard01 from './whatsup/storyboard.png'
 import storyboard02 from './whatsup/moodtone.png'
