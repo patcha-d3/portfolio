@@ -42,6 +42,15 @@ export const workBlocks = [
         link: '/case-studies/uiux/gotit',
       },
       {
+        id: 'deepread',
+        tags: ['UI/UX Designer', 'Front-end Developer'],
+        name: 'Forgot What You Read? DeepRead Helps You Remember and Reflect',
+        description:
+          'A solo end-to-end product experiment transforming passive bookmarks into reflective checkpoints through research UX UI design vibe coding and full deployment.',
+        tone: 'blue',
+        link: '/case-studies/uiux/deepread',
+      },
+      {
         id: 'healu',
         tags: ['UI/UX Designer', 'Branding Designer'],
         name: 'HealU Turns Body Pain into a Guided Recovery Journey',
@@ -50,6 +59,7 @@ export const workBlocks = [
         tone: 'blue',
         link: '/case-studies/uiux/healu',
       },
+
       // {
       //   id: 'verifyvasp',
       //   tags: ['UI/UX Designer', 'Branding Designer'],
@@ -81,16 +91,22 @@ export const workBlocks = [
         tone: 'yellow',
         link: '/case-studies/graphics/castleread',
       },
-{
-   id: 'bacchuss',
-    tags: ['Branding Designer', 'Graphic Designer'],
-   name: 'Where Tradition Umeshu Meets a Modern Can Design',
- description: 'Bacchuss transforms traditional Japanese plum wine into a bold, shelf-ready can design crafted for modern Canadian consumers and retail impact.',
-  tone: 'yellow',
-  link: '/case-studies/graphics/bacchuss',
-   },
-
-
+      {
+        id: 'bacchuss',
+        tags: ['Branding Designer', 'Graphic Designer'],
+        name: 'Where Tradition Umeshu Meets a Modern Can Design',
+        description: 'Bacchuss transforms traditional Japanese plum wine into a bold, shelf-ready can design crafted for modern Canadian consumers and retail impact.',
+        tone: 'yellow',
+        link: '/case-studies/graphics/bacchuss',
+      },
+      {
+        id: 'karakedmatcha',
+        tags: ['Branding Designer', 'Graphic Designer'],
+        name: 'Where Traditional Matcha Meets a Modern Can Design',
+        description: 'Karaked Matcha transforms ceremonial-grade matcha into a refined, shelf-ready can design crafted for modern Canadian consumers and retail impact.',
+        tone: 'yellow',
+        link: '/case-studies/graphics/karakedmatcha',
+      },
     ],
   },
   {

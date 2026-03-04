@@ -7,7 +7,7 @@ const BacchussCaseStudy = () => (
     projectId="bacchuss"
     content={bacchussContent}
     prevWork={{ title: "CastleRead", href: "/case-studies/graphics/castleread" }}
-    nextWork={{ title: "Qooked", href: "/case-studies/graphics/qooked" }}
+    nextWork={{ title: "Karaked Matcha", href: "/case-studies/graphics/karakedmatcha" }}
   />
 )
 
