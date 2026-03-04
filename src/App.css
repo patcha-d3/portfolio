@@ -107,6 +107,7 @@ h2 {
   justify-content: center;
   align-items: center;
   margin: auto;
+  padding: 80px 0;
 }
 
 .home-clients__ticker {

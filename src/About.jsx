@@ -29,6 +29,7 @@ import discordIcon from './assets/about/comm/discord.svg'
 import googleIcon from './assets/about/comm/google.svg'
 import jiraIcon from './assets/about/comm/jira.svg'
 
+
 const MONTHS = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, July: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11 }
 
 function yearsFromPeriod(period) {
@@ -81,11 +82,13 @@ const experiences = [
     role: 'Marketing Designer',
     company: 'Upbit Exchange, Bangkok, Thailand',
     period: 'Jan 2022 - Dec 2022',
+    variant: 'accent',
   },
   {
     role: 'Architectural Designer',
     company: 'PEPA Studio (Co-founder), Bangkok, Thailand',
     period: 'July 2018 - July 2024',
+    variant: 'accent',
   },
 ]
 
@@ -97,6 +100,7 @@ const designWeapons = [
   { label: 'Adobe Photoshop', badge: 'Ps', icon: adobePhotoshopIcon },
   { label: 'Adobe InDesign', badge: 'Id', icon: adobeInDesignIcon },
   { label: 'Adobe After Effects', badge: 'Ae', icon: adobeAfterEffectsIcon },
+  { label: 'Jitter', badge: 'Jttr'},
   { label: 'Procreate', badge: 'Pr' },
 ]
 
@@ -180,7 +184,10 @@ I'd love to hear from you.</h3>
           </div>
           <div className="about-experience">
             {experiences.map((exp) => (
-              <div className="about-experience__row" key={`${exp.role}-${exp.company}`}>
+              <div
+                className={`about-experience__row${exp.variant ? ` about-experience__row--${exp.variant}` : ''}`}
+                key={`${exp.role}-${exp.company}`}
+              >
                 <span className="about-experience__role">{exp.role}</span>
                 <span className="about-experience__company">{exp.company}</span>
                 <span className="about-experience__period">{formatPeriodWithYears(exp.period)}</span>

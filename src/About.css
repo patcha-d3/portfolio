@@ -227,6 +227,12 @@
   gap: 16px;
 }
 
+.about-experience__row--accent {
+  opacity: 0.5;
+
+
+}
+
 .about-experience__role {
   font-weight: 600;
 }
