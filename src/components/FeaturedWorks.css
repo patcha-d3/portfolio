@@ -32,12 +32,19 @@
 }
 
 .home-works__tabs button {
-  border: none;
+  border: 1px solid transparent;
   background: transparent;
   padding: 6px 14px;
   border-radius: 999px;
   font-size: 0.85rem;
   cursor: pointer;
+  color: rgb(127, 127, 127);
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.home-works__tabs button:hover {
+  border-color: #303030;
+  color: var(--text-color);
 }
 
 .home-works__tabs button.is-active {
@@ -173,6 +180,11 @@
   border-radius: 999px;
   border: 1px solid var(--border-color-default);
   color: grey;
+  transition: border-color 0.2s ease;
+}
+
+.home-work-card__meta span:hover {
+  border-color: #666;
 }
 
 .home-work-card__content h3 {

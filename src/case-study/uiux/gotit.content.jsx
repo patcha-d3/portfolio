@@ -19,7 +19,7 @@ export const gotitContent = {
   ),
 
   projectTitle:
-    'Reduced learning complexity for trades students by designing a structured, distraction-free AI study tool grounded in user feedback and fast, iterative prototyping',
+    'How we simplified complex trade learning with a distraction-free AI study tool for Level 1 Electrical Apprentices in BC',
 
   tocItems: [
     { id: 'context', label: 'Context' },

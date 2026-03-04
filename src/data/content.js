@@ -35,9 +35,9 @@ export const workBlocks = [
       {
         id: 'gotit',
         tags: ['Scrum Master', 'Product Designer'],
-        name: 'Reduced learning complexity for trades students by designing a structured, distraction-free AI study tool grounded in user feedback and fast, iterative prototyping',
+        name: 'How we simplified complex trade learning with a distraction-free AI study tool for Level 1 Electrical Apprentices in BC',
         description:
-          '',
+          'As Scrum Master and Product Designer, I built an AI study tool that reduces cognitive overload for Level 1 electrician apprentices by summarizing content, simplifying language, and generating mind maps.',
         tone: 'dark',
         link: '/case-studies/uiux/gotit',
       },
