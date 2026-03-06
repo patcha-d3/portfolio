@@ -25,7 +25,7 @@ const CARD_IMAGES = {
   karakedmatcha: karakedMatchaThumbnail,
 }
 
-const SELECTED_WORK_IDS = ['gotit', 'healu', 'deepread', 'qooked', 'castleread', 'bacchuss', 'karakedmatcha', 'uber']
+const SELECTED_WORK_IDS = ['gotit', 'healu', 'qooked', 'castleread', 'bacchuss', 'uber']
 
 const getLabelVariant = (cardLabel) => {
   if (!cardLabel) return "primary"
