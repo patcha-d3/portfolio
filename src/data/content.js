@@ -125,8 +125,8 @@ export const workBlocks = [
       {
         id: 'whatsup',
         tags: ['Motion Designer'],
-        name: 'Late for Class? How Uber Beats the Clock',
-        description: 'A relatable morning rush brought to life through motion graphics. This project follows a student racing to BCIT, using layered collage visuals and animated UI elements to show how Uber turns stress into a smooth arrival.',
+        name: 'Need a break? WhatSUP is the answer!',
+        description: 'This promotional video was created as part of the WhatSUP project to introduce the brand and highlight its energetic, community-focused identity. WhatSUP is a stand-up paddleboarding and kayaking business based on Bowen Island.',
         tone: 'green',
         link: '/case-studies/motion/whatsup',
       },
