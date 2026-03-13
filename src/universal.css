@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&display=swap');
+
 :root {
   --border-color-default: #efefef;
   --color-primary: #b3d7ee;
@@ -55,11 +57,12 @@ p {
 .section-heading__label h2,
 .section-heading .section-heading__label h2 {
   margin: 0;
-  padding: 2px 16px;
-  border: 1px solid #e3e3e3;
-  border-radius: 8px 8px 8px 0;
-  background: #fff;
-  font-size: 1.6rem;
+  padding: 2px 0px;
+  font-family: "Faustina", serif;
+  font-optical-sizing: auto;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 2rem;
 }
 
 @media (max-width: 1199px) {
