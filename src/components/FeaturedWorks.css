@@ -16,7 +16,7 @@
 .home-works__subtitle h3 {
   margin: 0;
   font-size: 1.2rem;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
   font-weight: 400;
   color: #4f4f4f;
   text-align: center;
@@ -86,7 +86,7 @@
 .home-work-card__label {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   display: flex;
@@ -190,13 +190,16 @@
 .home-work-card__content h3 {
   margin: 0;
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: "Faustina", serif;
+
 }
 
 .home-work-card__content p {
   margin: 0;
   color: #4f4f4f;
   line-height: 1.5;
+  font-size: 1rem;
 }
 
 .home-work-card__cta {
