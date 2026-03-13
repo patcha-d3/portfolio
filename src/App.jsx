@@ -63,7 +63,7 @@ const Home = () => (
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          <FeaturedWorks workBlocks={workBlocks} />
+          <FeaturedWorks workBlocks={workBlocks} showSeeMore />
         </motion.div>
       </main>
     </div>

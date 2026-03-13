@@ -60,6 +60,33 @@
   gap: 16px;
 }
 
+.home-works__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.home-works__see-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border: 1px solid #151515;
+  border-radius: 999px;
+  background: #151515;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.home-works__see-more:hover {
+  background: #fff;
+  color: #151515;
+  transform: translateY(-1px);
+}
+
 .home-work-card {
   display: flex;
   min-height: fit-content;
@@ -257,6 +284,15 @@
     max-width: 100%;
     width: 100%;
     box-sizing: border-box;
+  }
+
+  .home-works__cta {
+    margin-top: 4px;
+  }
+
+  .home-works__see-more {
+    width: 100%;
+    max-width: 220px;
   }
 
   .home-work-card__link {

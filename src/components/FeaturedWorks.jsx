@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react"
 import { Link } from "react-router-dom"
 import "./FeaturedWorks.css"
-import Button from "./Button"
+import { trackEvent } from "../utils/analytics"
 import gotitHero from "../case-study/uiux/gotit_hero.png"
 import uberThumbnail from "../case-study/motion/uber/banner.png"
 import whatsupThumbnail from "../case-study/motion/whatsup/banner.png"
@@ -35,7 +35,7 @@ const getLabelVariant = (cardLabel) => {
   return "primary"
 }
 
-const FeaturedWorks = ({ workBlocks = [] }) => {
+const FeaturedWorks = ({ workBlocks = [], showSeeMore = false }) => {
   const [activeTabIndex, setActiveTabIndex] = useState(0)
 
   const tabs = useMemo(() => {
@@ -142,6 +142,23 @@ const FeaturedWorks = ({ workBlocks = [] }) => {
           )
         })}
       </div>
+      {showSeeMore && (
+        <div className="home-works__cta">
+          <Link
+            to="/projects"
+            className="home-works__see-more"
+            onClick={() =>
+              trackEvent("featured_works_see_more_click", {
+                event_category: "engagement",
+                event_label: "Featured Works See More",
+                destination: "/projects",
+              })
+            }
+          >
+            View more projects
+          </Link>
+        </div>
+      )}
     </section>
   )
 }
