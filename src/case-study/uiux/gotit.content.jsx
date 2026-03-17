@@ -77,7 +77,7 @@ export const gotitContent = {
       ],
       metaLinks: [
         { label: 'Figma Prototype', href: '#', primary: true },
-        { label: 'Visit Website', href: '#', primary: false },
+        { label: 'Visit Website', href: 'https://got-it-phi.vercel.app/', primary: false },
       ],
     },
     targetUsers: {
