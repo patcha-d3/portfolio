@@ -33,6 +33,15 @@ export const workBlocks = [
     cardLabel: 'UI/UX Project',
     items: [
       {
+        id: 'upbit',
+        tags: ['Product Designer', 'Marketing Designer', 'Real-World Experience'],
+        name: 'Designing for Growth in a High-Stakes Crypto Platform',
+        description:
+          'Worked as a Marketing Designer and UI UX Designer on digital campaigns and user flows. Improved sign up conversion by 54% by reducing friction and optimizing the experience.',
+        tone: 'dark',
+        link: '/case-studies/uiux/upbit',
+      },
+      {
         id: 'gotit',
         tags: ['Scrum Master', 'Product Designer'],
         name: 'How we simplified complex trade learning with a distraction-free AI study tool for Level 1 Electrical Apprentices in BC',
@@ -59,6 +68,7 @@ export const workBlocks = [
         tone: 'blue',
         link: '/case-studies/uiux/healu',
       },
+
 
       // {
       //   id: 'verifyvasp',

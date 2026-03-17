@@ -22,8 +22,8 @@ export const deepReadContent = {
   tocItems: [
     { id: 'context', label: 'Context' },
     { id: 'workflow', label: 'Workflow' },
-    { id: 'pre-design', label: 'Pre-Design' },
-    { id: 'design-process', label: 'Design Process' },
+    { id: 'pre-design', label: 'What Do I Design?' },
+    { id: 'design-process', label: 'Digital Product Design' },
     { id: 'problem', label: 'Post-Design' },
     { id: 'final-thoughts', label: 'Final Thoughts' },
   ],

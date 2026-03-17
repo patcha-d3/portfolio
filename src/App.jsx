@@ -15,6 +15,7 @@ import Gallery from './gallery'
 import Bubble from './components/Bubble'
 import Gotit from './case-study/uiux/gotit'
 import HealU from './case-study/uiux/healU'
+import Upbit from './case-study/uiux/upbit'
 import DeepRead from './case-study/uiux/deepRead'
 import Uber from './case-study/motion/uber'
 import WhatSUP from './case-study/motion/whatsup'
@@ -87,6 +88,7 @@ const App = () => {
       <Route path="/case-study-template" element={<Gotit />} />
       <Route path="/case-studies/uiux/gotit" element={<Gotit />} />
       <Route path="/case-studies/uiux/healu" element={<HealU />} />
+      <Route path="/case-studies/uiux/upbit" element={<Upbit />} />
       <Route path="/case-studies/uiux/deepread" element={<DeepRead />} />
       <Route path="/case-studies/motion/uber" element={<Uber />} />
       <Route path="/case-studies/motion/whatsup" element={<WhatSUP />} />

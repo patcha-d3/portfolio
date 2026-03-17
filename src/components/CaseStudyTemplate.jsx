@@ -275,7 +275,7 @@ const CaseStudyTemplate = ({ projectId, content, prevWork, nextWork }) => {
             <div className="section-heading">
               <img src={logo5} alt="" className="section-heading__icon" aria-hidden="true" />
               <div className="section-heading__label">
-                <h2>Pre-Design</h2>
+                <h2>What Do I Design?</h2>
               </div>
             </div>
             <div className="case-template__subsections-list">
@@ -375,7 +375,7 @@ const CaseStudyTemplate = ({ projectId, content, prevWork, nextWork }) => {
             <div className="section-heading">
               <img src={logo6} alt="" className="section-heading__icon" aria-hidden="true" />
               <div className="section-heading__label">
-                <h2>Design Process</h2>
+                <h2>Digital Product Design</h2>
               </div>
             </div>
             {designProcess.subsections ? (

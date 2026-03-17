@@ -7,6 +7,7 @@ import uberThumbnail from "../case-study/motion/uber/banner.png"
 import whatsupThumbnail from "../case-study/motion/whatsup/banner.png"
 import qookedThumbnail from "../case-study/graphics/qooked/banner.png"
 import healUBanner from "../case-study/uiux/healU/banner.png"
+import upbitBanner from "../case-study/uiux/upbit/banner.png"
 import deepReadBanner from "../case-study/uiux/deepRead/banner.png"
 import castleReadThumbnail from "../case-study/graphics/castle-read/thumbnail.png"
 import bacchussThumbnail from "../case-study/graphics/bacchuss/banner.png"
@@ -16,6 +17,7 @@ import logo from "../assets/logo.svg"
 const CARD_IMAGES = {
   gotit: gotitHero,
   healu: healUBanner,
+  upbit: upbitBanner,
   deepread: deepReadBanner,
   uber: uberThumbnail,
   whatsup: whatsupThumbnail,
@@ -25,7 +27,7 @@ const CARD_IMAGES = {
   karakedmatcha: karakedMatchaThumbnail,
 }
 
-const SELECTED_WORK_IDS = ['gotit', 'healu', 'qooked', 'castleread', 'bacchuss', 'uber']
+const SELECTED_WORK_IDS = ['gotit', 'healu', 'upbit', 'qooked', 'castleread', 'bacchuss', 'uber']
 
 const getLabelVariant = (cardLabel) => {
   if (!cardLabel) return "primary"
