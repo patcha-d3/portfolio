@@ -76,14 +76,14 @@ export const upbitContent = {
         { label: 'Type', value: 'Digital Asset Exchange' },
         { label: 'Company', value: 'Upbit Asia Pacific' },
         { label: 'Timeline', value: '2022 — Present' },
-        { label: 'Role', value: 'RegionalMarketing & UI/UX Designer' },
+        { label: 'Role', value: 'Regional Marketing & UI/UX Designer' },
       ],
     },
 
     targetUsers: {
       content: (
         <p>
-          Traders, investors, and internal teams across marketing, product, and operations.
+          Crypto traders, investors, and crypto enthusiasts.
         </p>
       ),
     },
@@ -96,8 +96,7 @@ export const upbitContent = {
       { number: 2, title: 'System & Experience Design' },
       { number: 3, title: 'Interface & Visual Execution' },
       { number: 4, title: 'Marketing & Content Design' },
-      { number: 5, title: 'Testing & Iteration' },
-      { number: 6, title: 'Launch & Continuous Improvement' },
+      { number: 5, title: 'Offline Design' },
     ],
   },
 
