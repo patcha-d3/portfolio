@@ -1,0 +1,58 @@
+/* Parallax scroll footer - images reveal progressively as you scroll */
+/* Inspired by callbaba.com & prismic.io/blog/css-scroll-effects */
+
+.footer-parallax {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-parallax__viewport {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.footer-parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+.footer-parallax__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  pointer-events: none;
+}
+
+/* Spacer creates scroll height - more height = longer parallax reveal */
+.footer-parallax__spacer {
+  height: 300vh;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-parallax__layer {
+    will-change: auto;
+  }
+}
+
+@media (max-width: 1199px) {
+  .footer-parallax__spacer {
+    height: 250vh;
+  }
+}

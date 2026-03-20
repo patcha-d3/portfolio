@@ -9,6 +9,7 @@ import figmaIcon from '../../assets/about/design/figma.svg'
 import digitalProductDesignImage from './gotit/happypath.png'
 import personaImage from './gotit/persona.png'
 import brand1Image from './gotit/brand1.png'
+import reflectionImage from './gotit/reflection.png'
 import TextHighlighter from '../../components/TextHilight'
 
 export const gotitContent = {
@@ -260,6 +261,7 @@ export const gotitContent = {
   outcomes: {
     subsections: [
       {
+        image: { src: reflectionImage, alt: 'Reflection' },
         title: 'What Worked',
         body: (
           <p>

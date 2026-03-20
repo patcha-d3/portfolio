@@ -762,6 +762,13 @@ const CaseStudyTemplate = ({ projectId, content, prevWork, nextWork }) => {
             <div className="case-template__outcomes-card">
               {outcomes.subsections.map((sub) => (
                 <div key={sub.title} className="case-template__outcomes-item">
+                  {sub.image && (
+                    <div className="case-template__subsection-image">
+                      <ImageZoom src={sub.image.src} alt={sub.image.alt ?? ''}>
+                        <img src={sub.image.src} alt={sub.image.alt ?? ''} />
+                      </ImageZoom>
+                    </div>
+                  )}
                   <h3>{sub.title}</h3>
                   <div className="case-template__subsection-body">
                     <HtmlOrReact content={sub.body} as="div" />
